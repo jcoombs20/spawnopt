@@ -1,0 +1,706 @@
+
+Public Sub cmdOpt_Click()
+    disAbledF = 0: disAbledM = 0
+        
+    For i = 0 To CInt(frmMain.cmbFem.Text) - 1
+        If frmInput.txtTagFem(i).Text = "" Then
+            Msg = "There is an empty space in the Female list." + Chr(13) + "Please either scan a tag into the empty space or reselect the appropriate number of females."
+            Style = vbOKOnly + vbCritical + vbDefaultButton1
+            Title = "Missing Female"
+            Response = MsgBox(Msg, Style, Title)
+            
+            Exit Sub
+        End If
+        
+        If frmInput.txtFamID(i).Text = "" Then
+            Msg = "There is an empty space in the Family ID list." + Chr(13) + "Please enter in the appropriate family identification number."
+            Style = vbOKOnly + vbCritical + vbDefaultButton1
+            Title = "Missing Family ID"
+            Response = MsgBox(Msg, Style, Title)
+            
+            Exit Sub
+        End If
+            
+        If frmInput.txtTagFem(i).Enabled = False Then
+            disAbledF = disAbledF + 1
+        End If
+    Next i
+        
+    If disAbledF = CInt(frmMain.cmbFem.Text) Then
+        Msg = "There are no enabled female tags to optimize." + Chr(13) + "Please cancel this form and either deselect a spawning or reselect the number of females."
+        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Title = "No Females to Optimize"
+        Response = MsgBox(Msg, Style, Title)
+            
+        Exit Sub
+    End If
+        
+    'enableCnt = 0
+        
+    For i = 0 To CInt(frmMain.cmbMale.Text) - 1
+        If frmInput.txtTagMale(i).Text = "" Then
+            Msg = "There is an empty space in the Male list." + Chr(13) + "Please either scan a tag into the empty space or reselect the appropriate number of males."
+            Style = vbOKOnly + vbCritical + vbDefaultButton1
+            Title = "Missing Male"
+            Response = MsgBox(Msg, Style, Title)
+            
+            Exit Sub
+        End If
+            
+        If frmInput.txtTagMale(i).Enabled = False Then
+            disAbledM = disAbledM + 1
+        End If
+    Next i
+    
+    'enableCnt = enableCnt + 1
+    'If disAbledM = CInt(frmMain.cmbMale.Text) Then
+    '    Msg = "There must be at least one enabled male."
+    '    Style = vbOKOnly + vbCritical + vbDefaultButton1
+    '    Title = "No Enabled Males"
+    '    Response = MsgBox(Msg, Style, Title)
+            
+    '    Exit Sub
+    'End If
+                
+    If CInt(frmMain.cmbFem.Text) - disAbledF > CInt(frmMain.cmbMale.Text) - disAbledM Then
+        Msg = "There must be at least as many enabled males as enabled females."
+        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Title = "Not Enough Enabled Males"
+        Response = MsgBox(Msg, Style, Title)
+            
+        Exit Sub
+    End If
+        
+    'disAbledF = 0
+    'For i = 0 To CInt(frmMain.cmbFem.Text) - 1
+    '    If frmInput.txtTagFem(i).Enabled = False Then
+    '        disAbledF = disAbledF + 1
+    '    End If
+    'Next i
+        
+    'disAbledM = 0
+    'For i = 0 To CInt(frmMain.cmbMale.Text) - 1
+    '    If frmInput.txtTagMale(i).Enabled = False Then
+    '        disAbledM = disAbledM + 1
+    '    End If
+    'Next i
+        
+    ReDim fOrder(CInt(frmMain.cmbFem.Text) - disAbledF) As String
+    'ReDim fPic(CInt(frmMain.cmbFem.Text) - disAbledF) As String
+    'ReDim fWeight(CInt(frmMain.cmbFem.Text) - disAbledF) As Single
+    ReDim enNumF(CInt(frmMain.cmbFem.Text) - disAbledF) As Long
+    ReDim mOrder(CInt(frmMain.cmbMale.Text) - disAbledM) As String
+    'ReDim mPic(CInt(frmMain.cmbMale.Text) - disAbledM) As String
+    'ReDim mWeight(CInt(frmMain.cmbMale.Text) - disAbledM) As Single
+    ReDim enNumM(CInt(frmMain.cmbMale.Text) - disAbledM) As Long
+    
+    'read in female tags, picture numbers, and weights
+    j = 1
+    For i = 1 To CInt(frmMain.cmbFem.Text)
+        If frmInput.txtTagFem(i - 1).Enabled = True Then
+            enNumF(j) = i - 1
+            fOrder(j) = frmInput.txtTagFem(i - 1).Text
+            'fPic(j) = frmInput.txtPicFem(i - 1).Text
+            'If frmInput.txtWeightFem(i - 1).Text <> "" Then
+            '    fWeight(j) = frmInput.txtWeightFem(i - 1).Text
+            'End If
+            j = j + 1
+        End If
+    Next i
+    
+    'read in male tags, picture numbers, and weights
+    j = 1
+    For i = 1 To CInt(frmMain.cmbMale.Text)
+        If frmInput.txtTagMale(i - 1).Enabled = True Then
+            enNumM(j) = i - 1
+            mOrder(j) = frmInput.txtTagMale(i - 1).Text
+            'mPic(j) = frmInput.txtPicMale(i - 1).Text
+            'If frmInput.txtWeightMale(i - 1).Text <> "" Then
+            '    mWeight(j) = frmInput.txtWeightMale(i - 1).Text
+            'End If
+            j = j + 1
+        End If
+    Next i
+    
+    If frmInput.chkOptimize.Value = 1 Then
+        Set wrkJet = CreateWorkspace("", "admin", "", dbUseJet)
+        Set dbsNew = wrkJet.OpenDatabase("C:\Databases\MaineBroodstock.mdb")
+    
+        With dbsNew
+            Set rstTemp = dbsNew.OpenRecordset("SELECT Genetics.* FROM Genetics", dbOpenDynaset)
+            With rstTemp
+                ReDim fAlleles(CInt(frmMain.cmbFem.Text) - disAbledF, rstTemp.Fields.Count - 8, 2)
+                ReDim mAlleles(CInt(frmMain.cmbMale.Text) - disAbledM, rstTemp.Fields.Count - 8, 2)
+                ReDim maleFinal(CInt(frmMain.cmbFem.Text) - disAbledF) As Long
+                ReDim pTempMeasure(CInt(frmMain.cmbFem.Text) - disAbledF) As Single
+                ReDim pFinalMeasure(CInt(frmMain.cmbFem.Text) - disAbledF) As Single
+                ReDim maleOrder(CInt(frmMain.cmbMale.Text) - disAbledM) As String
+                ReDim femScored(CInt(frmMain.cmbFem.Text) - disAbledF) As Long
+                ReDim maleScored(CInt(frmMain.cmbMale.Text) - disAbledM) As Long
+                ReDim flaGG(CInt(frmMain.cmbFem.Text) - disAbledF) As Variant
+                
+                'acquiring male and female allele values
+                For j = 1 To CInt(frmMain.cmbFem.Text) - disAbledF
+                    rstTemp.MoveFirst
+                    Do Until rstTemp.EOF
+                        If UCase(![pit]) = UCase(fOrder(j)) Then
+                            m = 1
+                            locScored = 0
+                            For k = 7 To rstTemp.Fields.Count - 2
+                                fAlleles(j, m, 1) = rstTemp.Fields(k).Value
+                                If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                                k = k + 1
+                                fAlleles(j, m, 2) = rstTemp.Fields(k).Value
+                                If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                                m = m + 1
+                            Next k
+                            femScored(j) = locScored / 2
+                            Exit Do
+                        End If
+                        rstTemp.MoveNext
+                    Loop
+                Next j
+            
+                For j = 1 To CInt(frmMain.cmbMale.Text) - disAbledM
+                    rstTemp.MoveFirst
+                    Do Until rstTemp.EOF
+                        If UCase(![pit]) = UCase(mOrder(j)) Then
+                            m = 1
+                            locScored = 0
+                            For k = 7 To rstTemp.Fields.Count - 2
+                                mAlleles(j, m, 1) = rstTemp.Fields(k).Value
+                                If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                                k = k + 1
+                                mAlleles(j, m, 2) = rstTemp.Fields(k).Value
+                                If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                                m = m + 1
+                            Next k
+                            maleScored(j) = locScored / 2
+                            Exit Do
+                        End If
+                        rstTemp.MoveNext
+                    Loop
+                Next j
+                
+                
+                'calculating proportion of shared alleles
+                ReDim pwPSA(CInt(frmMain.cmbFem.Text) - disAbledF, CInt(frmMain.cmbMale.Text) - disAbledM)
+                
+                For f = 1 To CInt(frmMain.cmbFem.Text) - disAbledF
+                    For m = 1 To CInt(frmMain.cmbMale.Text) - disAbledM
+                        pTotal = 0
+                        totAlleles = rstTemp.Fields.Count - 8: pShared = 0
+                        For j = 1 To totAlleles / 2
+                            If IsNull(fAlleles(f, j, 1)) = True Or IsNull(fAlleles(f, j, 2)) = True Or IsNull(mAlleles(m, j, 1)) = True Or IsNull(mAlleles(m, j, 2)) = True Then
+                                totAlleles = totAlleles - 2
+                                GoTo nextLoci
+                            End If
+                    
+                            If fAlleles(f, j, 1) = fAlleles(f, j, 2) Then
+                                If fAlleles(f, j, 1) = mAlleles(m, j, 1) And fAlleles(f, j, 1) = mAlleles(m, j, 2) Then
+                                    pShared = pShared + 2
+                                ElseIf fAlleles(f, j, 1) = mAlleles(m, j, 1) Or fAlleles(f, j, 1) = mAlleles(m, j, 2) Then
+                                    pShared = pShared + 1
+                                End If
+                            ElseIf mAlleles(m, j, 1) = mAlleles(m, j, 2) Then
+                                If fAlleles(f, j, 1) = mAlleles(m, j, 1) And fAlleles(f, j, 2) = mAlleles(m, j, 1) Then
+                                    pShared = pShared + 2
+                                ElseIf fAlleles(f, j, 1) = mAlleles(m, j, 1) Or fAlleles(f, j, 2) = mAlleles(m, j, 1) Then
+                                    pShared = pShared + 1
+                                End If
+                            Else
+                                If fAlleles(f, j, 1) = mAlleles(m, j, 1) Or fAlleles(f, j, 1) = mAlleles(m, j, 2) Then
+                                    pShared = pShared + 1
+                                End If
+                        
+                                If fAlleles(f, j, 2) = mAlleles(m, j, 1) Or fAlleles(f, j, 2) = mAlleles(m, j, 2) Then
+                                    pShared = pShared + 1
+                                End If
+                            End If
+nextLoci:
+                        Next j
+                        
+                        If totAlleles = 0 Then
+                            pwPSA(f, m) = 0
+                        ElseIf pShared = 0 Then
+                            pwPSA(f, m) = 10
+                        ElseIf pShared = totAlleles Then
+                            pwPSA(f, m) = 0
+                        Else '****** Add additional genetic measures here
+                            pwPSA(f, m) = Format((-Log(pShared / totAlleles)), "0.000")
+                        End If
+                    Next m
+                Next f
+            
+                'My computer
+                Open "C:\Maine Genetics Program\Factorial Combinations\" & CInt(frmMain.cmbMale.Text) - disAbledM & "Factorial.txt" For Input As #1
+                
+                'Denise's computer
+                'Open "C:\Databases\MaineBroodstock\SpawnOpt\Factorial Combinations\" & CInt(frmMain.cmbMale.Text) - disAbledM & "Factorial.txt" For Input As #1
+                
+                m = 1: n = 0: p = 1: pFinal = 0
+                Do Until EOF(1)
+                    'acquiring male order
+                    Input #1, strFactorial
+                    Do Until Mid(strFactorial, m, 1) = ""
+                        If Mid(strFactorial, m, 1) = " " Or Mid(strFactorial, m, 1) = ";" Then
+                            maleOrder(p) = CLng(Mid(strFactorial, m - 1, n))
+                            p = p + 1
+                            n = -1
+                        End If
+                        m = m + 1
+                        n = n + 1
+                    Loop
+                    
+                    'summing proportion of shared alleles across matings
+                    pTotal = 0
+                    For n = 1 To CInt(frmMain.cmbFem.Text) - disAbledF
+                        pTotal = pTotal + pwPSA(n, maleOrder(n))
+                        pTempMeasure(n) = pwPSA(n, maleOrder(n))
+                    Next n
+                        
+                    'determining which combination is best
+                    If pTotal >= pFinal Then
+                        pFinal = pTotal
+                        For m = 1 To CInt(frmMain.cmbFem.Text) - disAbledF
+                            maleFinal(m) = CInt(maleOrder(m))
+                            pFinalMeasure(m) = Format(Exp(-(pTempMeasure(m))), "0.000")
+                        Next m
+                    End If
+                            
+                    m = 1: n = 0: p = 1
+                Loop
+                Close #1
+                
+                Set rstTemp = dbsNew.OpenRecordset("SELECT tblBroodMating.* FROM tblBroodMating", dbOpenDynaset)
+                'Set rstCull = dbsNew.OpenRecordset("SELECT tblBroodLookup.* FROM tblBroodLookup", dbOpenDynaset)
+                
+                For m = 1 To CInt(frmMain.cmbFem.Text) - disAbledF
+                    frmMain.lblFem(enNumF(m)).Visible = True
+                    frmMain.txtFem(enNumF(m)).Visible = True
+                    frmMain.lblMale(enNumF(m)).Visible = True
+                    frmMain.txtMale(enNumF(m)).Visible = True
+                    frmMain.txtPShare(enNumF(m)).Visible = True
+                    frmMain.cmdComment(enNumF(m)).Visible = True
+                    frmMain.chkSpawned(enNumF(m)).Visible = True
+                    frmMain.chkReleaseF(enNumF(m)).Visible = True
+                    frmMain.chkReleaseM(enNumF(m)).Visible = True
+                    
+                    frmMain.lblFem(enNumF(m)).Caption = frmInput.txtFamID(enNumF(m)).Text
+                
+                    frmMain.txtFem(enNumF(m)).Locked = False
+                    frmMain.txtFem(enNumF(m)).Text = fOrder(m)
+                    frmMain.txtFem(enNumF(m)).Locked = True
+                
+                    frmMain.txtLocFem(enNumF(m)).Text = femScored(m)
+                    
+                    'frmMain.txtPicFem(enNumF(m)).Text = fPic(m)
+                    
+                    'frmMain.txtWeightFem(enNumF(m)).Text = fWeight(m)
+                    
+                    Select Case UCase(fDrainage(enNumF(m)))
+                        Case "PENOBSCOT"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 1
+                        Case "SHEEPSCOT"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 11
+                        Case "NARRAGUAGUS"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 3
+                        Case "PLEASANT"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 4
+                        Case "MACHIAS"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 5
+                        Case "EAST MACHIAS"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 6
+                        Case "DENNYS"
+                            frmMain.txtDrainageF(enNumF(m)).Text = 7
+                    End Select
+                    
+                    frmMain.txtfYear(enNumF(m)).Text = fYear(enNumF(m))
+                    
+                    frmMain.lblMale(enNumF(m)).Caption = enNumM(maleFinal(m)) + 1
+                
+                    frmMain.txtMale(enNumF(m)).Locked = False
+                    frmMain.txtMale(enNumF(m)).Text = mOrder(maleFinal(m))
+                    frmMain.txtMale(enNumF(m)).Locked = True
+                
+                    frmMain.txtLocMale(enNumF(m)).Text = maleScored(maleFinal(m))
+                    
+                    'frmMain.txtPicMale(enNumF(m)).Text = mPic(maleFinal(m))
+                    
+                    'frmMain.txtWeightMale(enNumF(m)).Text = mWeight(maleFinal(m))
+                    
+                    Select Case UCase(mDrainage(maleFinal(m) - 1))
+                        Case "PENOBSCOT"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 1
+                        Case "SHEEPSCOT"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 11
+                        Case "NARRAGUAGUS"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 3
+                        Case "PLEASANT"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 4
+                        Case "MACHIAS"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 5
+                        Case "EAST MACHIAS"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 6
+                        Case "DENNYS"
+                            frmMain.txtDrainageM(enNumF(m)).Text = 7
+                    End Select
+                    
+                    frmMain.txtmYear(enNumF(m)).Text = mYear(maleFinal(m) - 1)
+                    
+                    frmMain.txtPShare(enNumF(m)).Locked = False
+                    frmMain.txtPShare(enNumF(m)).Text = pFinalMeasure(m)
+                    frmMain.txtPShare(enNumF(m)).Locked = True
+                    
+                    If disAbledF > 0 Or disAbledM > 0 Then
+                        frmMain.txtOptimized(enNumF(m)) = "REOPTIMIZED"
+                    Else
+                        frmMain.txtOptimized(enNumF(m)) = "YES"
+                    End If
+                    
+                    'Determine mating flags
+                    If UCase(frmMain.txtDrainageF(enNumF(m)).Text) <> UCase(frmMain.txtDrainageM(enNumF(m)).Text) Then
+                        flaGG(m - 1) = "The male and female for this mating come from two different drainages." & Chr(13) & Chr(13)
+                    End If
+                    
+                    Select Case CInt(frmMain.txtDrainageF(enNumF(m)).Text)
+                        Case 7
+                            numDrainage = 0
+                        Case 6
+                            numDrainage = 1
+                        Case 5
+                            numDrainage = 2
+                        Case 3
+                            numDrainage = 3
+                        Case 1
+                            numDrainage = 4
+                        Case 4
+                            numDrainage = 5
+                        Case 11
+                            numDrainage = 6
+                        Case Else
+                            numDrainage = 7
+                    End Select
+                    
+                    If femScored(m) > 0 And maleScored(m) > 0 Then
+                        If CSng(frmMain.txtPShare(enNumF(m)).Text) > CSng(frmMain.txtQuartile(numDrainage).Text) Then
+                            flaGG(m - 1) = flaGG(m - 1) & "The proportion of shared alleles for this mating is in the lower quartile for drainage " & frmMain.txtDrainageF(enNumF(m)).Text & "." & Chr(13) & Chr(13)
+                        End If
+                    End If
+                    
+                    With rstTemp
+                        rstTemp.MoveFirst
+                        Do Until rstTemp.EOF
+                            If UCase(rstTemp!Dam) = UCase(frmMain.txtFem(enNumF(m)).Text) Then
+                                If UCase(rstTemp!Sire) = UCase(frmMain.txtMale(enNumF(m)).Text) Then
+                                    flaGG(m - 1) = flaGG(m - 1) & "This female and male pairing has already been spawned on " & rstTemp!TakeDate & Chr(13) & Chr(13)
+                                End If
+                            End If
+                            rstTemp.MoveNext
+                        Loop
+                    End With
+                    
+                    'With rstCull
+                    '    If rstCull.RecordCount > 0 Then
+                    '        rstCull.MoveFirst
+                    '        Do Until rstCull.EOF
+                    '            If UCase(rstCull!Mark) = UCase(frmMain.txtFem(enNumF(m)).Text) Then
+                    '                flaGG(m - 1) = flaGG(m - 1) & "The PIT tag number of the female for this pairing is located in the 'tblBroodLookup' table with the comment '" & rstCull!Comments & "'." & Chr(13) & Chr(13)
+                    '            ElseIf UCase(rstCull!Mark) = UCase(frmMain.txtMale(enNumF(m)).Text) Then
+                    '                flaGG(m - 1) = flaGG(m - 1) & "The PIT tag number of the male for this pairing is located in the 'tblBroodLookup' table with the comment '" & rstCull!Comments & "'." & Chr(13) & Chr(13)
+                    '            End If
+                    '            rstCull.MoveNext
+                    '        Loop
+                    '    End If
+                    'End With
+                    
+                    If femScored(m) = 0 Then
+                        flaGG(m - 1) = flaGG(m - 1) & "This female has not been scored at any loci" & Chr(13) & Chr(13)
+                    End If
+                    
+                    If maleScored(m) = 0 Then
+                        flaGG(m - 1) = flaGG(m - 1) & "This male has not been scored at any loci" & Chr(13) & Chr(13)
+                    End If
+                    
+                    If flaGG(m - 1) <> Empty Then
+                        frmMain.imgFlag(enNumF(m)).Visible = True
+                        frmMain.txtFlag(enNumF(m)).Text = flaGG(m - 1)
+                    Else
+                        frmMain.imgFlag(enNumF(m)).Visible = False
+                    End If
+                    
+                Next m
+            
+                For m = CInt(frmMain.cmbFem.Text) To 9
+                    frmMain.lblFem(m).Visible = False
+                    frmMain.txtFem(m).Visible = False
+                    frmMain.txtFem(m).Locked = False
+                    frmMain.txtFem(m).Text = ""
+                    frmMain.txtFem(m).Locked = True
+                    frmMain.lblMale(m).Visible = False
+                    frmMain.txtMale(m).Visible = False
+                    frmMain.txtMale(m).Locked = False
+                    frmMain.txtMale(m).Text = ""
+                    frmMain.txtMale(m).Locked = True
+                    frmMain.txtPShare(m).Visible = False
+                    frmMain.cmdComment(m).Visible = False
+                    frmMain.imgFlag(m).Visible = False
+                    frmMain.chkSpawned(m).Visible = False
+                    frmMain.chkReleaseF(m).Visible = False
+                    frmMain.chkReleaseM(m).Visible = False
+                Next m
+            
+            End With
+        End With
+    
+        dbsNew.Close
+        wrkJet.Close
+    Else
+        'disAbledF = 0: disAbledM = 0
+        'For i = 0 To CInt(frmMain.cmbFem.Text) - 1
+        '    If frmInput.txtTagFem(i).Text = "" Then
+        '        Msg = "There is an empty space in the Female list." + Chr(13) + "Please either scan a tag into the empty space or reselect the appropriate number of females."
+        '        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        '        Title = "Missing Female"
+        '        Response = MsgBox(Msg, Style, Title)
+            
+        '        Exit Sub
+        '    End If
+        
+        '    If frmInput.txtFamID(i).Text = "" Then
+        '        Msg = "There is an empty space in the Family ID list." + Chr(13) + "Please enter in the appropriate family identification number."
+        '        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        '        Title = "Missing Family ID"
+        '        Response = MsgBox(Msg, Style, Title)
+            
+        '        Exit Sub
+        '    End If
+            
+        '    If frmInput.txtTagFem(i).Enabled = False Then
+        '        disAbledF = disAbledF + 1
+        '    End If
+        'Next i
+        
+        'If disAbledF = CInt(frmMain.cmbFem.Text) Then
+        '    Msg = "There are no enabled female tags to optimize." + Chr(13) + "Please cancel this form and either deselect a spawning or reselect the number of females."
+        '    Style = vbOKOnly + vbCritical + vbDefaultButton1
+        '    Title = "No Females to Optimize"
+        '    Response = MsgBox(Msg, Style, Title)
+            
+        '    Exit Sub
+        'End If
+        
+        'enableCnt = 0
+        
+        'For i = 0 To CInt(frmMain.cmbMale.Text) - 1
+        '    If frmInput.txtTagMale(i).Text = "" Then
+        '        Msg = "There is an empty space in the Male list." + Chr(13) + "Please either scan a tag into the empty space or reselect the appropriate number of males."
+        '        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        '        Title = "Missing Male"
+        '        Response = MsgBox(Msg, Style, Title)
+            
+        '        Exit Sub
+        '    End If
+            
+        '    If frmInput.txtTagMale(i).Enabled = False Then
+        '        enableCnt = enableCnt + 1
+        '        If enableCnt = CInt(frmMain.cmbMale.Text) Then
+        '            Msg = "There must be at least one enabled male."
+        '            Style = vbOKOnly + vbCritical + vbDefaultButton1
+        '            Title = "No Enabled Males"
+        '            Response = MsgBox(Msg, Style, Title)
+        '
+        '            Exit Sub
+        '        End If
+        '
+        '        If CInt(frmMain.cmbFem.Text) - disAbledF > CInt(frmMain.cmbMale.Text) - enableCnt Then
+        '            Msg = "There must at least as many enabled males as enabled females."
+        '            Style = vbOKOnly + vbCritical + vbDefaultButton1
+        '            Title = "Not Enough Enabled Males"
+        '            Response = MsgBox(Msg, Style, Title)
+        '
+        '            Exit Sub
+        '        End If
+        '    End If
+        'Next i
+        
+        'disAbledF = 0
+        'For i = 0 To CInt(frmMain.cmbFem.Text) - 1
+        '    If frmInput.txtTagFem(i).Enabled = False Then
+        '        disAbledF = disAbledF + 1
+        '    End If
+        'Next i
+        '
+        'disAbledM = 0
+        'For i = 0 To CInt(frmMain.cmbMale.Text) - 1
+        '    If frmInput.txtTagMale(i).Enabled = False Then
+        '        disAbledM = disAbledM + 1
+        '    End If
+        'Next i
+        
+        ReDim fOrder(CInt(frmMain.cmbFem.Text) - disAbledF) As String
+        'ReDim fPic(CInt(frmMain.cmbFem.Text)) As String
+        'ReDim fWeight(CInt(frmMain.cmbFem.Text) - disAbledF) As Single
+        ReDim enNumF(CInt(frmMain.cmbFem.Text) - disAbledF) As Long
+        
+        ReDim mOrder(CInt(frmMain.cmbMale.Text) - disAbledM) As String
+        'ReDim mWeight(CInt(frmMain.cmbMale.Text) - disAbledM) As Single
+        'ReDim mPic(CInt(frmMain.cmbMale.Text) - disAbledM) As String
+        ReDim enNumM(CInt(frmMain.cmbMale.Text) - disAbledM) As Long
+        
+        ReDim flaGG(CInt(frmMain.cmbFem.Text) - disAbledF) As Variant
+        
+        'read in female tags, picture numbers, and weights
+        j = 0
+        For i = 1 To CInt(frmMain.cmbFem.Text)
+            If frmInput.txtTagFem(i - 1).Enabled = True Then
+                enNumF(j) = i - 1
+                fOrder(j) = frmInput.txtTagFem(i - 1).Text
+                'fPic(j) = frmInput.txtPicFem(i - 1).Text
+                'If frmInput.txtWeightFem(i - 1).Text <> "" Then
+                '    fWeight(j) = frmInput.txtWeightFem(i - 1).Text
+                'End If
+                j = j + 1
+            End If
+        Next i
+    
+        'read in male tags, picture numbers, and weights
+        j = 0
+        For i = 1 To CInt(frmMain.cmbMale.Text)
+            If frmInput.txtTagMale(i - 1).Enabled = True Then
+                enNumM(j) = i - 1
+                mOrder(j) = frmInput.txtTagMale(i - 1).Text
+                'mPic(j) = frmInput.txtPicMale(i - 1).Text
+                'If frmInput.txtWeightMale(i - 1).Text <> "" Then
+                '    mWeight(j) = frmInput.txtWeightMale(i - 1).Text
+                'End If
+                j = j + 1
+            End If
+        Next i
+        
+        z = 0
+        For i = 0 To CInt(frmMain.cmbFem.Text) - 1
+            frmMain.lblFem(i).Visible = True
+            frmMain.txtFem(i).Visible = True
+            frmMain.lblMale(i).Visible = True
+            frmMain.txtMale(i).Visible = True
+            frmMain.txtPShare(i).Visible = True
+            frmMain.cmdComment(i).Visible = True
+            frmMain.chkSpawned(i).Visible = True
+            frmMain.chkReleaseF(i).Visible = True
+            frmMain.chkReleaseM(i).Visible = False
+            
+            If frmMain.txtFem(i).BackColor <> &HFF& Then
+                frmMain.lblFem(i).Caption = frmInput.txtFamID(enNumF(z)).Text
+                frmMain.txtFem(i).Text = frmInput.txtTagFem(enNumF(z)).Text
+                frmMain.txtLocFem(i).Text = 0
+                'frmMain.txtPicFem(i).Text = fPic(z)
+                'frmMain.txtWeightFem(i).Text = fWeight(z)
+                frmMain.txtfYear(i).Text = fYear(enNumF(z))
+            
+                Select Case UCase(fDrainage(enNumF(z)))
+                    Case "PENOBSCOT"
+                        frmMain.txtDrainageF(i).Text = 1
+                    Case "SHEEPSCOT"
+                        frmMain.txtDrainageF(i).Text = 11
+                    Case "NARRAGUAGUS"
+                        frmMain.txtDrainageF(i).Text = 3
+                    Case "PLEASANT"
+                        frmMain.txtDrainageF(i).Text = 4
+                    Case "MACHIAS"
+                        frmMain.txtDrainageF(i).Text = 5
+                    Case "EAST MACHIAS"
+                        frmMain.txtDrainageF(i).Text = 6
+                    Case "DENNYS"
+                        frmMain.txtDrainageF(i).Text = 7
+                End Select
+            
+                frmMain.lblMale(i).Caption = frmInput.lblMale(enNumM(z)).Caption
+                frmMain.txtMale(i).Text = frmInput.txtTagMale(enNumM(z)).Text
+                frmMain.txtLocMale(i).Text = 0
+                'frmMain.txtPicMale(i).Text = mPic(z)
+                'frmMain.txtWeightMale(i).Text = mWeight(z)
+                frmMain.txtmYear(i).Text = mYear(enNumM(z))
+            
+                Select Case UCase(mDrainage(enNumM(z)))
+                    Case "PENOBSCOT"
+                        frmMain.txtDrainageM(i).Text = 1
+                    Case "SHEEPSCOT"
+                        frmMain.txtDrainageM(i).Text = 11
+                    Case "NARRAGUAGUS"
+                        frmMain.txtDrainageM(i).Text = 3
+                    Case "PLEASANT"
+                        frmMain.txtDrainageM(i).Text = 4
+                    Case "MACHIAS"
+                        frmMain.txtDrainageM(i).Text = 5
+                    Case "EAST MACHIAS"
+                        frmMain.txtDrainageM(i).Text = 6
+                    Case "DENNYS"
+                        frmMain.txtDrainageM(i).Text = 7
+                End Select
+            
+                frmMain.txtPShare(i).Text = 0
+                frmMain.txtOptimized(i).Text = "NO"
+                z = z + 1
+            End If
+        Next i
+        
+        For i = CInt(frmMain.cmbFem.Text) To 9
+            frmMain.lblFem(i).Visible = False
+            frmMain.txtFem(i).Visible = False
+            frmMain.txtFem(i).Locked = False
+            frmMain.txtFem(i).Text = ""
+            frmMain.txtFem(i).Locked = True
+            frmMain.lblMale(i).Visible = False
+            frmMain.txtMale(i).Visible = False
+            frmMain.txtMale(i).Locked = False
+            frmMain.txtMale(i).Text = ""
+            frmMain.txtMale(i).Locked = True
+            frmMain.txtPShare(i).Visible = False
+            frmMain.cmdComment(i).Visible = False
+            frmMain.imgFlag(i).Visible = False
+            frmMain.chkSpawned(i).Visible = False
+            frmMain.chkReleaseF(i).Visible = False
+            frmMain.chkReleaseM(i).Visible = False
+        Next i
+    
+        Set wrkJet = CreateWorkspace("", "admin", "", dbUseJet)
+        Set dbsNew = wrkJet.OpenDatabase("C:\Databases\MaineBroodstock.mdb")
+    
+        With dbsNew
+            Set rstTemp = dbsNew.OpenRecordset("SELECT tblBroodMating.* FROM tblBroodMating", dbOpenDynaset)
+            For m = 1 To CInt(frmMain.cmbFem.Text)
+    
+                If CInt(frmMain.txtDrainageF(m - 1).Text) <> CInt(frmMain.txtDrainageM(m - 1).Text) Then
+                    flaGG(m - 1) = "The male and female for this mating come from two different drainages." & Chr(13) & Chr(13)
+                End If
+                
+                With rstTemp
+                    rstTemp.MoveFirst
+                    Do Until rstTemp.EOF
+                        If UCase(rstTemp!Dam) = UCase(frmMain.txtFem(m - 1).Text) Then
+                            If UCase(rstTemp!Sire) = UCase(frmMain.txtMale(m - 1).Text) Then
+                                flaGG(m - 1) = flaGG(m - 1) & "This female and male pairing has already been spawned on " & rstTemp!TakeDate & Chr(13) & Chr(13)
+                            End If
+                        End If
+                        rstTemp.MoveNext
+                    Loop
+                End With
+            
+                If flaGG(m - 1) <> Empty Then
+                    frmMain.imgFlag(m - 1).Visible = True
+                    frmMain.txtFlag(m - 1).Text = flaGG(m - 1)
+                Else
+                    frmMain.imgFlag(m - 1).Visible = False
+                End If
+            
+            Next m
+        End With
+        
+        dbsNew.Close
+        wrkJet.Close
+    
+    End If
+    
+    frmInput.Hide
+End Sub
