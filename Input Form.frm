@@ -1,17 +1,160 @@
 VERSION 5.00
 Begin VB.Form frmInput 
-   Caption         =   "PIT Tag Input"
-   ClientHeight    =   8640
+   Caption         =   "Individual Input"
+   ClientHeight    =   8535
    ClientLeft      =   915
    ClientTop       =   1245
-   ClientWidth     =   13680
+   ClientWidth     =   13695
    Icon            =   "Input Form.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   8640
-   ScaleWidth      =   13680
+   ScaleHeight     =   8535
+   ScaleWidth      =   13695
    StartUpPosition =   2  'CenterScreen
+   Begin VB.ComboBox cmbFamIDPrefix 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   390
+      Left            =   5040
+      MouseIcon       =   "Input Form.frx":048A
+      MousePointer    =   99  'Custom
+      TabIndex        =   113
+      ToolTipText     =   $"Input Form.frx":05DC
+      Top             =   7920
+      Width           =   2895
+   End
+   Begin VB.CheckBox chkFamIDPrefix 
+      Caption         =   "Use Family ID Prefix"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   2520
+      MouseIcon       =   "Input Form.frx":0697
+      MousePointer    =   99  'Custom
+      TabIndex        =   112
+      ToolTipText     =   $"Input Form.frx":07E9
+      Top             =   8040
+      Width           =   2535
+   End
+   Begin VB.CommandButton cmdCohortChange 
+      Caption         =   "Update"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   405
+      Left            =   2760
+      MouseIcon       =   "Input Form.frx":089B
+      MousePointer    =   99  'Custom
+      TabIndex        =   111
+      TabStop         =   0   'False
+      ToolTipText     =   "Update the cohort of the current individual"
+      Top             =   4800
+      Width           =   855
+   End
+   Begin VB.CommandButton cmdPopChange 
+      Caption         =   "Update"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   405
+      Left            =   2760
+      MouseIcon       =   "Input Form.frx":09ED
+      MousePointer    =   99  'Custom
+      TabIndex        =   110
+      TabStop         =   0   'False
+      ToolTipText     =   "Update the population of the current individual"
+      Top             =   3840
+      Width           =   855
+   End
+   Begin VB.CommandButton cmdClearTemplate 
+      Caption         =   "Clear Templates"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   840
+      MouseIcon       =   "Input Form.frx":0B3F
+      MousePointer    =   99  'Custom
+      TabIndex        =   109
+      ToolTipText     =   "Clear the list of ID template options"
+      Top             =   2040
+      Width           =   2055
+   End
+   Begin VB.ComboBox cmbTemplate 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   390
+      Left            =   120
+      MouseIcon       =   "Input Form.frx":0C91
+      MousePointer    =   99  'Custom
+      TabIndex        =   108
+      ToolTipText     =   $"Input Form.frx":0DE3
+      Top             =   1440
+      Width           =   3495
+   End
+   Begin VB.CheckBox chkTemplate 
+      Caption         =   "Use ID Input Template"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   120
+      MouseIcon       =   "Input Form.frx":0E9E
+      MousePointer    =   99  'Custom
+      TabIndex        =   107
+      ToolTipText     =   $"Input Form.frx":0FF0
+      Top             =   960
+      Width           =   2655
+   End
    Begin VB.CommandButton cmdClearTag 
       Caption         =   "Clear"
       BeginProperty Font 
@@ -24,9 +167,12 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   2280
+      Left            =   2760
+      MouseIcon       =   "Input Form.frx":10A2
+      MousePointer    =   99  'Custom
       TabIndex        =   1
-      Top             =   600
+      ToolTipText     =   "Remove the entered ID"
+      Top             =   480
       Width           =   855
    End
    Begin VB.CommandButton cmdSexChange 
@@ -40,21 +186,26 @@ Begin VB.Form frmInput
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      Left            =   2280
+      Height          =   405
+      Left            =   2760
+      MouseIcon       =   "Input Form.frx":11F4
+      MousePointer    =   99  'Custom
       TabIndex        =   103
       TabStop         =   0   'False
-      ToolTipText     =   "Update the sex of the current individual"
-      Top             =   1560
+      ToolTipText     =   "Update the gender of the current individual"
+      Top             =   2880
       Width           =   855
    End
    Begin VB.CheckBox chkUse 
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   10
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":1346
+      MousePointer    =   99  'Custom
       TabIndex        =   102
-      Top             =   7200
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   7080
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -63,9 +214,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   9
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":1498
+      MousePointer    =   99  'Custom
       TabIndex        =   101
-      Top             =   6600
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   6480
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -74,9 +228,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   8
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":15EA
+      MousePointer    =   99  'Custom
       TabIndex        =   100
-      Top             =   6000
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   5880
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -85,9 +242,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   7
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":173C
+      MousePointer    =   99  'Custom
       TabIndex        =   99
-      Top             =   5400
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   5280
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -96,9 +256,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   6
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":188E
+      MousePointer    =   99  'Custom
       TabIndex        =   98
-      Top             =   4800
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   4680
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -107,9 +270,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   5
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":19E0
+      MousePointer    =   99  'Custom
       TabIndex        =   97
-      Top             =   4200
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   4080
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -118,9 +284,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   4
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":1B32
+      MousePointer    =   99  'Custom
       TabIndex        =   96
-      Top             =   3600
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   3480
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -129,9 +298,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   3
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":1C84
+      MousePointer    =   99  'Custom
       TabIndex        =   95
-      Top             =   3000
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   2880
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -140,9 +312,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   2
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":1DD6
+      MousePointer    =   99  'Custom
       TabIndex        =   94
-      Top             =   2400
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   2280
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -151,9 +326,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   1
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":1F28
+      MousePointer    =   99  'Custom
       TabIndex        =   93
-      Top             =   1800
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   1680
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -162,9 +340,12 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       Height          =   375
       Index           =   0
-      Left            =   9120
+      Left            =   9240
+      MouseIcon       =   "Input Form.frx":207A
+      MousePointer    =   99  'Custom
       TabIndex        =   92
-      Top             =   1200
+      ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
+      Top             =   1080
       Value           =   1  'Checked
       Visible         =   0   'False
       Width           =   255
@@ -181,10 +362,12 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   3360
+      Left            =   120
+      MouseIcon       =   "Input Form.frx":21CC
+      MousePointer    =   99  'Custom
       TabIndex        =   38
-      ToolTipText     =   "Closes the current form"
-      Top             =   8040
+      ToolTipText     =   "Close this form"
+      Top             =   7920
       Width           =   1335
    End
    Begin VB.CheckBox chkOptimize 
@@ -198,32 +381,34 @@ Begin VB.Form frmInput
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   8640
+      Height          =   270
+      Left            =   9000
+      MouseIcon       =   "Input Form.frx":231E
+      MousePointer    =   99  'Custom
       TabIndex        =   35
       TabStop         =   0   'False
-      ToolTipText     =   "Choice of whether or not to optimize matings"
-      Top             =   8160
+      ToolTipText     =   $"Input Form.frx":2470
+      Top             =   8040
       Value           =   1  'Checked
-      Width           =   2295
+      Width           =   2175
    End
    Begin VB.ListBox lstXSpawned 
       BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
+         Name            =   "Arial Narrow"
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1260
+      Height          =   960
       Left            =   120
       TabIndex        =   2
       TabStop         =   0   'False
-      ToolTipText     =   "List of prior spawning dates for current individual"
-      Top             =   4800
-      Width           =   3015
+      ToolTipText     =   "List of prior mating dates and mates for the current individual"
+      Top             =   5760
+      Width           =   3495
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -238,12 +423,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   22
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   6600
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   6480
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -258,12 +443,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   20
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   6000
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   5880
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -278,12 +463,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   18
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   5400
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   5280
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -298,12 +483,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   16
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   4800
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   4680
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -318,12 +503,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   14
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   4200
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   4080
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -338,12 +523,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   12
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   3600
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   3480
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -358,12 +543,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   10
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   3000
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   2880
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -378,12 +563,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   8
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   2400
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   2280
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -398,12 +583,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   6
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   1800
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   1680
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtFamID 
       Alignment       =   2  'Center
@@ -418,51 +603,14 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   3840
+      Left            =   4200
       TabIndex        =   4
-      ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   1185
+      ToolTipText     =   "Family ID number associated with the female"
+      Top             =   1080
       Visible         =   0   'False
-      Width           =   735
+      Width           =   975
    End
    Begin VB.TextBox txtDrainage 
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   405
-      Left            =   120
-      Locked          =   -1  'True
-      TabIndex        =   88
-      TabStop         =   0   'False
-      ToolTipText     =   "Drainage of most recently scanned individual"
-      Top             =   2640
-      Width           =   3015
-   End
-   Begin VB.TextBox txtTagCur2 
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   360
-      Left            =   120
-      TabIndex        =   0
-      ToolTipText     =   "Most recently scanned PIT tag"
-      Top             =   600
-      Width           =   2175
-   End
-   Begin VB.CommandButton cmdAddCurTag 
-      Caption         =   "Add Current Tag"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   12
@@ -472,19 +620,60 @@ Begin VB.Form frmInput
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
+      Height          =   405
       Left            =   120
+      Locked          =   -1  'True
+      TabIndex        =   88
+      TabStop         =   0   'False
+      ToolTipText     =   "Population of the current individual"
+      Top             =   3840
+      Width           =   2655
+   End
+   Begin VB.TextBox txtTagCur2 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   120
+      TabIndex        =   0
+      ToolTipText     =   "Most recently scanned/entered individual ID"
+      Top             =   480
+      Width           =   2655
+   End
+   Begin VB.CommandButton cmdAddCurTag 
+      BackColor       =   &H0080FF80&
+      Caption         =   "Add Current ID"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   840
+      MouseIcon       =   "Input Form.frx":2514
+      MousePointer    =   99  'Custom
+      Style           =   1  'Graphical
       TabIndex        =   3
-      ToolTipText     =   "Adds current PIT tag to the appropriate list of females and males"
-      Top             =   6240
-      Width           =   3015
+      ToolTipText     =   "Add the current ID to the first open female or male slot"
+      Top             =   6840
+      Width           =   2055
    End
    Begin VB.TextBox txtSex 
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -494,9 +683,9 @@ Begin VB.Form frmInput
       Locked          =   -1  'True
       TabIndex        =   86
       TabStop         =   0   'False
-      ToolTipText     =   "Sex of most recently scanned individual"
-      Top             =   1560
-      Width           =   2175
+      ToolTipText     =   "Gender of the current individual"
+      Top             =   2880
+      Width           =   2655
    End
    Begin VB.TextBox txtTagCur 
       Alignment       =   2  'Center
@@ -514,7 +703,7 @@ Begin VB.Form frmInput
       LinkItem        =   "Field(1)"
       LinkTopic       =   "winwedge|COM1"
       TabIndex        =   85
-      Top             =   600
+      Top             =   480
       Width           =   1815
    End
    Begin VB.CommandButton cmdClear 
@@ -529,14 +718,17 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   6000
+      Left            =   8160
+      MouseIcon       =   "Input Form.frx":2666
+      MousePointer    =   99  'Custom
       TabIndex        =   37
-      ToolTipText     =   "Clears all data for spawning females and males"
-      Top             =   8040
+      ToolTipText     =   "Clears all data for mating individuals"
+      Top             =   6960
       Width           =   1335
    End
    Begin VB.CommandButton cmdOpt 
-      Caption         =   "Optimize"
+      BackColor       =   &H0080FF80&
+      Caption         =   "Proceed"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   12
@@ -548,9 +740,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   12240
+      MouseIcon       =   "Input Form.frx":27B8
+      MousePointer    =   99  'Custom
+      Style           =   1  'Graphical
       TabIndex        =   36
-      ToolTipText     =   "Optimizes female and male pairings and displays them on the initial form"
-      Top             =   8040
+      ToolTipText     =   "Create mating pairs based on the 'Optimize Matings' setting"
+      Top             =   7920
       Width           =   1335
    End
    Begin VB.CommandButton cmdClearM 
@@ -566,10 +761,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   10
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":290A
+      MousePointer    =   99  'Custom
       TabIndex        =   34
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   7200
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   7080
       Visible         =   0   'False
       Width           =   735
    End
@@ -586,12 +783,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   10
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   80
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   7200
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   7080
       Visible         =   0   'False
       Width           =   2055
    End
@@ -608,10 +805,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":2A5C
+      MousePointer    =   99  'Custom
       TabIndex        =   33
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   6600
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   6480
       Visible         =   0   'False
       Width           =   735
    End
@@ -628,12 +827,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   78
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   6600
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   6480
       Visible         =   0   'False
       Width           =   2055
    End
@@ -650,10 +849,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":2BAE
+      MousePointer    =   99  'Custom
       TabIndex        =   32
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   6000
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   5880
       Visible         =   0   'False
       Width           =   735
    End
@@ -670,12 +871,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   76
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   6000
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   5880
       Visible         =   0   'False
       Width           =   2055
    End
@@ -692,10 +893,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":2D00
+      MousePointer    =   99  'Custom
       TabIndex        =   31
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   5400
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   5280
       Visible         =   0   'False
       Width           =   735
    End
@@ -712,12 +915,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   74
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   5400
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   5280
       Visible         =   0   'False
       Width           =   2055
    End
@@ -734,10 +937,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":2E52
+      MousePointer    =   99  'Custom
       TabIndex        =   30
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   4800
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   4680
       Visible         =   0   'False
       Width           =   735
    End
@@ -754,12 +959,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   72
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   4800
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   4680
       Visible         =   0   'False
       Width           =   2055
    End
@@ -776,10 +981,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":2FA4
+      MousePointer    =   99  'Custom
       TabIndex        =   29
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   4200
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   4080
       Visible         =   0   'False
       Width           =   735
    End
@@ -796,12 +1003,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   70
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   4200
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   4080
       Visible         =   0   'False
       Width           =   2055
    End
@@ -818,10 +1025,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":30F6
+      MousePointer    =   99  'Custom
       TabIndex        =   28
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   3600
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   3480
       Visible         =   0   'False
       Width           =   735
    End
@@ -838,12 +1047,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   68
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   3600
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   3480
       Visible         =   0   'False
       Width           =   2055
    End
@@ -860,10 +1069,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":3248
+      MousePointer    =   99  'Custom
       TabIndex        =   27
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   3000
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   2880
       Visible         =   0   'False
       Width           =   735
    End
@@ -880,12 +1091,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   66
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   3000
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   2880
       Visible         =   0   'False
       Width           =   2055
    End
@@ -902,10 +1113,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":339A
+      MousePointer    =   99  'Custom
       TabIndex        =   26
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   2400
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   2280
       Visible         =   0   'False
       Width           =   735
    End
@@ -922,12 +1135,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   64
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   2400
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   2280
       Visible         =   0   'False
       Width           =   2055
    End
@@ -944,10 +1157,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":34EC
+      MousePointer    =   99  'Custom
       TabIndex        =   25
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   1800
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   1680
       Visible         =   0   'False
       Width           =   735
    End
@@ -964,12 +1179,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   62
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   1800
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   1680
       Visible         =   0   'False
       Width           =   2055
    End
@@ -986,10 +1201,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   12360
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":363E
+      MousePointer    =   99  'Custom
       TabIndex        =   24
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   1200
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   1080
       Visible         =   0   'False
       Width           =   735
    End
@@ -1006,12 +1223,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   10080
+      Left            =   10200
       Locked          =   -1  'True
       TabIndex        =   60
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   1200
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   1080
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1028,10 +1245,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":3790
+      MousePointer    =   99  'Custom
       TabIndex        =   23
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   6600
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   6480
       Visible         =   0   'False
       Width           =   735
    End
@@ -1048,12 +1267,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   58
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   6600
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   6480
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1070,10 +1289,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":38E2
+      MousePointer    =   99  'Custom
       TabIndex        =   21
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   6000
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   5880
       Visible         =   0   'False
       Width           =   735
    End
@@ -1090,12 +1311,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   56
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   6000
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   5880
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1112,10 +1333,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":3A34
+      MousePointer    =   99  'Custom
       TabIndex        =   19
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   5400
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   5280
       Visible         =   0   'False
       Width           =   735
    End
@@ -1132,12 +1355,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   54
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   5400
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   5280
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1154,10 +1377,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":3B86
+      MousePointer    =   99  'Custom
       TabIndex        =   17
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   4800
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   4680
       Visible         =   0   'False
       Width           =   735
    End
@@ -1174,12 +1399,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   52
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   4800
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   4680
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1196,10 +1421,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":3CD8
+      MousePointer    =   99  'Custom
       TabIndex        =   15
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   4200
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   4080
       Visible         =   0   'False
       Width           =   735
    End
@@ -1216,12 +1443,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   50
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   4200
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   4080
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1238,10 +1465,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":3E2A
+      MousePointer    =   99  'Custom
       TabIndex        =   13
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   3600
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   3480
       Visible         =   0   'False
       Width           =   735
    End
@@ -1258,12 +1487,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   48
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   3600
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   3480
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1280,10 +1509,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":3F7C
+      MousePointer    =   99  'Custom
       TabIndex        =   11
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   3000
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   2880
       Visible         =   0   'False
       Width           =   735
    End
@@ -1300,12 +1531,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   46
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   3000
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   2880
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1322,10 +1553,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":40CE
+      MousePointer    =   99  'Custom
       TabIndex        =   9
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   2400
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   2280
       Visible         =   0   'False
       Width           =   735
    End
@@ -1342,12 +1575,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   44
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   2400
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   2280
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1364,10 +1597,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":4220
+      MousePointer    =   99  'Custom
       TabIndex        =   7
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   1800
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   1680
       Visible         =   0   'False
       Width           =   735
    End
@@ -1384,12 +1619,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   42
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   1800
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   1680
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1406,10 +1641,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   7320
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":4372
+      MousePointer    =   99  'Custom
       TabIndex        =   5
-      ToolTipText     =   "Clears this individuals PIT tag"
-      Top             =   1200
+      ToolTipText     =   "Remove this female's unique ID"
+      Top             =   1080
       Visible         =   0   'False
       Width           =   735
    End
@@ -1426,12 +1663,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   5040
+      Left            =   5400
       Locked          =   -1  'True
       TabIndex        =   40
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   1200
+      ToolTipText     =   "Unique ID for mating female"
+      Top             =   1080
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1440,7 +1677,7 @@ Begin VB.Form frmInput
          Name            =   "Arial"
          Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -1449,8 +1686,9 @@ Begin VB.Form frmInput
       Left            =   120
       TabIndex        =   105
       TabStop         =   0   'False
-      Top             =   3720
-      Width           =   3015
+      ToolTipText     =   "Cohort of the current individual"
+      Top             =   4800
+      Width           =   2655
    End
    Begin VB.Label lblMD 
       Alignment       =   2  'Center
@@ -1473,20 +1711,20 @@ Begin VB.Form frmInput
    End
    Begin VB.Label lblYearclass 
       BackStyle       =   0  'Transparent
-      Caption         =   "Capture Year"
+      Caption         =   "Cohort"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
+      Left            =   120
       TabIndex        =   104
-      Top             =   3240
+      Top             =   4440
       Width           =   1935
    End
    Begin VB.Label Label12 
@@ -1495,27 +1733,27 @@ Begin VB.Form frmInput
       Caption         =   "Use"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   8880
+      Left            =   9000
       TabIndex        =   91
       ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   600
+      Top             =   720
       Width           =   735
    End
    Begin VB.Line Line1 
       BorderStyle     =   5  'Dash-Dot-Dot
       BorderWidth     =   3
-      X1              =   8565
-      X2              =   8565
+      X1              =   8805
+      X2              =   8805
       Y1              =   600
-      Y2              =   7680
+      Y2              =   6840
    End
    Begin VB.Label Label7 
       Alignment       =   2  'Center
@@ -1523,98 +1761,88 @@ Begin VB.Form frmInput
       Caption         =   "Family ID"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   3480
+      Left            =   3960
       TabIndex        =   90
       ToolTipText     =   "3 digit ID number for female-male spawning"
-      Top             =   600
+      Top             =   720
       Width           =   1455
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
-      Caption         =   "Drainage"
+      Caption         =   "Population"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
+      Left            =   120
       TabIndex        =   89
-      Top             =   2160
-      Width           =   1215
+      Top             =   3480
+      Width           =   1575
    End
    Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
-      Caption         =   "Prior Spawnings"
+      Caption         =   "Prior Matings"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
-      TabIndex        =   87
-      Top             =   4320
-      Width           =   2175
-   End
-   Begin VB.Image Image1 
-      BorderStyle     =   1  'Fixed Single
-      Height          =   1560
       Left            =   120
-      Picture         =   "Input Form.frx":030A
-      Stretch         =   -1  'True
-      ToolTipText     =   "Picture of a DNA double helix"
-      Top             =   6990
-      Width           =   3075
+      TabIndex        =   87
+      Top             =   5400
+      Width           =   2175
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
       Caption         =   "Sex"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
+      Left            =   120
       TabIndex        =   84
-      Top             =   1080
+      Top             =   2520
       Width           =   1215
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Current Tag"
+      Caption         =   "Current ID"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
+      Left            =   120
       TabIndex        =   83
       Top             =   120
       Width           =   1935
@@ -1625,18 +1853,18 @@ Begin VB.Form frmInput
       Caption         =   "Males"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   10320
+      Left            =   10440
       TabIndex        =   82
       ToolTipText     =   "PIT tag number for spawning male"
-      Top             =   600
+      Top             =   720
       Width           =   1335
    End
    Begin VB.Label Label1 
@@ -1645,18 +1873,18 @@ Begin VB.Form frmInput
       Caption         =   "Females"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12.75
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5400
+      Left            =   5760
       TabIndex        =   81
       ToolTipText     =   "PIT tag number for spawning female"
-      Top             =   600
+      Top             =   720
       Width           =   1335
    End
    Begin VB.Label lblMale 
@@ -1665,18 +1893,18 @@ Begin VB.Form frmInput
       Caption         =   "11"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   10
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   79
-      Top             =   7200
+      Top             =   7140
       Visible         =   0   'False
       Width           =   255
    End
@@ -1686,18 +1914,18 @@ Begin VB.Form frmInput
       Caption         =   "10"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   9
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   77
-      Top             =   6600
+      Top             =   6540
       Visible         =   0   'False
       Width           =   255
    End
@@ -1707,18 +1935,18 @@ Begin VB.Form frmInput
       Caption         =   "9"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   8
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   75
-      Top             =   6000
+      Top             =   5940
       Visible         =   0   'False
       Width           =   255
    End
@@ -1728,18 +1956,18 @@ Begin VB.Form frmInput
       Caption         =   "8"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   7
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   73
-      Top             =   5400
+      Top             =   5340
       Visible         =   0   'False
       Width           =   255
    End
@@ -1749,18 +1977,18 @@ Begin VB.Form frmInput
       Caption         =   "7"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   6
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   71
-      Top             =   4800
+      Top             =   4740
       Visible         =   0   'False
       Width           =   255
    End
@@ -1770,18 +1998,18 @@ Begin VB.Form frmInput
       Caption         =   "6"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   5
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   69
-      Top             =   4200
+      Top             =   4140
       Visible         =   0   'False
       Width           =   255
    End
@@ -1791,18 +2019,18 @@ Begin VB.Form frmInput
       Caption         =   "5"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   4
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   67
-      Top             =   3600
+      Top             =   3540
       Visible         =   0   'False
       Width           =   255
    End
@@ -1812,18 +2040,18 @@ Begin VB.Form frmInput
       Caption         =   "4"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   3
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   65
-      Top             =   3000
+      Top             =   2940
       Visible         =   0   'False
       Width           =   255
    End
@@ -1833,18 +2061,18 @@ Begin VB.Form frmInput
       Caption         =   "3"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   2
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   63
-      Top             =   2400
+      Top             =   2340
       Visible         =   0   'False
       Width           =   255
    End
@@ -1854,18 +2082,18 @@ Begin VB.Form frmInput
       Caption         =   "2"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   1
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   61
-      Top             =   1800
+      Top             =   1740
       Visible         =   0   'False
       Width           =   255
    End
@@ -1875,18 +2103,18 @@ Begin VB.Form frmInput
       Caption         =   "1"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   0
-      Left            =   9600
+      Left            =   9720
       TabIndex        =   59
-      Top             =   1200
+      Top             =   1140
       Visible         =   0   'False
       Width           =   255
    End
@@ -1896,18 +2124,18 @@ Begin VB.Form frmInput
       Caption         =   "10"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   9
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   57
-      Top             =   6600
+      Top             =   6540
       Visible         =   0   'False
       Width           =   255
    End
@@ -1917,18 +2145,18 @@ Begin VB.Form frmInput
       Caption         =   "9"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   8
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   55
-      Top             =   6000
+      Top             =   5940
       Visible         =   0   'False
       Width           =   255
    End
@@ -1938,18 +2166,18 @@ Begin VB.Form frmInput
       Caption         =   "8"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   7
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   53
-      Top             =   5400
+      Top             =   5340
       Visible         =   0   'False
       Width           =   255
    End
@@ -1959,18 +2187,18 @@ Begin VB.Form frmInput
       Caption         =   "7"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   6
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   51
-      Top             =   4800
+      Top             =   4740
       Visible         =   0   'False
       Width           =   255
    End
@@ -1980,18 +2208,18 @@ Begin VB.Form frmInput
       Caption         =   "6"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   5
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   49
-      Top             =   4200
+      Top             =   4140
       Visible         =   0   'False
       Width           =   255
    End
@@ -2001,18 +2229,18 @@ Begin VB.Form frmInput
       Caption         =   "5"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   4
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   47
-      Top             =   3600
+      Top             =   3540
       Visible         =   0   'False
       Width           =   255
    End
@@ -2022,18 +2250,18 @@ Begin VB.Form frmInput
       Caption         =   "4"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   3
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   45
-      Top             =   3000
+      Top             =   2940
       Visible         =   0   'False
       Width           =   255
    End
@@ -2043,18 +2271,18 @@ Begin VB.Form frmInput
       Caption         =   "3"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   2
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   43
-      Top             =   2400
+      Top             =   2340
       Visible         =   0   'False
       Width           =   255
    End
@@ -2064,18 +2292,18 @@ Begin VB.Form frmInput
       Caption         =   "2"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   1
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   41
-      Top             =   1800
+      Top             =   1740
       Visible         =   0   'False
       Width           =   255
    End
@@ -2085,18 +2313,18 @@ Begin VB.Form frmInput
       Caption         =   "1"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
       Index           =   0
-      Left            =   3480
+      Left            =   3840
       TabIndex        =   39
-      Top             =   1200
+      Top             =   1140
       Visible         =   0   'False
       Width           =   255
    End
@@ -2104,10 +2332,10 @@ Begin VB.Form frmInput
       BackColor       =   &H0000C000&
       BackStyle       =   1  'Opaque
       BorderWidth     =   2
-      Height          =   7335
-      Left            =   3360
+      Height          =   7095
+      Left            =   3840
       Top             =   480
-      Width           =   10215
+      Width           =   9735
    End
 End
 Attribute VB_Name = "frmInput"
@@ -2119,20 +2347,31 @@ Option Explicit
 Dim Msg, Style, Title, Response, Default, wrkJet As Workspace, dbsNew As Database
 Dim rstTemp As Recordset, famID() As String, fOrder() As String, mOrder() As String
 Dim fAlleles(), mAlleles(), maleFinal() As Integer, femFinal() As Integer, pTempMeasure() As Single
-Dim pFinalMeasure() As Single, strFactorial As String
+Dim pFinalMeasure() As Single, strFactorial As String, maleNonOpt() As Integer
 Dim pTotal As Single, pFinal As Single, pShared As Long
 Dim pMeasure As Single, totAlleles As Long, maleOrder() As Long
 Dim priorSpawn As Long, femScored() As Long, maleScored() As Long, locScored As Long
 Dim tempTag As String, fPic() As String, fWeight() As Single, mPic() As String
 Dim mWeight() As Single, mDrainage(11) As String, fDrainage(10) As String
 Dim rstCull As Recordset, flaGG() As Variant, numDrainage As Long, disAbledF As Long
-Dim disAbledM As Long, enNumF() As Long, enNumM() As Long, enableCnt As Long
+Dim disAbledM As Long, enNumF() As Long, enNumM() As Long, tmpEnNumM() As Long, enableCnt As Long
 Dim mYear(11) As Long, fYear(10) As Long, z As Long, enTrans As String
 Dim tmpMOrder() As String, pwPSA() As Single, numFem As Long
 Dim a As Long, b As Long, c As Long, d As Long, e As Long, f As Long, g As Long, h As Long
 Dim i As Long, j As Long, k As Long, l As Long, m As Long, n As Long, o As Long, p As Long
 Dim femMD As Integer, numF As Integer, numM As Integer, mateNum As Integer, matDes As Integer
-Dim pPartial As Single, tmpBi As Integer
+Dim maleMD As Integer, lociCnt As Long, firstAllele As Long, idCol As Long, minLoci As Long
+Dim pPartial As Single, tmpBi As Integer, popRelVal() As Variant, mateArray() As Variant
+Dim reasonArray() As Variant, tmpStr As String, popArray() As Variant
+Dim accessApp As Access.Application, dbTemp As Database
+
+Private Sub chkFamIDPrefix_Click()
+    If frmInput.cmbFamIDPrefix.Enabled = False Then
+        frmInput.cmbFamIDPrefix.Enabled = True
+    Else
+        frmInput.cmbFamIDPrefix.Enabled = False
+    End If
+End Sub
 
 Private Sub chkOptimize_Click()
     If frmInput.chkOptimize.Value = 0 Then
@@ -2148,45 +2387,56 @@ Private Sub chkOptimize_Click()
     End If
 End Sub
 
+Private Sub chkTemplate_Click()
+    Call frmInput.toggleTemplate
+End Sub
+
 Private Sub chkUse_Click(Index As Integer)
     For z = 0 To (CInt(frmMain.cmbMale.Text) - 1)
         If frmInput.chkUse(z).Enabled = False Or frmInput.chkUse(z).Value = 0 Then
             frmInput.lblMale(z).Enabled = False
             frmInput.txtTagMale(z).Enabled = False
-            'frmInput.txtPicMale(z).Enabled = False
-            'frmInput.txtWeightMale(z).Enabled = False
             frmInput.cmdClearM(z).Enabled = False
         Else
             frmInput.lblMale(z).Enabled = True
             frmInput.txtTagMale(z).Enabled = True
-            'frmInput.txtPicMale(z).Enabled = True
-            'frmInput.txtWeightMale(z).Enabled = True
             frmInput.cmdClearM(z).Enabled = True
         End If
     Next z
 End Sub
 
+Private Sub cmbTemplate_LostFocus()
+    For i = 0 To frmInput.cmbTemplate.ListCount - 1
+        If frmInput.cmbTemplate.Text = frmInput.cmbTemplate.List(i) Then
+            Exit Sub
+        End If
+    Next i
+    If frmInput.cmbTemplate.Text <> "" Then
+        frmInput.cmbTemplate.AddItem frmInput.cmbTemplate.Text
+        frmInput.cmbTemplate.ListIndex = frmInput.cmbTemplate.ListCount - 1
+    End If
+End Sub
+
 Private Sub cmdAddCurTag_Click()
-    i = 1
-    Do Until Mid(frmInput.txtTagCur2.Text, i, 1) = ""
-        i = i + 1
-    Loop
-    
-    If i <> 11 And i <> 15 Then
-        Msg = "Tag numbers must be 10 or 14 characters long."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
-        Title = "Tag Error"
-        Response = MsgBox(Msg, Style, Title)
-        
-        frmInput.txtTagCur2.SetFocus
-        Exit Sub
+    If frmInput.chkTemplate.Value = 1 Then
+        i = frmInput.checkTemplate
+            
+        If i = -1 Then
+            Msg = "The current ID does not match the input template, please finish entering the ID or change the template."
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
+            Title = "ID Error"
+            Response = MsgBox(Msg, Style, Title)
+            
+            frmInput.txtTagCur2.SetFocus
+            Exit Sub
+        End If
     End If
     
     If UCase(frmInput.txtSex.Text) = "MALE" Then
         For i = 0 To CInt(frmMain.cmbMale.Text) - 1
             If UCase(frmInput.txtTagCur2.Text) = UCase(frmInput.txtTagMale(i).Text) Then
                 Msg = "This tag number is already present in male number " & i + 1 & "." & Chr(13) & "Do you wish to add it again?"
-                Style = vbYesNo + vbCritical + vbDefaultButton1
+                Style = vbYesNo + vbInformation + vbDefaultButton1
                 Title = "Duplicate Tag"
                 Response = MsgBox(Msg, Style, Title)
                 
@@ -2197,17 +2447,18 @@ Private Sub cmdAddCurTag_Click()
         For i = 0 To 10
             If frmInput.txtTagMale(i).Visible = True Then
                 If frmInput.txtTagMale(i).Text = "" Then
-                    frmInput.txtTagMale(i).Locked = False
                     frmInput.txtTagMale(i).Text = UCase(frmInput.txtTagCur2.Text)
-                    frmInput.txtTagMale(i).Locked = True
+                    frmInput.cmdClearM(i).Tag = UCase(frmInput.txtTagCur2.Text)
                     mDrainage(i) = frmInput.txtDrainage.Text
-                    mYear(i) = CInt(frmInput.txtYear.Text)
+                    If frmInput.txtYear.Text <> "" Then
+                        mYear(i) = CInt(frmInput.txtYear.Text)
+                    End If
                     GoTo clearData
                 End If
             End If
         Next i
         Msg = "There are no empty spaces to add an additional MALE tag number."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
         Title = "Input Error"
         Response = MsgBox(Msg, Style, Title)
         
@@ -2215,7 +2466,7 @@ Private Sub cmdAddCurTag_Click()
         For i = 0 To CInt(frmMain.cmbFem.Text) - 1
             If UCase(frmInput.txtTagCur2.Text) = UCase(frmInput.txtTagFem(i).Text) Then
                 Msg = "This tag number is already present in female number " & i + 1 & "." & Chr(13) & "Do you wish to add it again?"
-                Style = vbYesNo + vbCritical + vbDefaultButton1
+                Style = vbYesNo + vbInformation + vbDefaultButton1
                 Title = "Duplicate Tag"
                 Response = MsgBox(Msg, Style, Title)
                 
@@ -2226,17 +2477,20 @@ Private Sub cmdAddCurTag_Click()
         For i = 0 To 9
             If frmInput.txtTagFem(i).Visible = True Then
                 If frmInput.txtTagFem(i).Text = "" Then
-                    frmInput.txtTagFem(i).Locked = False
                     frmInput.txtTagFem(i).Text = UCase(frmInput.txtTagCur2.Text)
-                    frmInput.txtTagFem(i).Locked = False
-                    fDrainage(i) = frmInput.txtDrainage.Text
-                    fYear(i) = CInt(frmInput.txtYear.Text)
+                    frmInput.cmdClearF(i).Tag = UCase(frmInput.txtTagCur2.Text)
+                    For b = 0 To mateNum - 1
+                        fDrainage(i + b) = frmInput.txtDrainage.Text
+                        If frmInput.txtYear.Text <> "" Then
+                            fYear(i + b) = CInt(frmInput.txtYear.Text)
+                        End If
+                    Next b
                     GoTo clearData
                 End If
             End If
         Next i
         Msg = "There are no empty spaces to add an additional FEMALE tag number."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
         Title = "Input Error"
         Response = MsgBox(Msg, Style, Title)
     
@@ -2260,6 +2514,8 @@ Private Sub cmdCancel_Click()
     frmInput.txtDrainage.Text = ""
     frmInput.lstXSpawned.Clear
     
+    'dbsNew.Close
+    'accessApp.CloseCurrentDatabase
     frmInput.Hide
 End Sub
 
@@ -2274,20 +2530,17 @@ Private Sub cmdClear_Click()
     End If
     
     For i = 0 To CInt(frmMain.cmbFem.Text) - 1
-        frmInput.txtFamID(i).Text = ""
-        frmInput.txtTagFem(i).Text = ""
-        'frmInput.txtPicFem(i).Text = ""
-        'frmInput.txtWeightFem(i).Text = ""
+        If frmInput.cmdClearF(i).Enabled = True Then
+            frmInput.txtFamID(i).Text = ""
+            frmInput.txtTagFem(i).Text = ""
+        End If
     Next i
    
     For j = 0 To CInt(frmMain.cmbMale.Text) - 1
-        frmInput.chkUse(j).Value = 1
-        frmInput.txtTagMale(j).Text = ""
-        frmInput.txtTagMale(j).Enabled = True
-        'frmInput.txtPicMale(j).Text = ""
-        'frmInput.txtPicMale(j).Enabled = True
-        'frmInput.txtWeightMale(j).Text = ""
-        'frmInput.txtWeightMale(j).Enabled = True
+        If frmInput.cmdClearM(j).Enabled = True Then
+            frmInput.chkUse(j).Value = 1
+            frmInput.txtTagMale(j).Text = ""
+        End If
     Next j
 End Sub
 
@@ -2307,18 +2560,26 @@ Private Sub cmdClearF_Click(Index As Integer)
         End If
     End If
     
-    'frmInput.txtFamID(Index).Text = ""
     frmInput.txtTagFem(Index).Text = ""
-    'frmInput.txtPicFem(Index).Text = ""
-    'frmInput.txtWeightFem(Index).Text = ""
-    Unload frmAddReason
-    
 End Sub
 
 Private Sub cmdClearM_Click(Index As Integer)
+    If frmInput.txtTagMale(Index).Text <> "" Then
+        Msg = "Would you like to provide a reason for clearing this individual?"
+        Style = vbYesNo + vbQuestion + vbDefaultButton1
+        Title = "Reason for Clearing"
+        Response = MsgBox(Msg, Style, Title)
+    
+        If Response = 6 Then 'yes
+            Dim tmpTag As String
+            Dim secondForm As New frmAddReason
+            tmpTag = frmInput.txtTagMale(Index).Text
+            secondForm.tmpTagReason = tmpTag
+            secondForm.Show 1
+        End If
+    End If
+    
     frmInput.txtTagMale(Index).Text = ""
-    'frmInput.txtPicMale(Index).Text = ""
-    'frmInput.txtWeightMale(Index).Text = ""
 End Sub
 
 Private Sub cmdClearTag_Click()
@@ -2327,60 +2588,70 @@ Private Sub cmdClearTag_Click()
 End Sub
 
 Public Function getAlleles(rstTemp)
-    With rstTemp
-        ReDim fAlleles(femMD - disAbledF, rstTemp.Fields.Count - 8, 2)
-        ReDim mAlleles(numM - disAbledM, rstTemp.Fields.Count - 8, 2)
-        ReDim femFinal(femMD - disAbledF)
-        ReDim maleFinal(femMD - disAbledF)
-        ReDim pTempMeasure(femMD - disAbledF)
-        ReDim pFinalMeasure(femMD - disAbledF)
-        ReDim maleOrder(numM - disAbledM)
-        ReDim femScored(femMD - disAbledF)
-        ReDim maleScored(numM - disAbledM)
-                
+    lociCnt = CLng(frmDataSpec.txtLoci.Text)
+    firstAllele = frmDataSpec.cmbFirstLocus.ListIndex
+    idCol = frmDataSpec.cmbUniqueId.ListIndex
+    
+    ReDim fAlleles(femMD - disAbledF, lociCnt, 2)
+    ReDim mAlleles(numM - disAbledM, lociCnt, 2)
+    ReDim femFinal(femMD - disAbledF)
+    ReDim maleFinal(femMD - disAbledF)
+    ReDim pTempMeasure(femMD - disAbledF)
+    ReDim pFinalMeasure(femMD - disAbledF)
+    ReDim maleOrder(numM - disAbledM)
+    ReDim femScored(femMD - disAbledF)
+    ReDim maleNonOpt(femMD - disAbledF)
+    ReDim maleScored(numM - disAbledM)
+    
+    If rstTemp.RecordCount > 0 Then
+        rstTemp.MoveLast
+        rstTemp.MoveFirst
+    End If
+    
+    If rstTemp.RecordCount > 0 Then
+        popArray = rstTemp.GetRows(rstTemp.RecordCount)
+        
         'acquiring male and female allele values
         For j = 1 To femMD - disAbledF
-            rstTemp.MoveFirst
-            Do Until rstTemp.EOF
-                If UCase(![pit]) = UCase(fOrder(j)) Then
+            For a = 0 To UBound(popArray, 2)
+                If UCase(popArray(idCol, a)) = UCase(fOrder(j)) Then
                     m = 1
                     locScored = 0
-                    For k = 7 To rstTemp.Fields.Count - 2
-                        fAlleles(j, m, 1) = rstTemp.Fields(k).Value
-                        If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                    For k = firstAllele To (firstAllele + (lociCnt * 2) - 1)
+                        fAlleles(j, m, 1) = popArray(k, a)
+                        If IsNull(popArray(k, a)) = False Then locScored = locScored + 1
                         k = k + 1
-                        fAlleles(j, m, 2) = rstTemp.Fields(k).Value
-                        If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                        fAlleles(j, m, 2) = popArray(k, a)
+                        If IsNull(popArray(k, a)) = False Then locScored = locScored + 1
                         m = m + 1
                     Next k
                     femScored(j) = locScored / 2
-                    Exit Do
+                    Exit For
                 End If
-                rstTemp.MoveNext
-            Loop
+            Next a
         Next j
-            
+                
         For j = 1 To numM - disAbledM
-            rstTemp.MoveFirst
-            Do Until rstTemp.EOF
-                If UCase(![pit]) = UCase(mOrder(j)) Then
+            For a = 0 To UBound(popArray, 2)
+                If UCase(popArray(idCol, a)) = UCase(mOrder(j)) Then
                     m = 1
                     locScored = 0
-                    For k = 7 To rstTemp.Fields.Count - 2
-                        mAlleles(j, m, 1) = rstTemp.Fields(k).Value
-                        If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                    For k = firstAllele To (firstAllele + (lociCnt * 2) - 1)
+                        mAlleles(j, m, 1) = popArray(k, a)
+                        If IsNull(popArray(k, a)) = False Then locScored = locScored + 1
                         k = k + 1
-                        mAlleles(j, m, 2) = rstTemp.Fields(k).Value
-                        If IsNull(rstTemp.Fields(k).Value) = False Then locScored = locScored + 1
+                        mAlleles(j, m, 2) = popArray(k, a)
+                        If IsNull(popArray(k, a)) = False Then locScored = locScored + 1
                         m = m + 1
                     Next k
                     maleScored(j) = locScored / 2
-                    Exit Do
+                    Exit For
                 End If
-                rstTemp.MoveNext
-            Loop
+            Next a
         Next j
-    End With
+        
+        Erase popArray
+    End If
 End Function
 
 Public Function propSA()
@@ -2390,7 +2661,8 @@ Public Function propSA()
     For f = 1 To femMD - disAbledF
         For m = 1 To numM - disAbledM
             pTotal = 0
-            totAlleles = rstTemp.Fields.Count - 8: pShared = 0
+            totAlleles = lociCnt * 2
+            pShared = 0
             For j = 1 To totAlleles / 2
                 If IsNull(fAlleles(f, j, 1)) = True Or IsNull(fAlleles(f, j, 2)) = True Or IsNull(mAlleles(m, j, 1)) = True Or IsNull(mAlleles(m, j, 2)) = True Then
                     totAlleles = totAlleles - 2
@@ -2448,7 +2720,7 @@ Public Function getMales(tmpColl)
         Next n
                             
         'determining which combination is best
-        If pTotal > pFinal Then
+        If pTotal > pFinal Or pTotal = 0 Then
             pFinal = pTotal
             For n = 1 To femMD - disAbledF
                 maleFinal(n) = arr(n - 1)
@@ -2459,6 +2731,7 @@ Public Function getMales(tmpColl)
     
     For n = 1 To femMD - disAbledF
         femFinal(n) = n
+        maleNonOpt(n) = n
     Next n
 End Function
 
@@ -2490,8 +2763,8 @@ Public Function getMalesRecip(tmpColl)
                 For k = 1 To mateNum
                     j = 0
                     For i = m To m + (mateNum - 1)
-                        pTotal = pTotal + pwPSA(arrF(n), arr(i - 1))
-                        pTempMeasure(n + j) = pwPSA(arrF(n), arr(i - 1))
+                        pTotal = pTotal + pwPSA(arrF(n - 1 + j), arr(i - 1))
+                        pTempMeasure(n + j) = pwPSA(arrF(n - 1 + j), arr(i - 1))
                         j = j + 1
                     Next i
                     n = n + mateNum
@@ -2528,18 +2801,79 @@ Public Function getMalesRecip(tmpColl)
         Next
     Next
     
-    ReDim Preserve maleScored(numM * mateNum)
-    j = numM
-    For i = (numM * mateNum) - disAbledM To 1 Step -mateNum
-        For m = 0 To mateNum - 1
-            maleScored(i - m) = maleScored(j)
-        Next m
-        j = j - 1
-    Next i
+    For n = 1 To femMD - disAbledF
+        j = 0
+        For k = 1 To mateNum
+            b = (Int(n / ((mateNum ^ 2) + 1))) + j + (Int(n / ((mateNum ^ 2) + 1) + 1))
+            maleNonOpt(n + j) = b
+            'pFinalMeasure(n + j) = Format(Exp(-(pwPSA((n + j), b))), "0.000")
+            j = j + 1
+        Next k
+        n = n + (mateNum - 1)
+    Next n
 End Function
 
+Private Sub cmdClearTemplate_Click()
+    Msg = "Would you like to remove all of the ID templates from the dropdown list?"
+    Style = vbYesNo + vbQuestion + vbDefaultButton1
+    Title = "Clear Template List"
+    Response = MsgBox(Msg, Style, Title)
+    
+    If Response = 6 Then 'yes
+        frmInput.cmbTemplate.Clear
+    End If
+End Sub
+
+Private Sub cmdCohortChange_Click()
+    If frmInput.txtTagCur2.Text <> "" Then
+        Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].* FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] WHERE ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "])='" & frmInput.txtTagCur2.Text & "'));", dbOpenDynaset)
+        rstTemp.MoveLast
+        rstTemp.MoveFirst
+        If rstTemp.RecordCount > 0 Then
+reenterCohort:
+            Msg = "Please enter in a cohort for this ID (must be a number)."
+            Title = "Cohort Update"
+            Default = Format(Date, "YYYY")
+            Response = InputBox(Msg, Title, Default)
+                                
+            If IsNumeric(Response) = True Then
+                rstTemp.Edit
+                rstTemp(frmDataSpec.cmbCohort.Text) = CSng(Response)
+                rstTemp.Update
+                frmInput.txtYear.Text = Response
+            ElseIf Response = "" Then
+                Exit Sub
+            Else
+                GoTo reenterCohort
+            End If
+        Else
+            Msg = "The ID '" & UCase(frmInput.txtTagCur2.Text) & "' is not located in the '" & frmDataSpec.cmbGeneticsTable.Text & "' table so it will just be updated here."
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
+            Title = "ID Not Found"
+            Response = MsgBox(Msg, Style, Title)
+        
+reenterCohort2:
+            Msg = "Please enter in a cohort for this ID."
+            Title = "Cohort Update"
+            Default = Format(Date, "YYYY")
+            Response = InputBox(Msg, Title, Default)
+                                
+            If IsNumeric(Response) = True Then
+                frmInput.txtYear.Text = Response
+            ElseIf Response = "" Then
+                Exit Sub
+            Else
+                GoTo reenterCohort2
+            End If
+        End If
+    End If
+End Sub
+
 Public Sub cmdOpt_Click()
-    disAbledF = 0: disAbledM = 0
+    Call frmInput.saveTemplates
+    
+    disAbledF = 0
+    disAbledM = 0
     numF = CInt(frmMain.cmbFem.Text)
     numM = CInt(frmMain.cmbMale.Text)
     
@@ -2558,12 +2892,17 @@ Public Sub cmdOpt_Click()
         mateNum = 3
     End If
     femMD = numF * mateNum
-
+    
+    If matDes = 2 Or matDes = 4 Then
+        maleMD = numM * mateNum
+    Else
+        maleMD = numM
+    End If
         
     For i = 0 To femMD - 1
         If frmInput.txtTagFem(i).Visible = True And frmInput.txtTagFem(i).Text = "" Then
-            Msg = "There is an empty space in the Female list." + Chr(13) + "Please either scan a tag into the empty space or reselect the appropriate number of females."
-            Style = vbOKOnly + vbCritical + vbDefaultButton1
+            Msg = "There is an empty space in the Female list." + Chr(13) + "Please either add a female or reselect the appropriate number of females."
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
             Title = "Missing Female"
             Response = MsgBox(Msg, Style, Title)
             
@@ -2572,7 +2911,7 @@ Public Sub cmdOpt_Click()
         
         If frmInput.txtFamID(i).Text = "" Then
             Msg = "There is an empty space in the Family ID list." + Chr(13) + "Please enter in the appropriate family identification number."
-            Style = vbOKOnly + vbCritical + vbDefaultButton1
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
             Title = "Missing Family ID"
             Response = MsgBox(Msg, Style, Title)
             
@@ -2585,8 +2924,8 @@ Public Sub cmdOpt_Click()
     Next i
         
     If disAbledF = femMD Then
-        Msg = "There are no enabled female tags to optimize." + Chr(13) + "Please cancel this form and either deselect a spawning or reselect the number of females."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Msg = "There are no enabled female tags to optimize." + Chr(13) + "Please cancel this form and either deselect a mating-pair or reselect the number of females."
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
         Title = "No Females to Optimize"
         Response = MsgBox(Msg, Style, Title)
             
@@ -2595,8 +2934,8 @@ Public Sub cmdOpt_Click()
                 
     For i = 0 To numM - 1
         If frmInput.txtTagMale(i).Text = "" Then
-            Msg = "There is an empty space in the Male list." + Chr(13) + "Please either scan a tag into the empty space or reselect the appropriate number of males."
-            Style = vbOKOnly + vbCritical + vbDefaultButton1
+            Msg = "There is an empty space in the Male list." + Chr(13) + "Please either add a male or reselect the appropriate number of males."
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
             Title = "Missing Male"
             Response = MsgBox(Msg, Style, Title)
             
@@ -2608,9 +2947,9 @@ Public Sub cmdOpt_Click()
         End If
     Next i
                     
-    If femMD - disAbledF > numM - disAbledM Then
+    If femMD - disAbledF > maleMD - disAbledM Then
         Msg = "There must be at least as many enabled males as enabled females."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
         Title = "Not Enough Enabled Males"
         Response = MsgBox(Msg, Style, Title)
             
@@ -2624,6 +2963,7 @@ Public Sub cmdOpt_Click()
     ReDim flaGG(femMD - disAbledF) As Variant
     
     'read in female tags and fam ids
+    tmpStr = ""
     j = 1
     For i = 1 To femMD
         For m = 1 To mateNum
@@ -2631,7 +2971,13 @@ Public Sub cmdOpt_Click()
                 enNumF(j) = (i - 1) + (m - 1)
                 famID(j) = frmInput.txtFamID((i - 1) + (m - 1)).Text
                 fOrder(j) = frmInput.txtTagFem(i - 1).Text
-                fDrainage(j - 1) = fDrainage(i - 1)
+                'fDrainage(j - 1) = fDrainage((i - 1))
+                'fYear(j - 1) = fYear((i - 1))
+                If tmpStr = "" Then
+                    tmpStr = "([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "] = '" & fOrder(j) & "'"
+                Else
+                    tmpStr = tmpStr & " OR [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "] = '" & fOrder(j) & "'"
+                End If
                 j = j + 1
             End If
         Next m
@@ -2647,21 +2993,24 @@ Public Sub cmdOpt_Click()
         If frmInput.txtTagMale(i - 1).Enabled = True Then
             enNumM(j) = i - 1
             mOrder(j) = frmInput.txtTagMale(i - 1).Text
+            tmpStr = tmpStr & " OR [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "] = '" & mOrder(j) & "'"
             j = j + 1
         End If
     Next i
     
-    Set wrkJet = CreateWorkspace("", "admin", "", dbUseJet)
-    Set dbsNew = wrkJet.OpenDatabase("C:\Databases\MaineBroodstock.mdb")
-    Set rstTemp = dbsNew.OpenRecordset("SELECT Genetics.* FROM Genetics", dbOpenDynaset)
+    tmpStr = tmpStr & ")"
+    
+    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].* FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] WHERE " & tmpStr & ";", dbOpenDynaset)
     
     If frmInput.chkOptimize.Value = 1 Then
         '***Read in mating individuals genotypes
         Call getAlleles(rstTemp)
         
         '***Get proportion of shared alleles (add other relatedness options here)
-        Call propSA
-        
+        Select Case frmMain.cmbRelMetric.Text
+            Case "Proportion of Shared Alleles"
+                Call propSA
+        End Select
         
         '***Find optimal matings
         pFinal = 0
@@ -2727,7 +3076,6 @@ Public Sub cmdOpt_Click()
                 'Call getMales(mList11)
         End Select
                 
-        
         '******Update main form
         For m = 0 To femMD - 1
             frmMain.lblFem(m).Visible = True
@@ -2741,123 +3089,114 @@ Public Sub cmdOpt_Click()
             frmMain.chkReleaseM(m).Visible = True
         Next m
         
-        Set rstTemp = dbsNew.OpenRecordset("SELECT tblBroodMating.* FROM tblBroodMating", dbOpenDynaset)
         
         m = 1
-        'pFinal = 0
+        If frmFlags.chkNoAlleles.Value = 1 Then
+            minLoci = CLng(frmFlags.txtMinLoci.Text)
+        End If
+        
         For p = 1 To femMD
             If frmInput.txtFamID(p - 1).Enabled = True Then
                 frmMain.lblFem(enNumF(m)).Caption = famID(femFinal(m))
-                frmMain.txtFem(enNumF(m)).Locked = False
                 frmMain.txtFem(enNumF(m)).Text = fOrder(femFinal(m))
-                frmMain.txtFem(enNumF(m)).Locked = True
+                frmMain.txtFem(enNumF(m)).Tag = fOrder(m)
                 frmMain.txtLocFem(enNumF(m)).Text = femScored(femFinal(m))
-                
-                Select Case UCase(fDrainage(enNumF(femFinal(m))))
-                    Case "PENOBSCOT"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 1
-                    Case "SHEEPSCOT"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 11
-                    Case "NARRAGUAGUS"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 3
-                    Case "PLEASANT"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 4
-                    Case "MACHIAS"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 5
-                    Case "EAST MACHIAS"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 6
-                    Case "DENNYS"
-                        frmMain.txtDrainageF(enNumF(femFinal(m))).Text = 7
-                End Select
-                
-                
+                frmMain.txtLocFem(enNumF(m)).Tag = femScored(m)
+                frmMain.txtDrainageF(enNumF(m)).Text = fDrainage(enNumF(femFinal(m)))
+                frmMain.txtDrainageF(enNumF(m)).Tag = fDrainage(enNumF(m))
                 frmMain.txtfYear(enNumF(m)).Text = fYear(enNumF(femFinal(m)))
+                frmMain.txtfYear(enNumF(m)).Tag = fYear(enNumF(m))
+                
                 frmMain.lblMale(enNumF(m)).Caption = enNumM(maleFinal(m)) + 1
-                frmMain.txtMale(enNumF(m)).Locked = False
                 frmMain.txtMale(enNumF(m)).Text = mOrder(maleFinal(m))
-                frmMain.txtMale(enNumF(m)).Locked = True
+                frmMain.txtMale(enNumF(m)).Tag = mOrder(maleNonOpt(m))
                 frmMain.txtLocMale(enNumF(m)).Text = maleScored(maleFinal(m))
-                        
-                Select Case UCase(mDrainage(maleFinal(m) - 1))
-                    Case "PENOBSCOT"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 1
-                    Case "SHEEPSCOT"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 11
-                    Case "NARRAGUAGUS"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 3
-                    Case "PLEASANT"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 4
-                    Case "MACHIAS"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 5
-                    Case "EAST MACHIAS"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 6
-                    Case "DENNYS"
-                        frmMain.txtDrainageM(enNumF(m)).Text = 7
-                End Select
+                frmMain.txtLocMale(enNumF(m)).Tag = maleScored(maleNonOpt(m))
+                frmMain.txtDrainageM(enNumF(m)).Text = mDrainage(enNumM(maleFinal(m)))
+                frmMain.txtDrainageM(enNumF(m)).Tag = mDrainage(enNumM(maleNonOpt(m)))
+                frmMain.txtmYear(enNumF(m)).Text = mYear(enNumM(maleFinal(m)))
+                frmMain.txtmYear(enNumF(m)).Tag = mYear(enNumM(maleNonOpt(m)))
                 
-                frmMain.txtmYear(enNumF(m)).Text = mYear(maleFinal(m) - 1)
-                frmMain.txtPShare(enNumF(m)).Locked = False
-                frmMain.txtPShare(enNumF(m)).Text = Format(pFinalMeasure(m), "0.000")
-                'pFinal = pFinal + pFinalMeasure(m)
-                frmMain.txtPShare(enNumF(m)).Locked = True
+                If femScored(femFinal(m)) = 0 Or maleScored(maleFinal(m)) = 0 Then
+                    frmMain.txtPShare(enNumF(m)).Text = "NA"
+                Else
+                    frmMain.txtPShare(enNumF(m)).Text = Format(pFinalMeasure(m), "0.000")
+                End If
                 
-                If disAbledF > 0 Or disAbledM > 0 Then
+                If femScored(femFinal(m)) = 0 Or maleScored(maleNonOpt(m)) = 0 Then
+                    frmMain.txtPShare(enNumF(m)).Tag = "NA"
+                Else
+                    frmMain.txtPShare(enNumF(m)).Tag = Format(Exp(-(pwPSA(m, maleNonOpt(m)))), "0.000")
+                End If
+                
+                If (disAbledF > 0 And disAbledM > 0) Then
                     frmMain.txtOptimized(enNumF(m)) = "REOPTIMIZED"
                 Else
                     frmMain.txtOptimized(enNumF(m)) = "YES"
                 End If
                 
+                
                 'Determine mating flags
-                If UCase(frmMain.txtDrainageF(enNumF(femFinal(m))).Text) <> UCase(frmMain.txtDrainageM(enNumF(m)).Text) Then
-                    flaGG(m - 1) = "The male and female for this mating come from two different drainages." & Chr(13) & Chr(13)
-                End If
                 
-                Select Case CInt(frmMain.txtDrainageF(enNumF(femFinal(m))).Text)
-                    Case 7
-                        numDrainage = 0
-                    Case 6
-                        numDrainage = 1
-                    Case 5
-                        numDrainage = 2
-                    Case 3
-                        numDrainage = 3
-                    Case 1
-                        numDrainage = 4
-                    Case 4
-                        numDrainage = 5
-                    Case 11
-                        numDrainage = 6
-                    Case Else
-                        numDrainage = 7
-                End Select
-                
-                If femScored(femFinal(m)) > 0 And maleScored(maleFinal(m)) > 0 Then
-                    If pFinalMeasure(m) > CSng(frmMain.txtQuartile(numDrainage).Text) Then
-                        flaGG(m - 1) = flaGG(m - 1) & "The proportion of shared alleles for this mating is in the upper quartile for the " & fDrainage(enNumF(m)) & " drainage (>" & frmMain.txtQuartile(numDrainage).Text & ")." & Chr(13) & Chr(13)
+                'Exceeds relatedness threshold
+                If frmFlags.chkUppQuart.Value = 1 Then
+                    If femScored(femFinal(m)) > 0 And maleScored(maleFinal(m)) > 0 Then
+                        tmpBi = 0
+                        For a = 0 To UBound(popRelVal, 1)
+                            If fDrainage(enNumF(femFinal(m))) = popRelVal(a, 0) Then
+                                tmpBi = 1
+                                Exit For
+                            End If
+                        Next a
+                        
+                        If tmpBi = 1 Then
+                            If pFinalMeasure(m) > CSng(popRelVal(a, 1)) Then
+                                flaGG(m - 1) = flaGG(m - 1) & "The pair-wise genetic relatedness for this mating (" & pFinalMeasure(m) & ") exceeds the threshold value for the " & fDrainage(enNumF(m)) & " population (>" & popRelVal(a, 1) & ")." & Chr(13) & Chr(13)
+                            End If
+                        End If
                     End If
                 End If
                 
-                Set rstTemp = dbsNew.OpenRecordset("SELECT tblBroodMating.* FROM tblBroodMating", dbOpenDynaset)
-                With rstTemp
-                    rstTemp.MoveFirst
-                    Do Until rstTemp.EOF
-                        If UCase(rstTemp!Dam) = UCase(frmMain.txtFem(enNumF(m)).Text) Then
-                            If UCase(rstTemp!Sire) = UCase(frmMain.txtMale(enNumF(m)).Text) Then
-                                flaGG(m - 1) = flaGG(m - 1) & "This female and male pairing has already been spawned on " & rstTemp!TakeDate & Chr(13) & Chr(13)
-                            End If
-                        End If
-                        rstTemp.MoveNext
-                    Loop
-                End With
-                        
-                If femScored(femFinal(m)) = 0 Then
-                    flaGG(m - 1) = flaGG(m - 1) & "This female has not been scored at any loci" & Chr(13) & Chr(13)
+                'Below minimum number of scored loci
+                If frmFlags.chkNoAlleles.Value = 1 Then
+                    If femScored(femFinal(m)) < minLoci Then
+                        flaGG(m - 1) = flaGG(m - 1) & "This female has been scored for " & femScored(femFinal(m)) & " loci, less than the specified minimum number (" & minLoci & ")." & Chr(13) & Chr(13)
+                    End If
+                    
+                    If maleScored(maleFinal(m)) < minLoci Then
+                        flaGG(m - 1) = flaGG(m - 1) & "This male has been scored for " & maleScored(maleFinal(m)) & " loci, less than the specified minimum number (" & minLoci & ")." & Chr(13) & Chr(13)
+                    End If
                 End If
                 
-                If maleScored(maleFinal(m)) = 0 Then
-                    flaGG(m - 1) = flaGG(m - 1) & "This male has not been scored at any loci" & Chr(13) & Chr(13)
+                'Previous mating
+                If frmFlags.chkPrevMating.Value = 1 Then
+                    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbMatingsTable.Text & "].* FROM [" & frmDataSpec.cmbMatingsTable.Text & "] WHERE ([" & frmDataSpec.cmbMatingsTable.Text & "].[" & frmDataSpec.cmbDamID.Text & "] = '" & fOrder(femFinal(m)) & "' AND [" & frmDataSpec.cmbMatingsTable.Text & "].[" & frmDataSpec.cmbSireID.Text & "] = '" & mOrder(maleFinal(m)) & "');", dbOpenDynaset)
+                    
+                    If rstTemp.RecordCount > 0 Then
+                        rstTemp.MoveLast
+                        rstTemp.MoveFirst
+                        Do Until rstTemp.EOF
+                            flaGG(m - 1) = flaGG(m - 1) & "This female and male pairing was previously mated on " & rstTemp(frmDataSpec.cmbDate.Text) & Chr(13) & Chr(13)
+                            rstTemp.MoveNext
+                        Loop
+                    End If
+                    Set rstTemp = Nothing
                 End If
                 
+                'Different pops
+                If frmDataSpec.chkPop.Value = 1 And frmFlags.chkDiffPops.Value = 1 Then
+                    If UCase(fDrainage(enNumF(femFinal(m)))) <> UCase(mDrainage(enNumM(maleFinal(m)))) Then
+                        flaGG(m - 1) = flaGG(m - 1) & "The female (" & fDrainage(enNumF(femFinal(m))) & ") and male (" & mDrainage(enNumM(maleFinal(m))) & ") for this mating pair come from two different populations." & Chr(13) & Chr(13)
+                    End If
+                End If
+                
+                'Different cohorts
+                If frmDataSpec.chkCohort.Value = 1 And frmFlags.chkDiffCohorts.Value = 1 Then
+                    If UCase(fYear(enNumF(femFinal(m)))) <> UCase(mYear(enNumM(maleFinal(m)))) Then
+                        flaGG(m - 1) = flaGG(m - 1) & "The female (" & fYear(enNumF(femFinal(m))) & ") and male (" & mYear(enNumM(maleFinal(m))) & ") for this mating pair are from two different cohorts." & Chr(13) & Chr(13)
+                    End If
+                End If
+
                 If flaGG(m - 1) <> Empty Then
                     frmMain.imgFlag(enNumF(m)).Visible = True
                     frmMain.txtFlag(enNumF(m)).Text = flaGG(m - 1)
@@ -2868,11 +3207,7 @@ Public Sub cmdOpt_Click()
                 m = m + 1
             End If
         Next p
-        
-        'frmMain.lblAvgPShare.Visible = True
-        'frmMain.txtAvgPShare.Text = Format((pFinal / femMD), "0.000")
-        'frmMain.txtAvgPShare.Visible = True
-        
+                
         For m = femMD To 9
             frmMain.lblFem(m).Visible = False
             frmMain.txtFem(m).Visible = False
@@ -2891,48 +3226,56 @@ Public Sub cmdOpt_Click()
             frmMain.chkReleaseF(m).Visible = False
             frmMain.chkReleaseM(m).Visible = False
         Next m
-    
-        dbsNew.Close
-        wrkJet.Close
-        
     Else '***No optimization, use straight order
         '***Read in mating individuals genotypes
         Call getAlleles(rstTemp)
                 
         '***Get proportion of shared alleles (add other relatedness options here)
-        Call propSA
-        
+        Select Case frmMain.cmbRelMetric.Text
+            Case "Proportion of Shared Alleles"
+                Call propSA
+        End Select
+                
         '***Adjust mOrder for 2 to 2 and 3 to 3 mating designs
         If matDes = 2 Or matDes = 4 Then
-            m = 1
             For n = 1 To femMD - disAbledF
+                j = 0
                 For k = 1 To mateNum
-                    j = 0
-                    For i = m To m + (mateNum - 1)
-                        maleFinal(n + j) = i
-                        j = j + 1
-                    Next i
-                    n = n + mateNum
+                    b = (Int(n / ((mateNum ^ 2) + 1))) + j + (Int(n / ((mateNum ^ 2) + 1) + 1))
+                    femFinal(n + j) = enNumF(n) + 1
+                    maleFinal(n + j) = enNumM(b)
+                    pFinalMeasure(n + j) = Format(Exp(-(pwPSA((n + j), b))), "0.000")
+                    j = j + 1
                 Next k
-                m = m + mateNum
-                n = n - 1
+                n = n + (mateNum - 1)
             Next n
             
             ReDim Preserve mOrder(femMD)
             ReDim Preserve maleScored(femMD)
+            tmpEnNumM = enNumM
+            ReDim enNumM(femMD)
             For n = femMD To 1 Step -1
-                mOrder(n) = mOrder(maleFinal(n))
-                maleScored(n) = maleScored(maleFinal(n))
+                For i = 1 To numM
+                    If tmpEnNumM(i) = maleFinal(n) Then
+                        enNumM(n) = tmpEnNumM(i)
+                        maleFinal(n) = i
+                        'mOrder(n) = mOrder(i)
+                        'maleScored(n) = maleScored(i)
+                        Exit For
+                    End If
+                Next i
             Next n
         Else
             For n = 1 To femMD - disAbledF
                 maleFinal(n) = n
+                femFinal(n) = n
+                pFinalMeasure(n) = Format(Exp(-(pwPSA(n, n))), "0.000")
             Next n
         End If
         
         
+        
         z = 1
-        'pFinal = 0
         For i = 0 To femMD - 1
             frmMain.lblFem(i).Visible = True
             frmMain.txtFem(i).Visible = True
@@ -2942,75 +3285,48 @@ Public Sub cmdOpt_Click()
             frmMain.cmdComment(i).Visible = True
             frmMain.chkSpawned(i).Visible = True
             frmMain.chkReleaseF(i).Visible = True
-            frmMain.chkReleaseM(i).Visible = False
+            frmMain.chkReleaseM(i).Visible = True
             
             If frmMain.txtFem(i).BackColor <> &HFF& Then
                 frmMain.lblFem(i).Caption = famID(z)
                 frmMain.txtFem(i).Text = fOrder(z)
+                frmMain.txtFem(i).Tag = fOrder(z)
                 frmMain.txtLocFem(i).Text = femScored(z)
+                frmMain.txtLocFem(i).Tag = femScored(z)
+                frmMain.txtDrainageF(i).Text = fDrainage(enNumF(z))
+                frmMain.txtDrainageF(i).Tag = fDrainage(enNumF(z))
                 frmMain.txtfYear(i).Text = fYear(enNumF(z))
-            
-                Select Case UCase(fDrainage(enNumF(z)))
-                    Case "PENOBSCOT"
-                        frmMain.txtDrainageF(i).Text = 1
-                    Case "SHEEPSCOT"
-                        frmMain.txtDrainageF(i).Text = 11
-                    Case "NARRAGUAGUS"
-                        frmMain.txtDrainageF(i).Text = 3
-                    Case "PLEASANT"
-                        frmMain.txtDrainageF(i).Text = 4
-                    Case "MACHIAS"
-                        frmMain.txtDrainageF(i).Text = 5
-                    Case "EAST MACHIAS"
-                        frmMain.txtDrainageF(i).Text = 6
-                    Case "DENNYS"
-                        frmMain.txtDrainageF(i).Text = 7
-                End Select
-            
-                frmMain.lblMale(i).Caption = frmInput.lblMale(maleFinal(z) - 1).Caption
-                frmMain.txtMale(i).Text = mOrder(z)
-                frmMain.txtLocMale(i).Text = maleScored(z)
-                frmMain.txtmYear(i).Text = mYear(maleFinal(z) - 1)
-            
-                Select Case UCase(mDrainage(maleFinal(z) - 1))
-                    Case "PENOBSCOT"
-                        frmMain.txtDrainageM(i).Text = 1
-                    Case "SHEEPSCOT"
-                        frmMain.txtDrainageM(i).Text = 11
-                    Case "NARRAGUAGUS"
-                        frmMain.txtDrainageM(i).Text = 3
-                    Case "PLEASANT"
-                        frmMain.txtDrainageM(i).Text = 4
-                    Case "MACHIAS"
-                        frmMain.txtDrainageM(i).Text = 5
-                    Case "EAST MACHIAS"
-                        frmMain.txtDrainageM(i).Text = 6
-                    Case "DENNYS"
-                        frmMain.txtDrainageM(i).Text = 7
-                End Select
+                frmMain.txtfYear(i).Tag = fYear(enNumF(z))
                 
-                frmMain.txtPShare(i).Text = Format(Exp(-(pwPSA(i + 1, maleFinal(z)))), "0.000")
-                'pFinal = pFinal + Format(Exp(-(pwPSA(i + 1, maleFinal(z)))), "0.000")
+                frmMain.lblMale(i).Caption = frmInput.lblMale(maleFinal(z)).Caption
+                frmMain.txtMale(i).Text = mOrder(maleFinal(z))
+                frmMain.txtMale(i).Tag = mOrder(maleFinal(z))
+                frmMain.txtLocMale(i).Text = maleScored(maleFinal(z))
+                frmMain.txtLocMale(i).Tag = maleScored(maleFinal(z))
+                frmMain.txtDrainageM(i).Text = mDrainage(enNumM(z))
+                frmMain.txtDrainageM(i).Tag = mDrainage(enNumM(z))
+                frmMain.txtmYear(i).Text = mYear(enNumM(z))
+                frmMain.txtmYear(i).Tag = mYear(enNumM(z))
+                                
+                If femScored(z) = 0 Or maleScored(maleFinal(z)) = 0 Then
+                    frmMain.txtPShare(i).Text = "NA"
+                    frmMain.txtPShare(i).Tag = "NA"
+                Else
+                    frmMain.txtPShare(i).Text = Format(pFinalMeasure(z), "0.000")
+                    frmMain.txtPShare(i).Tag = Format(pFinalMeasure(z), "0.000")
+                End If
                 frmMain.txtOptimized(i).Text = "NO"
                 z = z + 1
             End If
         Next i
-        
-        'frmMain.lblAvgPShare.Visible = True
-        'frmMain.txtAvgPShare.Text = Format((pFinal / femMD), "0.000")
-        'frmMain.txtAvgPShare.Visible = True
-        
+                
         For i = femMD To 9
             frmMain.lblFem(i).Visible = False
             frmMain.txtFem(i).Visible = False
-            frmMain.txtFem(i).Locked = False
             frmMain.txtFem(i).Text = ""
-            frmMain.txtFem(i).Locked = True
             frmMain.lblMale(i).Visible = False
             frmMain.txtMale(i).Visible = False
-            frmMain.txtMale(i).Locked = False
             frmMain.txtMale(i).Text = ""
-            frmMain.txtMale(i).Locked = True
             frmMain.txtPShare(i).Visible = False
             frmMain.cmdComment(i).Visible = False
             frmMain.imgFlag(i).Visible = False
@@ -3018,115 +3334,212 @@ Public Sub cmdOpt_Click()
             frmMain.chkReleaseF(i).Visible = False
             frmMain.chkReleaseM(i).Visible = False
         Next i
-        
-        With dbsNew
-            Set rstTemp = dbsNew.OpenRecordset("SELECT tblBroodMating.* FROM tblBroodMating", dbOpenDynaset)
-        
-            For m = 1 To numF
-                If frmMain.txtFem(m - 1).BackColor <> &HFF& Then
-                    If CInt(frmMain.txtDrainageF(m - 1).Text) <> CInt(frmMain.txtDrainageM(m - 1).Text) Then
-                        flaGG(m - 1) = "The male and female for this mating come from two different drainages." & Chr(13) & Chr(13)
-                    End If
-                    
-                    With rstTemp
-                        rstTemp.MoveFirst
-                        Do Until rstTemp.EOF
-                            If UCase(rstTemp!Dam) = UCase(frmMain.txtFem(m - 1).Text) Then
-                                If UCase(rstTemp!Sire) = UCase(frmMain.txtMale(m - 1).Text) Then
-                                    flaGG(m - 1) = flaGG(m - 1) & "This female and male pairing has already been spawned on " & rstTemp!TakeDate & Chr(13) & Chr(13)
-                                End If
-                            End If
-                            rstTemp.MoveNext
-                        Loop
-                    End With
                 
-                    If flaGG(m - 1) <> Empty Then
-                        frmMain.imgFlag(m - 1).Visible = True
-                        frmMain.txtFlag(m - 1).Text = flaGG(m - 1)
-                    Else
-                        frmMain.imgFlag(m - 1).Visible = False
+        'Determine mating flags
+        For m = 1 To femMD
+            If frmMain.txtFem(m - 1).BackColor <> &HFF& Then  'Check logic*************************************************************************
+                'Exceeds relatedness threshold
+                If frmFlags.chkUppQuart.Value = 1 Then
+                    If femScored(m) > 0 And maleScored(m) > 0 Then
+                        tmpBi = 0
+                        For a = 0 To UBound(popRelVal, 1)
+                            If fDrainage(enNumF(m)) = popRelVal(a, 0) Then
+                                tmpBi = 1
+                                Exit For
+                            End If
+                        Next a
+                        
+                        If tmpBi = 1 Then
+                            If pFinalMeasure(m) > CSng(popRelVal(a, 1)) Then
+                                flaGG(m - 1) = flaGG(m - 1) & "The pair-wise genetic relatedness for this mating (" & pFinalMeasure(m) & ") exceeds the threshold value for the " & fDrainage(enNumF(m)) & " population (>" & popRelVal(a, 1) & ")." & Chr(13) & Chr(13)
+                            End If
+                        End If
                     End If
                 End If
-            Next m
-        End With
-        
-        dbsNew.Close
-        wrkJet.Close
+                
+                'Below minimum number of scored loci
+                If frmFlags.chkNoAlleles.Value = 1 Then
+                    If femScored(m) < minLoci Then
+                        flaGG(m - 1) = flaGG(m - 1) & "This female has been scored for " & femScored(m) & " loci, less than the specified minimum number (" & minLoci & ")." & Chr(13) & Chr(13)
+                    End If
+                    
+                    If maleScored(maleFinal(m)) < minLoci Then
+                        flaGG(m - 1) = flaGG(m - 1) & "This male has been scored for " & maleScored(maleFinal(m)) & " loci, less than the specified minimum number (" & minLoci & ")." & Chr(13) & Chr(13)
+                    End If
+                End If
+                
+                'Previous mating
+                If frmFlags.chkPrevMating.Value = 1 Then
+                    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbMatingsTable.Text & "].* FROM [" & frmDataSpec.cmbMatingsTable.Text & "] WHERE ([" & frmDataSpec.cmbMatingsTable.Text & "].[" & frmDataSpec.cmbDamID.Text & "] = '" & fOrder(m) & "' AND [" & frmDataSpec.cmbMatingsTable.Text & "].[" & frmDataSpec.cmbDamID.Text & "] = '" & mOrder(maleFinal(m)) & "');", dbOpenDynaset)
+                    
+                    If rstTemp.RecordCount > 0 Then
+                        rstTemp.MoveLast
+                        rstTemp.MoveFirst
+                        Do Until rstTemp.EOF
+                            flaGG(m - 1) = flaGG(m - 1) & "This female and male pairing was previously mated on " & rstTemp(frmDataSpec.cmbDate.Text) & Chr(13) & Chr(13)
+                            rstTemp.MoveNext
+                        Loop
+                    End If
+                    Set rstTemp = Nothing
+                End If
+                
+                'Different pops
+                If frmDataSpec.chkPop.Value = 1 And frmFlags.chkDiffPops.Value = 1 Then
+                    If UCase(fDrainage(enNumF(m))) <> UCase(mDrainage(enNumM(m))) Then
+                        flaGG(m - 1) = flaGG(m - 1) & "The female (" & fDrainage(enNumF(m)) & ") and male (" & mDrainage(enNumM(m)) & ") for this mating pair come from two different populations." & Chr(13) & Chr(13)
+                    End If
+                End If
+                
+                'Different cohorts
+                If frmDataSpec.chkCohort.Value = 1 And frmFlags.chkDiffCohorts.Value = 1 Then
+                    If UCase(fYear(enNumF(m))) <> UCase(mYear(enNumM(m))) Then
+                        flaGG(m - 1) = flaGG(m - 1) & "The female (" & fYear(enNumF(m)) & ") and male (" & mYear(enNumM(m)) & ") for this mating pair are from two different cohorts." & Chr(13) & Chr(13)
+                    End If
+                End If
+                
+                If flaGG(m - 1) <> Empty Then
+                    frmMain.imgFlag(m - 1).Visible = True
+                    frmMain.txtFlag(m - 1).Text = flaGG(m - 1)
+                Else
+                    frmMain.imgFlag(m - 1).Visible = False
+                End If
+            End If
+        Next m
     End If
     
     pFinal = 0
+    b = 0
     For i = 0 To femMD - 1
-        pFinal = pFinal + CSng(frmMain.txtPShare(i).Text)
+        If (CLng(frmMain.txtLocFem(i).Text) > 0 And CLng(frmMain.txtLocMale(i).Text) > 0) Then
+            b = b + 1
+            pFinal = pFinal + CSng(frmMain.txtPShare(i).Text)
+        End If
     Next i
     
     frmMain.lblAvgPShare.Visible = True
-    frmMain.txtAvgPShare.Text = Format((pFinal / femMD), "0.000")
+    If b = 0 Then
+        frmMain.txtAvgPShare.Text = "NA"
+    Else
+        frmMain.txtAvgPShare.Text = Format((pFinal / b), "0.000")
+    End If
     frmMain.txtAvgPShare.Visible = True
     
-    Call frmMain.highlightTag
+    'Call frmMain.highlightTag
+    
     frmInput.Hide
 End Sub
 
-Private Sub cmdSexChange_Click()
-    i = 1
-    Do Until Mid(frmInput.txtTagCur2.Text, i, 1) = ""
-        i = i + 1
-    Loop
-    
+Private Sub cmdPopChange_Click()
     If frmInput.txtTagCur2.Text <> "" Then
-        Set wrkJet = CreateWorkspace("", "admin", "", dbUseJet)
-        Set dbsNew = wrkJet.OpenDatabase("C:\Databases\MaineBroodstock.mdb")
-    
-        With dbsNew
-            Set rstTemp = dbsNew.OpenRecordset("SELECT tblBrood.* FROM tblBrood", dbOpenDynaset)
-            With rstTemp
-                rstTemp.MoveFirst
-                Do Until rstTemp.EOF
-                    If UCase(!Mark) = UCase(frmInput.txtTagCur2.Text) Then
-reenterSex:
-                        Msg = "Please enter in a sex for this tag." & Chr(13) & Chr(13) & "'M' for male, 'F' for female"
-                        Title = "Gender Update"
-                        Default = "M"
-                        Response = InputBox(Msg, Title, Default)
-                            
-                        If Response = "M" Or Response = "m" Or Response = "F" Or Response = "f" Then
-                            rstTemp.Edit
-                            !Gender = UCase(Response)
-                            rstTemp.Update
-                            If !Gender = "M" Then
-                                frmInput.txtSex.Text = "Male"
-                            Else
-                                frmInput.txtSex.Text = "Female"
-                            End If
-                        ElseIf Response = "" Then
-                            Exit Sub
-                        Else
-                            GoTo reenterSex
-                        End If
-                        GoTo tagFound
-                    End If
-                    rstTemp.MoveNext
-                Loop
-                GoTo tagNotFound
-tagFound:
-            End With
-        End With
-        
-        dbsNew.Close
-        wrkJet.Close
+        Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].* FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] WHERE ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "])='" & frmInput.txtTagCur2.Text & "'));", dbOpenDynaset)
+        rstTemp.MoveLast
+        rstTemp.MoveFirst
+        If rstTemp.RecordCount > 0 Then
+            
+            Msg = "Please enter in a population for this ID."
+            Title = "Population Update"
+            Default = ""
+            Response = InputBox(Msg, Title, Default)
+                                
+            If UCase(Response) <> "" Then
+                rstTemp.Edit
+                rstTemp(frmDataSpec.cmbPop.Text) = Response
+                rstTemp.Update
+                frmInput.txtDrainage.Text = Response
+            ElseIf Response = "" Then
+                Exit Sub
+            End If
+        Else
+            Msg = "The ID '" & UCase(frmInput.txtTagCur2.Text) & "' is not located in the '" & frmDataSpec.cmbGeneticsTable.Text & "' table so it will just be updated here."
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
+            Title = "ID Not Found"
+            Response = MsgBox(Msg, Style, Title)
+            
+            Msg = "Please enter in a population for this ID."
+            Title = "Population Update"
+            Default = ""
+            Response = InputBox(Msg, Title, Default)
+            
+            If UCase(Response) <> "" Then
+                frmInput.txtDrainage.Text = Response
+            ElseIf Response = "" Then
+                Exit Sub
+            End If
+        End If
     End If
-    
-    Exit Sub
-    
-tagNotFound:
-    Msg = "The tag " & UCase(frmInput.txtTagCur2.Text) & " is not located in the 'tblbrood' table."
-    Style = vbOKOnly + vbCritical + vbDefaultButton1
-    Title = "Tag Not Found"
-    Response = MsgBox(Msg, Style, Title)
-    
+
+End Sub
+
+Private Sub cmdSexChange_Click()
+    If frmInput.txtTagCur2.Text <> "" Then
+        Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].* FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] WHERE ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "])='" & frmInput.txtTagCur2.Text & "'));", dbOpenDynaset)
+        rstTemp.MoveLast
+        rstTemp.MoveFirst
+        If rstTemp.RecordCount > 0 Then
+reenterSex:
+            Msg = "Please enter in a sex for this ID." & Chr(13) & Chr(13) & "'M' for male, 'F' for female"
+            Title = "Gender Update"
+            Default = "M"
+            Response = InputBox(Msg, Title, Default)
+                                
+            If UCase(Response) = "M" Or UCase(Response) = "F" Then
+                rstTemp.Edit
+                rstTemp(frmDataSpec.cmbSex.Text) = UCase(Response)
+                rstTemp.Update
+                If UCase(Response) = "M" Then
+                    frmInput.txtSex.Text = "Male"
+                Else
+                    frmInput.txtSex.Text = "Female"
+                End If
+            ElseIf Response = "" Then
+                Exit Sub
+            Else
+                GoTo reenterSex
+            End If
+        Else
+            Msg = "The ID '" & UCase(frmInput.txtTagCur2.Text) & "' is not located in the '" & frmDataSpec.cmbGeneticsTable.Text & "' table so it will just be updated here."
+            Style = vbOKOnly + vbInformation + vbDefaultButton1
+            Title = "ID Not Found"
+            Response = MsgBox(Msg, Style, Title)
+            
+reenterSex2:
+            Msg = "Please enter in a sex for this ID." & Chr(13) & Chr(13) & "'M' for male, 'F' for female"
+            Title = "Gender Update"
+            Default = "M"
+            Response = InputBox(Msg, Title, Default)
+                                
+            If UCase(Response) = "M" Or UCase(Response) = "F" Then
+                If UCase(Response) = "M" Then
+                    frmInput.txtSex.Text = "Male"
+                Else
+                    frmInput.txtSex.Text = "Female"
+                End If
+            ElseIf Response = "" Then
+                Exit Sub
+            Else
+                GoTo reenterSex2
+            End If
+        End If
+    End If
 End Sub
 
 Private Sub Form_Activate()
+    If frmDataSpec.chkPop.Value = 0 Then
+        frmInput.txtDrainage.Enabled = False
+        frmInput.cmdPopChange.Enabled = False
+    Else
+        frmInput.txtDrainage.Enabled = True
+        frmInput.cmdPopChange.Enabled = True
+    End If
+    
+    If frmDataSpec.chkCohort.Value = 0 Then
+        frmInput.txtYear.Enabled = False
+        frmInput.cmdCohortChange.Enabled = False
+    Else
+        frmInput.txtYear.Enabled = True
+        frmInput.cmdCohortChange.Enabled = True
+    End If
+    
     If frmMain.optMatDes(0).Value = True Then
         mateNum = 1
     ElseIf frmMain.optMatDes(1).Value = True Or frmMain.optMatDes(2).Value = True Then
@@ -3142,8 +3555,6 @@ Private Sub Form_Activate()
             frmInput.txtFamID(i).Visible = True
             frmInput.txtTagFem(i).Visible = True
             frmInput.cmdClearF(i).Visible = True
-            'frmInput.txtPicFem(i).Visible = True
-            'frmInput.txtWeightFem(i).Visible = True
         Else
             frmInput.txtFamID(i).Visible = True 'only show family id
             frmInput.txtTagFem(i).Visible = False
@@ -3172,15 +3583,11 @@ Private Sub Form_Activate()
                 frmInput.txtTagFem(i).Enabled = True
                 frmInput.cmdClearF(i).Enabled = True
             End If
-            'frmInput.txtPicFem(i).Enabled = False
-            'frmInput.txtWeightFem(i).Enabled = False
         Else
             frmInput.lblFem(i).Enabled = True
             frmInput.txtFamID(i).Enabled = True
             frmInput.txtTagFem(i).Enabled = True
             frmInput.cmdClearF(i).Enabled = True
-            'frmInput.txtPicFem(i).Enabled = True
-            'frmInput.txtWeightFem(i).Enabled = True
         End If
     Next i
     
@@ -3189,8 +3596,6 @@ Private Sub Form_Activate()
         frmInput.txtFamID(i).Visible = False
         frmInput.txtTagFem(i).Visible = False
         frmInput.cmdClearF(i).Visible = False
-        'frmInput.txtPicFem(i).Visible = False
-        'frmInput.txtWeightFem(i).Visible = False
     Next i
     
     For i = 0 To CInt(frmMain.cmbMale.Text) - 1
@@ -3199,15 +3604,11 @@ Private Sub Form_Activate()
             frmInput.lblMale(i).Visible = True
             frmInput.txtTagMale(i).Visible = True
             frmInput.cmdClearM(i).Visible = True
-            'frmInput.txtPicMale(i).Visible = True
-            'frmInput.txtWeightMale(i).Visible = True
             
             frmInput.chkUse(i).Enabled = True
             frmInput.lblMale(i).Enabled = True
             frmInput.txtTagMale(i).Enabled = True
             frmInput.cmdClearM(i).Enabled = True
-            'frmInput.txtPicMale(i).Enabled = True
-            'frmInput.txtWeightMale(i).Enabled = True
         End If
     Next i
         
@@ -3220,8 +3621,6 @@ Private Sub Form_Activate()
                     frmInput.lblMale(j).Enabled = False
                     frmInput.txtTagMale(j).Enabled = False
                     frmInput.cmdClearM(j).Enabled = False
-                    'frmInput.txtPicMale(j).Enabled = False
-                    'frmInput.txtWeightMale(j).Enabled = False
                 End If
             Next j
         Else
@@ -3232,8 +3631,6 @@ Private Sub Form_Activate()
                     frmInput.lblMale(j).Enabled = True
                     frmInput.txtTagMale(j).Enabled = True
                     frmInput.cmdClearM(j).Enabled = True
-                    'frmInput.txtPicMale(j).Enabled = True
-                    'frmInput.txtWeightMale(j).Enabled = True
                     
                     GoTo skipEnable
                 End If
@@ -3253,8 +3650,6 @@ Private Sub Form_Activate()
                     frmInput.lblMale(j).Enabled = True
                     frmInput.txtTagMale(j).Enabled = True
                     frmInput.cmdClearM(j).Enabled = True
-                    'frmInput.txtPicMale(j).Enabled = True
-                    'frmInput.txtWeightMale(j).Enabled = True
                 End If
             Next j
 skipEnable:
@@ -3266,26 +3661,25 @@ skipEnable:
         frmInput.lblMale(i).Visible = False
         frmInput.txtTagMale(i).Visible = False
         frmInput.cmdClearM(i).Visible = False
-        'frmInput.txtPicMale(i).Visible = False
-        'frmInput.txtWeightMale(i).Visible = False
         
         frmInput.chkUse(i).Enabled = True
         frmInput.lblMale(i).Enabled = True
         frmInput.txtTagMale(i).Enabled = True
         frmInput.cmdClearM(i).Enabled = True
-        'frmInput.txtPicMale(i).Enabled = True
-        'frmInput.txtWeightMale(i).Enabled = True
     Next i
-    
-    'frmInput.txtTagCur.LinkMode = 1
+End Sub
+
+Private Sub Form_Load()
+    'Set accessApp = CreateObject("Access.Application")
+    Call frmInput.importTemplates
 End Sub
 
 Private Sub txtFamID_LostFocus(Index As Integer)
-    For i = 0 To UCase(frmMain.cmbFem.Text) - 1
+    For i = 0 To numF - 1
         If i <> Index Then
             If UCase(frmInput.txtFamID(i).Text) = UCase(frmInput.txtFamID(Index).Text) And frmInput.txtFamID(Index).Text <> "" Then
                 Msg = "The family ID " & frmInput.txtFamID(Index).Text & " is already present in female " & i + 1 & "'s family ID." & Chr(13) & "Please enter a different family ID."
-                Style = vbOKOnly + vbCritical + vbDefaultButton1
+                Style = vbOKOnly + vbInformation + vbDefaultButton1
                 Title = "Duplicate Family ID"
                 Response = MsgBox(Msg, Style, Title)
                 
@@ -3314,159 +3708,121 @@ Private Sub txtTagCur_Change()
 End Sub
 
 Private Sub txtTagCur2_Change()
-    k = 1
-    Do Until Mid(frmInput.txtTagCur2.Text, k, 1) = ""
-        k = k + 1
-    Loop
+    k = Len(frmInput.txtTagCur2.Text)
     
     frmInput.txtTagCur2.Text = UCase(frmInput.txtTagCur2.Text)
-    frmInput.txtTagCur2.SelStart = k - 1
+    frmInput.txtTagCur2.SelStart = k
     
-    If frmInput.txtTagCur2.Text <> "" And ((k = 11 And Mid(txtTagCur2.Text, 4, 1) <> ".") Or Left(Right(txtTagCur2.Text, 11), 1) = ".") And frmInput.txtTagCur2.Text <> tempTag Then
-        Set wrkJet = CreateWorkspace("", "admin", "", dbUseJet)
-        Set dbsNew = wrkJet.OpenDatabase("C:\Databases\MaineBroodstock.mdb")
+    If frmInput.chkTemplate.Value = 1 Then
+        tmpBi = frmInput.checkTemplate
+    Else
+        tmpBi = 1
+    End If
+    
+    If frmInput.txtTagCur2.Text <> "" And frmInput.txtTagCur2.Text <> tempTag And tmpBi <> -1 Then 'And ((k = 11 And Mid(txtTagCur2.Text, 4, 1) <> ".") Or Left(Right(txtTagCur2.Text, 11), 1) = ".")
+        Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].* FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] WHERE ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "])='" & frmInput.txtTagCur2.Text & "'));", dbOpenDynaset)
         
-        With dbsNew
-            Set rstCull = dbsNew.OpenRecordset("SELECT tblBroodLookup.* FROM tblBroodLookup", dbOpenDynaset)
-            With rstCull
-                If rstCull.RecordCount > 0 Then
-                    rstCull.MoveFirst
-                    Do Until rstCull.EOF
-                        If UCase(rstCull!Mark) = UCase(frmInput.txtTagCur2.Text) Then
-                            Msg = rstCull!Comments
-                            Style = vbOKOnly + vbExclamation + vbDefaultButton1
-                            Title = "Warning"
-                            Response = MsgBox(Msg, Style, Title)
-                            
-                        End If
-                        rstCull.MoveNext
-                    Loop
-                End If
-            End With
-    
-            Set rstTemp = dbsNew.OpenRecordset("SELECT tblBrood.* FROM tblBrood", dbOpenDynaset)
-            With rstTemp
-                rstTemp.MoveFirst
-                Do Until rstTemp.EOF
-reTry:
-                    If UCase(!Mark) = UCase(frmInput.txtTagCur2.Text) Then
-                        If !Gender = "M" Then
-                            frmInput.txtSex.Locked = False
-                            frmInput.txtSex.Text = "Male"
-                            frmInput.txtSex.Locked = True
-                        ElseIf !Gender = "F" Then
-                            frmInput.txtSex.Locked = False
-                            frmInput.txtSex.Text = "Female"
-                            frmInput.txtSex.Locked = True
-                        Else
-enterSex:
-                            Msg = "There is no gender entered for this tag, please enter in a sex." & Chr(13) & Chr(13) & "'M' for male, 'F' for female"
-                            Title = "Gender Identification"
-                            Default = "M"
-                            Response = InputBox(Msg, Title, Default)
-                            
-                            If Response = "M" Or Response = "m" Or Response = "F" Or Response = "f" Then
-                                rstTemp.Edit
-                                !Gender = UCase(Response)
-                                rstTemp.Update
-                                GoTo reTry
-                            ElseIf Response = "" Then
-                                GoTo inputCancel
-                            Else
-                                Msg = "Please enter in either a 'M' or an 'F' for the gender input." & Chr(13) & Chr(13) & "If you do not know the gender please use a different individual."
-                                Style = vbOKOnly + vbInformation + vbDefaultButton1
-                                Title = "Invalid Gender"
-                                Response = MsgBox(Msg, Style, Title)
-                                GoTo reTry
-                            End If
-                        End If
-                        
-                        Select Case !Drainage
-                            Case 1
-                                frmInput.txtDrainage.Text = "Penobscot"
-                            Case 11
-                                frmInput.txtDrainage.Text = "Sheepscot"
-                            Case 3
-                                frmInput.txtDrainage.Text = "NARRAGUAGUS"
-                            Case 4
-                                frmInput.txtDrainage.Text = "Pleasant"
-                            Case 5
-                                frmInput.txtDrainage.Text = "Machias"
-                            Case 6
-                                frmInput.txtDrainage.Text = "East Machias"
-                            Case 7
-                                frmInput.txtDrainage.Text = "Dennys"
-                            Case Else
-                                frmInput.txtDrainage.Text = !Drainage
-                        End Select
-                        
-                        frmInput.txtYear = rstTemp!CaptureYear
-                        
-                        GoTo Finished
-                    End If
-                    rstTemp.MoveNext
-                Loop
-                Msg = "The tag " & UCase(frmInput.txtTagCur2.Text) & " is not present in the 'tblbrood' table." & Chr(13) & "Do you wish to add it?"
-                Style = vbYesNo + vbInformation + vbDefaultButton1
-                Title = "Tag Not Present"
-                Response = MsgBox(Msg, Style, Title)
-                
-                If Response = 6 Then 'yes
-                    frmAddTag.Show 1
-                Else
-                    Msg = "Do you still wish to use this tag without entering it into 'tblBrood'?"
-                    Style = vbYesNo + vbInformation + vbDefaultButton1
-                    Title = "Tag Fate"
+        If rstTemp.RecordCount > 0 Then
+            rstTemp.MoveLast
+            rstTemp.MoveFirst
+            If frmDataSpec.chkFlag.Value = 1 Then
+                If rstTemp(frmDataSpec.cmbFlag.Text).Value <> "" Then
+                    Msg = rstTemp(frmDataSpec.cmbFlag.Text).Value
+                    Style = vbOKOnly + vbExclamation + vbDefaultButton1
+                    Title = "Flag Present"
                     Response = MsgBox(Msg, Style, Title)
-                    
-                    If Response = 6 Then 'yes
-                        frmPartialAddTag.Show 1
-                    Else
-inputCancel:
-                        Msg = "Please scan another individual."
-                        Style = vbOKOnly + vbInformation + vbDefaultButton1
-                        Title = "Scan Different Individual"
-                        Response = MsgBox(Msg, Style, Title)
-                    
-                        frmInput.txtTagCur2.Text = ""
-                        frmInput.txtTagCur2.SetFocus
-                        GoTo Finished2
-                    End If
                 End If
-            End With
-            
-Finished:
-            Set rstTemp = dbsNew.OpenRecordset("SELECT tblBroodMating.* From tblBroodMating ORDER BY tblBroodMating.TakeDate DESC , tblBroodMating.TakeTime DESC", dbOpenDynaset)
-            
-            With rstTemp
-                rstTemp.MoveFirst
-                priorSpawn = 0
-                frmInput.lstXSpawned.Clear
-                If frmInput.txtSex.Text = "Female" Then
-                    Do Until rstTemp.EOF
-                        If UCase(!Dam) = UCase(frmInput.txtTagCur2.Text) Then
-                            priorSpawn = priorSpawn + 1
-                            frmInput.lstXSpawned.AddItem priorSpawn & "   " & Format(!TakeDate, "MM/DD/YYYY")
-                        End If
-                        rstTemp.MoveNext
-                    Loop
-                End If
-                
-                If frmInput.txtSex.Text = "Male" Then
-                    Do Until rstTemp.EOF
-                        If UCase(!Sire) = UCase(frmInput.txtTagCur2.Text) Then
-                            priorSpawn = priorSpawn + 1
-                            frmInput.lstXSpawned.AddItem priorSpawn & "   " & Format(!TakeDate, "MM/DD/YYYY")
-                        End If
-                        rstTemp.MoveNext
-                    Loop
-                End If
-            End With
-        End With
+            End If
         
+reTry:
+            If UCase(rstTemp(frmDataSpec.cmbSex.Text)) = "M" Or UCase(rstTemp(frmDataSpec.cmbSex.Text)) = "MALE" Then
+                frmInput.txtSex.Text = "Male"
+            ElseIf UCase(rstTemp(frmDataSpec.cmbSex.Text)) = "F" Or UCase(rstTemp(frmDataSpec.cmbSex.Text)) = "FEMALE" Then
+                frmInput.txtSex.Text = "Female"
+            Else
+enterSex:
+                Msg = "There is no gender entered for this tag, please enter in a sex." & Chr(13) & Chr(13) & "'F' for female, 'M' for male"
+                Title = "Gender Identification"
+                Default = "M"
+                Response = InputBox(Msg, Title, Default)
+                                    
+                If UCase(Response) = "M" Or UCase(Response) = "F" Then
+                    rstTemp.Edit
+                    rstTemp(frmDataSpec.cmbSex.Text) = UCase(Response)
+                    rstTemp.Update
+                    GoTo reTry
+                ElseIf Response = "" Then
+                    GoTo inputCancel
+                Else
+                    Msg = "Please enter in either an 'F' for female or an 'M' for male for the gender input." & Chr(13) & Chr(13) & "If you do not know the gender please use a different individual."
+                    Style = vbOKOnly + vbInformation + vbDefaultButton1
+                    Title = "Invalid Gender"
+                    Response = MsgBox(Msg, Style, Title)
+                    GoTo reTry
+                End If
+            End If
+        
+            If frmDataSpec.chkPop.Value = 1 Then
+                If IsNull(rstTemp(frmDataSpec.cmbPop.Text)) = False Then
+                    frmInput.txtDrainage.Text = rstTemp(frmDataSpec.cmbPop.Text)
+                End If
+            End If
+                                    
+            If frmDataSpec.chkCohort.Value = 1 Then
+                If IsNull(rstTemp(frmDataSpec.cmbCohort.Text)) = False Then
+                    frmInput.txtYear = rstTemp(frmDataSpec.cmbCohort.Text)
+                End If
+            End If
+                                
+            GoTo Finished
+        Else
+            Msg = "The ID '" & UCase(frmInput.txtTagCur2.Text) & "' is not present in the genetics table (" & frmDataSpec.cmbGeneticsTable.Text & ")." & Chr(13) & Chr(13) & "Would you like to add this individual to the genetics table?"
+            Style = vbYesNo + vbQuestion + vbDefaultButton1
+            Title = "ID Not Present"
+            Response = MsgBox(Msg, Style, Title)
+                    
+            If Response = 6 Then 'yes
+                frmAddTag.Show 1
+            Else
+                Msg = "Do you still wish to use this tag without entering it into the genetics table?"
+                Style = vbYesNo + vbQuestion + vbDefaultButton1
+                Title = "ID Fate"
+                Response = MsgBox(Msg, Style, Title)
+                        
+                If Response = 6 Then 'yes
+                    frmPartialAddTag.Show 1
+                Else
+inputCancel:
+                    Msg = "Please enter another ID."
+                    Style = vbOKOnly + vbInformation + vbDefaultButton1
+                    Title = "Enter Different Individual"
+                    Response = MsgBox(Msg, Style, Title)
+                        
+                    'frmInput.txtTagCur2.Text = ""
+                    frmInput.txtTagCur2.SetFocus
+                    GoTo Finished2
+                End If
+            End If
+        End If
+                
+Finished:
+        Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbMatingsTable.Text & "].* FROM [" & frmDataSpec.cmbMatingsTable.Text & "] WHERE ((([" & frmDataSpec.cmbMatingsTable.Text & "].[" & frmDataSpec.cmbDamID.Text & "])='" & frmInput.txtTagCur2.Text & "')) OR ((([" & frmDataSpec.cmbMatingsTable.Text & "].[" & frmDataSpec.cmbSireID.Text & "])='" & frmInput.txtTagCur2.Text & "'));", dbOpenDynaset)
+        If rstTemp.RecordCount > 0 Then
+            rstTemp.MoveLast
+            rstTemp.MoveFirst
+            mateArray = rstTemp.GetRows(rstTemp.RecordCount)
+        
+            frmInput.lstXSpawned.Clear
+            For k = 0 To UBound(mateArray, 2)
+                If frmInput.txtSex.Text = "Female" Then
+                    frmInput.lstXSpawned.AddItem Format(mateArray(frmDataSpec.cmbDate.ListIndex, k), "MM/DD/YYYY") & "  " & mateArray(frmDataSpec.cmbSireID.ListIndex, k)
+                ElseIf frmInput.txtSex.Text = "Male" Then
+                    frmInput.lstXSpawned.AddItem Format(mateArray(frmDataSpec.cmbDate.ListIndex, k), "MM/DD/YYYY") & "  " & mateArray(frmDataSpec.cmbDamID.ListIndex, k)
+                End If
+            Next k
+        End If
+            
 Finished2:
-        dbsNew.Close
-        wrkJet.Close
     ElseIf tempTag <> UCase(frmInput.txtTagCur2.Text) Then
         frmInput.txtSex.Text = ""
         frmInput.txtDrainage.Text = ""
@@ -3475,5 +3831,145 @@ Finished2:
     End If
     
     tempTag = UCase(frmInput.txtTagCur2.Text)
-    
 End Sub
+
+Public Function setPopRelVals(tmpCount, tmpArray)
+    ReDim popRelVal(tmpCount, 1)
+    
+    For i = 0 To tmpCount
+        popRelVal(i, 0) = tmpArray(i, 0)
+        popRelVal(i, 1) = tmpArray(i, 1)
+    Next i
+End Function
+
+Public Function fillReasons() As Variant
+    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbGenComments.Text & "] FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] GROUP BY [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbGenComments.Text & "] HAVING ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbGenComments.Text & "]) Is Not Null)) ORDER BY [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbGenComments.Text & "];", dbOpenDynaset)
+    rstTemp.MoveLast
+    rstTemp.MoveFirst
+    fillReasons = rstTemp.GetRows(rstTemp.RecordCount)
+End Function
+
+Public Function addReason(tmpTag As String, tmpTagReason As String)
+    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbGenComments.Text & "] FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] WHERE ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbUniqueId.Text & "])='" & tmpTag & "'));", dbOpenDynaset)
+    rstTemp.MoveLast
+    rstTemp.MoveFirst
+    If rstTemp.RecordCount > 0 Then
+        rstTemp.Edit
+        If IsNull(rstTemp(frmDataSpec.cmbGenComments.Text)) = True Then
+            rstTemp(frmDataSpec.cmbGenComments.Text) = tmpTagReason
+        Else
+            rstTemp(frmDataSpec.cmbGenComments.Text) = rstTemp(frmDataSpec.cmbGenComments.Text) & ", " & tmpTagReason
+        End If
+        rstTemp.Update
+    Else
+        MsgBox "ID '" & tmpTagReason & "' is not present in the '" & frmDataSpec.cmbGeneticsTable.Text & "' table, therefore a reason cannot be added.", vbInformation, "ID Not Found"
+    End If
+End Function
+
+Public Function toggleTemplate()
+    If frmInput.cmbTemplate.Enabled = False Then
+        frmInput.cmbTemplate.Enabled = True
+        frmInput.cmdClearTemplate.Enabled = True
+    Else
+        frmInput.cmbTemplate.Enabled = False
+        frmInput.cmdClearTemplate.Enabled = False
+    End If
+End Function
+
+Public Function saveTemplates()
+    Open App.Path & "\template_settings.mmf" For Output As #1
+        Print #1, CStr(frmInput.chkTemplate.Value)
+        Print #1, CStr(frmInput.cmbTemplate.ListCount - 1)
+        For i = 0 To frmInput.cmbTemplate.ListCount - 1
+            Print #1, frmInput.cmbTemplate.List(i)
+        Next i
+        Print #1, frmInput.cmbTemplate.Text
+    Close #1
+End Function
+
+Public Function importTemplates()
+    If Dir(App.Path & "\template_settings.mmf") <> "" Then
+        Open App.Path & "\template_settings.mmf" For Input As #1
+            Input #1, tmpStr
+            frmInput.chkTemplate.Value = CLng(tmpStr)
+            
+            Input #1, tmpStr
+            a = CLng(tmpStr)
+            For i = 0 To a
+                Input #1, tmpStr
+                frmInput.cmbTemplate.List(i) = tmpStr
+            Next i
+            
+            Input #1, tmpStr
+            For i = 0 To a
+                If frmInput.cmbTemplate.List(i) = tmpStr Then
+                    frmInput.cmbTemplate.ListIndex = i
+                    Exit For
+                End If
+            Next i
+        Close #1
+    End If
+End Function
+
+Public Function checkTemplate() As Integer
+    tmpStr = frmInput.cmbTemplate.Text
+    checkTemplate = 1
+    
+    If frmInput.cmbTemplate.ListIndex <> -1 Then
+        If Len(frmInput.txtTagCur2.Text) <> Len(tmpStr) Then
+            checkTemplate = -1
+        Else
+            For i = 1 To Len(tmpStr)
+                If Mid(tmpStr, i, 1) <> "#" Then
+                    If Mid(frmInput.txtTagCur2.Text, i, 1) <> Mid(tmpStr, i, 1) Then
+                        checkTemplate = -1
+                        Exit For
+                    End If
+                End If
+            Next i
+        End If
+    End If
+End Function
+
+Public Function getPops(tmpType As String)
+    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbPop.Text & "] FROM [" & frmDataSpec.cmbGeneticsTable.Text & "] GROUP BY [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbPop.Text & "] HAVING ((([" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbPop.Text & "]) Is Not Null)) ORDER BY [" & frmDataSpec.cmbGeneticsTable.Text & "].[" & frmDataSpec.cmbPop.Text & "];", dbOpenDynaset)
+    rstTemp.MoveLast
+    rstTemp.MoveFirst
+    If rstTemp.RecordCount > 0 Then
+        popArray = rstTemp.GetRows(rstTemp.RecordCount)
+        For i = 0 To UBound(popArray, 2)
+            If tmpType = "full" Then
+                frmAddTag.cmbPop.List(i) = popArray(0, i)
+            Else
+                frmPartialAddTag.cmbPop.List(i) = popArray(0, i)
+            End If
+        Next i
+    End If
+    Set rstTemp = Nothing
+End Function
+
+Public Function addTag()
+    Set rstTemp = dbsNew.OpenRecordset("SELECT [" & frmDataSpec.cmbGeneticsTable.Text & "].* FROM [" & frmDataSpec.cmbGeneticsTable.Text & "];", dbOpenDynaset)
+            
+    rstTemp.AddNew
+        rstTemp(frmDataSpec.cmbUniqueId.Text) = UCase(frmAddTag.txtTagAdd.Text)
+        rstTemp(frmDataSpec.cmbSex.Text) = UCase(Left(frmAddTag.cmbGender.Text, 1))
+        If frmDataSpec.chkPop.Value = 1 Then
+            rstTemp(frmDataSpec.cmbPop.Text) = frmAddTag.cmbPop.Text
+        End If
+        If frmDataSpec.chkCohort.Value = 1 Then
+            rstTemp(frmDataSpec.cmbCohort.Text) = CLng(frmAddTag.txtCohort.Text)
+        End If
+        rstTemp(frmDataSpec.cmbComments.Text) = frmAddTag.txtComment.Text
+    rstTemp.Update
+End Function
+
+Public Function setDBase()
+    Set accessApp = CreateObject("Access.Application")
+    On Error Resume Next
+    accessApp.CloseCurrentDatabase
+    accessApp.OpenCurrentDatabase frmDataSpec.txtDBFile.ToolTipText, False
+    On Error GoTo 0
+    Set dbsNew = accessApp.CurrentDb
+End Function
+

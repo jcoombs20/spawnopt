@@ -1,33 +1,34 @@
 VERSION 5.00
 Begin VB.Form frmPartialAddTag 
-   Caption         =   "Tag Information"
-   ClientHeight    =   1965
+   Caption         =   "Add Individual"
+   ClientHeight    =   1890
    ClientLeft      =   3510
    ClientTop       =   2730
-   ClientWidth     =   8265
+   ClientWidth     =   8415
    Icon            =   "frmPartialAddTag.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1965
-   ScaleWidth      =   8265
+   ScaleHeight     =   1890
+   ScaleWidth      =   8415
    StartUpPosition =   2  'CenterScreen
-   Begin VB.TextBox txtYear 
+   Begin VB.TextBox txtCohort 
       Alignment       =   2  'Center
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   465
-      Left            =   6720
-      TabIndex        =   2
-      ToolTipText     =   "PIT tag of individual that is currently being spawned"
-      Top             =   600
+      Height          =   390
+      Left            =   7200
+      TabIndex        =   3
+      ToolTipText     =   "Cohort of individual to be added"
+      Top             =   480
       Width           =   975
    End
    Begin VB.CommandButton cmdCancel 
@@ -42,14 +43,15 @@ Begin VB.Form frmPartialAddTag
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   120
-      TabIndex        =   4
+      Left            =   240
+      TabIndex        =   5
       ToolTipText     =   "Closes form without adding the current individual's information to the 'Input Form'"
-      Top             =   1320
+      Top             =   1200
       Width           =   1335
    End
    Begin VB.CommandButton cmdAddTag 
-      Caption         =   "Add Tag"
+      BackColor       =   &H0080FF80&
+      Caption         =   "Add"
       BeginProperty Font 
          Name            =   "Arial Narrow"
          Size            =   12
@@ -60,151 +62,155 @@ Begin VB.Form frmPartialAddTag
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   6720
-      TabIndex        =   3
+      Left            =   6840
+      Style           =   1  'Graphical
+      TabIndex        =   4
       ToolTipText     =   "Adds the above information to the 'Input Form'"
-      Top             =   1320
+      Top             =   1200
       Width           =   1335
    End
    Begin VB.ComboBox cmbGender 
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      ItemData        =   "frmPartialAddTag.frx":0CCA
-      Left            =   4560
-      List            =   "frmPartialAddTag.frx":0CD4
+      Height          =   390
+      ItemData        =   "frmPartialAddTag.frx":048A
+      Left            =   3000
+      List            =   "frmPartialAddTag.frx":0494
       Style           =   2  'Dropdown List
       TabIndex        =   1
-      ToolTipText     =   "Gender of individual that is currently being spawned"
-      Top             =   600
-      Width           =   1575
+      ToolTipText     =   "Gender of individual to be added"
+      Top             =   480
+      Width           =   1455
    End
    Begin VB.TextBox txtTagAdd 
       Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   465
-      Left            =   120
+      Height          =   390
+      Left            =   240
       Locked          =   -1  'True
-      TabIndex        =   5
+      TabIndex        =   0
       TabStop         =   0   'False
-      ToolTipText     =   "PIT tag of individual that is currently being spawned"
-      Top             =   600
-      Width           =   1935
+      ToolTipText     =   "Unique ID of individual that is currently being added"
+      Top             =   480
+      Width           =   2415
    End
-   Begin VB.ComboBox cmbDrainage 
+   Begin VB.ComboBox cmbPop 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
-      ItemData        =   "frmPartialAddTag.frx":0CE6
-      Left            =   2400
-      List            =   "frmPartialAddTag.frx":0CFF
-      Style           =   2  'Dropdown List
-      TabIndex        =   0
-      ToolTipText     =   "Drainage of origin of individual that is currently being spawned"
-      Top             =   600
-      Width           =   1935
+      Height          =   390
+      ItemData        =   "frmPartialAddTag.frx":04A6
+      Left            =   4800
+      List            =   "frmPartialAddTag.frx":04BF
+      TabIndex        =   2
+      ToolTipText     =   "Population of the individual to be added"
+      Top             =   480
+      Width           =   2055
    End
    Begin VB.Label Label5 
       Alignment       =   2  'Center
       BackColor       =   &H00C0C0C0&
       BackStyle       =   0  'Transparent
-      Caption         =   "PIT Tag"
+      Caption         =   "ID"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   360
+      Left            =   720
       TabIndex        =   8
       Top             =   120
       Width           =   1455
    End
-   Begin VB.Label Label2 
+   Begin VB.Label lblCohort 
       Alignment       =   2  'Center
       BackColor       =   &H00C0C0C0&
       BackStyle       =   0  'Transparent
-      Caption         =   "Capture Year"
+      Caption         =   "Cohort"
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   6240
+      Left            =   6720
       TabIndex        =   9
       Top             =   120
       Width           =   1935
    End
-   Begin VB.Label Label1 
+   Begin VB.Label lblPop 
       Alignment       =   2  'Center
       BackColor       =   &H00C0C0C0&
       BackStyle       =   0  'Transparent
-      Caption         =   "Drainage"
+      Caption         =   "Population"
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   2520
+      Left            =   4920
       TabIndex        =   7
+      ToolTipText     =   "Population of individual to be added"
       Top             =   120
-      Width           =   1455
+      Width           =   1815
    End
    Begin VB.Label Label4 
       Alignment       =   2  'Center
       BackColor       =   &H00C0C0C0&
       BackStyle       =   0  'Transparent
-      Caption         =   "Gender"
+      Caption         =   "Sex"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
+         Weight          =   700
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4680
+      Left            =   3000
       TabIndex        =   6
       Top             =   120
-      Width           =   1215
+      Width           =   1455
    End
 End
 Attribute VB_Name = "frmPartialAddTag"
@@ -216,19 +222,9 @@ Option Explicit
 Dim Msg, Style, Title, Response
 
 Private Sub cmdAddTag_Click()
-    If frmPartialAddTag.cmbDrainage.Text = "" Then
-        Msg = "Please fill in the 'Drainage' field."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
-        Title = "Missing Drainage"
-        Response = MsgBox(Msg, Style, Title)
-        
-        frmPartialAddTag.cmbDrainage.SetFocus
-        Exit Sub
-    End If
-
     If frmPartialAddTag.cmbGender.Text = "" Then
-        Msg = "Please fill in the 'Gender' field."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Msg = "Please fill in the 'Sex' field."
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
         Title = "Missing Gender"
         Response = MsgBox(Msg, Style, Title)
         
@@ -236,21 +232,29 @@ Private Sub cmdAddTag_Click()
         Exit Sub
     End If
     
-    If frmPartialAddTag.txtYear.Text = "" Then
-        Msg = "Please fill in the 'Capture Year' field."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
-        Title = "Missing Year"
+    If frmPartialAddTag.cmbPop.Enabled = True And frmPartialAddTag.cmbPop.Text = "" Then
+        Msg = "Please fill in the 'Population' field."
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
+        Title = "Missing Population"
         Response = MsgBox(Msg, Style, Title)
         
-        frmPartialAddTag.txtYear.SetFocus
+        frmPartialAddTag.cmbPop.SetFocus
         Exit Sub
     End If
-    
-    frmInput.txtDrainage.Text = frmPartialAddTag.cmbDrainage.Text
-    
+
+    If frmPartialAddTag.txtCohort.Enabled = True And frmPartialAddTag.txtCohort.Text = "" Then
+        Msg = "Please fill in the 'Cohort' field."
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
+        Title = "Missing Cohort"
+        Response = MsgBox(Msg, Style, Title)
+        
+        frmPartialAddTag.txtCohort.SetFocus
+        Exit Sub
+    End If
+            
     frmInput.txtSex.Text = frmPartialAddTag.cmbGender.Text
-    
-    frmInput.txtYear.Text = frmPartialAddTag.txtYear.Text
+    frmInput.txtDrainage.Text = frmPartialAddTag.cmbPop.Text
+    frmInput.txtYear.Text = frmPartialAddTag.txtCohort.Text
     
     Unload frmPartialAddTag
 End Sub
@@ -263,4 +267,16 @@ Private Sub Form_Load()
     frmPartialAddTag.txtTagAdd.Locked = False
     frmPartialAddTag.txtTagAdd.Text = frmInput.txtTagCur2.Text
     frmPartialAddTag.txtTagAdd.Locked = True
+    
+    If frmDataSpec.chkPop.Value = 1 Then
+        frmPartialAddTag.lblPop.Enabled = True
+        frmPartialAddTag.cmbPop.Enabled = True
+        Call frmInput.getPops("partial")
+    End If
+    
+    If frmDataSpec.chkCohort.Value = 1 Then
+        frmPartialAddTag.lblCohort.Enabled = True
+        frmPartialAddTag.txtCohort.Enabled = True
+    End If
+
 End Sub

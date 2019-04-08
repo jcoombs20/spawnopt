@@ -4,13 +4,13 @@ Begin VB.Form frmComment
    ClientHeight    =   2655
    ClientLeft      =   4695
    ClientTop       =   2475
-   ClientWidth     =   5775
+   ClientWidth     =   7005
    Icon            =   "frmComment.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   2655
-   ScaleWidth      =   5775
+   ScaleWidth      =   7005
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton cmdRemove 
       Caption         =   "Remove Comment"
@@ -25,8 +25,10 @@ Begin VB.Form frmComment
       EndProperty
       Height          =   465
       Left            =   120
+      MouseIcon       =   "frmComment.frx":048A
+      MousePointer    =   99  'Custom
       TabIndex        =   3
-      ToolTipText     =   "Closes the form without saving the comment"
+      ToolTipText     =   "Removes the comment from the corresponding mating pair in the matings table"
       Top             =   2040
       Width           =   2175
    End
@@ -43,11 +45,12 @@ Begin VB.Form frmComment
       Height          =   1695
       Left            =   120
       TabIndex        =   0
-      ToolTipText     =   "Comment to add to corresponding spawning pair"
+      ToolTipText     =   "Comment to add to corresponding mating pair in the matings table"
       Top             =   120
-      Width           =   5535
+      Width           =   6735
    End
    Begin VB.CommandButton cmdAddComment 
+      BackColor       =   &H0080FF80&
       Caption         =   "Add Comment"
       BeginProperty Font 
          Name            =   "Arial"
@@ -59,9 +62,12 @@ Begin VB.Form frmComment
          Strikethrough   =   0   'False
       EndProperty
       Height          =   465
-      Left            =   3960
+      Left            =   5160
+      MouseIcon       =   "frmComment.frx":05DC
+      MousePointer    =   99  'Custom
+      Style           =   1  'Graphical
       TabIndex        =   1
-      ToolTipText     =   "Adds comment to corresponding spawning pair"
+      ToolTipText     =   "Adds comment to corresponding mating pair in the matings table"
       Top             =   2040
       Width           =   1695
    End
@@ -77,9 +83,11 @@ Begin VB.Form frmComment
          Strikethrough   =   0   'False
       EndProperty
       Height          =   465
-      Left            =   2520
+      Left            =   3120
+      MouseIcon       =   "frmComment.frx":072E
+      MousePointer    =   99  'Custom
       TabIndex        =   2
-      ToolTipText     =   "Closes the form without saving the comment"
+      ToolTipText     =   "Cancels adding a comment for the corresponding mating pair in the matings table"
       Top             =   2040
       Width           =   1215
    End
@@ -95,7 +103,7 @@ Dim Msg, Style, Title, Response
 Private Sub cmdAddComment_Click()
     If frmComment.txtComment.Text = "" Then
         Msg = "There is no comment to add." & Chr(13) & Chr(13) & "Please either enter a comment or cancel the form."
-        Style = vbOKOnly + vbCritical + vbDefaultButton1
+        Style = vbOKOnly + vbInformation + vbDefaultButton1
         Title = "No Comment"
         Response = MsgBox(Msg, Style, Title)
         
