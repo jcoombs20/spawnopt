@@ -12,6 +12,27 @@ Begin VB.Form frmInput
    ScaleHeight     =   8535
    ScaleWidth      =   13695
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton cmdClearFamIDPrefix 
+      Caption         =   "Clear"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   7680
+      MouseIcon       =   "Input Form.frx":048A
+      MousePointer    =   99  'Custom
+      TabIndex        =   54
+      ToolTipText     =   "Clear the list of ID template options"
+      Top             =   8040
+      Width           =   975
+   End
    Begin VB.ComboBox cmbFamIDPrefix 
       Enabled         =   0   'False
       BeginProperty Font 
@@ -24,12 +45,12 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   390
-      Left            =   5040
-      MouseIcon       =   "Input Form.frx":048A
+      Left            =   4680
+      MouseIcon       =   "Input Form.frx":05DC
       MousePointer    =   99  'Custom
-      TabIndex        =   113
-      ToolTipText     =   $"Input Form.frx":05DC
-      Top             =   7920
+      TabIndex        =   53
+      ToolTipText     =   $"Input Form.frx":072E
+      Top             =   8040
       Width           =   2895
    End
    Begin VB.CheckBox chkFamIDPrefix 
@@ -44,11 +65,11 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   2520
-      MouseIcon       =   "Input Form.frx":0697
+      Left            =   2160
+      MouseIcon       =   "Input Form.frx":07E9
       MousePointer    =   99  'Custom
-      TabIndex        =   112
-      ToolTipText     =   $"Input Form.frx":07E9
+      TabIndex        =   52
+      ToolTipText     =   $"Input Form.frx":093B
       Top             =   8040
       Width           =   2535
    End
@@ -65,10 +86,9 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   405
       Left            =   2760
-      MouseIcon       =   "Input Form.frx":089B
+      MouseIcon       =   "Input Form.frx":09ED
       MousePointer    =   99  'Custom
-      TabIndex        =   111
-      TabStop         =   0   'False
+      TabIndex        =   7
       ToolTipText     =   "Update the cohort of the current individual"
       Top             =   4800
       Width           =   855
@@ -86,10 +106,9 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   405
       Left            =   2760
-      MouseIcon       =   "Input Form.frx":09ED
+      MouseIcon       =   "Input Form.frx":0B3F
       MousePointer    =   99  'Custom
-      TabIndex        =   110
-      TabStop         =   0   'False
+      TabIndex        =   6
       ToolTipText     =   "Update the population of the current individual"
       Top             =   3840
       Width           =   855
@@ -108,11 +127,11 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Left            =   840
-      MouseIcon       =   "Input Form.frx":0B3F
+      MouseIcon       =   "Input Form.frx":0C91
       MousePointer    =   99  'Custom
-      TabIndex        =   109
+      TabIndex        =   4
       ToolTipText     =   "Clear the list of ID template options"
-      Top             =   2040
+      Top             =   1920
       Width           =   2055
    End
    Begin VB.ComboBox cmbTemplate 
@@ -128,10 +147,10 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   390
       Left            =   120
-      MouseIcon       =   "Input Form.frx":0C91
+      MouseIcon       =   "Input Form.frx":0DE3
       MousePointer    =   99  'Custom
-      TabIndex        =   108
-      ToolTipText     =   $"Input Form.frx":0DE3
+      TabIndex        =   3
+      ToolTipText     =   $"Input Form.frx":0F35
       Top             =   1440
       Width           =   3495
    End
@@ -148,11 +167,11 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   255
       Left            =   120
-      MouseIcon       =   "Input Form.frx":0E9E
+      MouseIcon       =   "Input Form.frx":0FF0
       MousePointer    =   99  'Custom
-      TabIndex        =   107
-      ToolTipText     =   $"Input Form.frx":0FF0
-      Top             =   960
+      TabIndex        =   2
+      ToolTipText     =   $"Input Form.frx":1142
+      Top             =   1080
       Width           =   2655
    End
    Begin VB.CommandButton cmdClearTag 
@@ -168,7 +187,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Left            =   2760
-      MouseIcon       =   "Input Form.frx":10A2
+      MouseIcon       =   "Input Form.frx":11F4
       MousePointer    =   99  'Custom
       TabIndex        =   1
       ToolTipText     =   "Remove the entered ID"
@@ -188,10 +207,9 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   405
       Left            =   2760
-      MouseIcon       =   "Input Form.frx":11F4
+      MouseIcon       =   "Input Form.frx":1346
       MousePointer    =   99  'Custom
-      TabIndex        =   103
-      TabStop         =   0   'False
+      TabIndex        =   5
       ToolTipText     =   "Update the gender of the current individual"
       Top             =   2880
       Width           =   855
@@ -201,9 +219,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   10
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":1346
+      MouseIcon       =   "Input Form.frx":1498
       MousePointer    =   99  'Custom
-      TabIndex        =   102
+      TabIndex        =   49
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   7080
       Value           =   1  'Checked
@@ -215,9 +233,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   9
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":1498
+      MouseIcon       =   "Input Form.frx":15EA
       MousePointer    =   99  'Custom
-      TabIndex        =   101
+      TabIndex        =   47
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   6480
       Value           =   1  'Checked
@@ -229,9 +247,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   8
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":15EA
+      MouseIcon       =   "Input Form.frx":173C
       MousePointer    =   99  'Custom
-      TabIndex        =   100
+      TabIndex        =   45
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   5880
       Value           =   1  'Checked
@@ -243,9 +261,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   7
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":173C
+      MouseIcon       =   "Input Form.frx":188E
       MousePointer    =   99  'Custom
-      TabIndex        =   99
+      TabIndex        =   43
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   5280
       Value           =   1  'Checked
@@ -257,9 +275,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   6
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":188E
+      MouseIcon       =   "Input Form.frx":19E0
       MousePointer    =   99  'Custom
-      TabIndex        =   98
+      TabIndex        =   41
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   4680
       Value           =   1  'Checked
@@ -271,9 +289,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   5
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":19E0
+      MouseIcon       =   "Input Form.frx":1B32
       MousePointer    =   99  'Custom
-      TabIndex        =   97
+      TabIndex        =   39
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   4080
       Value           =   1  'Checked
@@ -285,9 +303,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   4
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":1B32
+      MouseIcon       =   "Input Form.frx":1C84
       MousePointer    =   99  'Custom
-      TabIndex        =   96
+      TabIndex        =   37
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   3480
       Value           =   1  'Checked
@@ -299,9 +317,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   3
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":1C84
+      MouseIcon       =   "Input Form.frx":1DD6
       MousePointer    =   99  'Custom
-      TabIndex        =   95
+      TabIndex        =   35
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   2880
       Value           =   1  'Checked
@@ -313,9 +331,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   2
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":1DD6
+      MouseIcon       =   "Input Form.frx":1F28
       MousePointer    =   99  'Custom
-      TabIndex        =   94
+      TabIndex        =   33
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   2280
       Value           =   1  'Checked
@@ -327,9 +345,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   1
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":1F28
+      MouseIcon       =   "Input Form.frx":207A
       MousePointer    =   99  'Custom
-      TabIndex        =   93
+      TabIndex        =   31
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   1680
       Value           =   1  'Checked
@@ -341,9 +359,9 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   0
       Left            =   9240
-      MouseIcon       =   "Input Form.frx":207A
+      MouseIcon       =   "Input Form.frx":21CC
       MousePointer    =   99  'Custom
-      TabIndex        =   92
+      TabIndex        =   29
       ToolTipText     =   "If checked, then male is available for creation of mating pairs. If not checked, male will be ignored."
       Top             =   1080
       Value           =   1  'Checked
@@ -363,9 +381,9 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   120
-      MouseIcon       =   "Input Form.frx":21CC
+      MouseIcon       =   "Input Form.frx":231E
       MousePointer    =   99  'Custom
-      TabIndex        =   38
+      TabIndex        =   57
       ToolTipText     =   "Close this form"
       Top             =   7920
       Width           =   1335
@@ -382,14 +400,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   270
-      Left            =   9000
-      MouseIcon       =   "Input Form.frx":231E
+      Left            =   9360
+      MouseIcon       =   "Input Form.frx":2470
       MousePointer    =   99  'Custom
-      TabIndex        =   35
+      TabIndex        =   55
       TabStop         =   0   'False
-      ToolTipText     =   $"Input Form.frx":2470
+      ToolTipText     =   $"Input Form.frx":25C2
       Top             =   8040
-      Value           =   1  'Checked
       Width           =   2175
    End
    Begin VB.ListBox lstXSpawned 
@@ -404,7 +421,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   960
       Left            =   120
-      TabIndex        =   2
+      TabIndex        =   59
       TabStop         =   0   'False
       ToolTipText     =   "List of prior mating dates and mates for the current individual"
       Top             =   5760
@@ -424,7 +441,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   9
       Left            =   4200
-      TabIndex        =   22
+      TabIndex        =   27
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   6480
       Visible         =   0   'False
@@ -444,7 +461,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   8
       Left            =   4200
-      TabIndex        =   20
+      TabIndex        =   25
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   5880
       Visible         =   0   'False
@@ -464,7 +481,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   7
       Left            =   4200
-      TabIndex        =   18
+      TabIndex        =   23
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   5280
       Visible         =   0   'False
@@ -484,7 +501,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   6
       Left            =   4200
-      TabIndex        =   16
+      TabIndex        =   21
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   4680
       Visible         =   0   'False
@@ -504,7 +521,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   5
       Left            =   4200
-      TabIndex        =   14
+      TabIndex        =   19
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   4080
       Visible         =   0   'False
@@ -524,7 +541,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   4
       Left            =   4200
-      TabIndex        =   12
+      TabIndex        =   17
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   3480
       Visible         =   0   'False
@@ -544,7 +561,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   3
       Left            =   4200
-      TabIndex        =   10
+      TabIndex        =   15
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   2880
       Visible         =   0   'False
@@ -564,7 +581,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   2
       Left            =   4200
-      TabIndex        =   8
+      TabIndex        =   13
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   2280
       Visible         =   0   'False
@@ -584,7 +601,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   1
       Left            =   4200
-      TabIndex        =   6
+      TabIndex        =   11
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   1680
       Visible         =   0   'False
@@ -604,7 +621,7 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   0
       Left            =   4200
-      TabIndex        =   4
+      TabIndex        =   9
       ToolTipText     =   "Family ID number associated with the female"
       Top             =   1080
       Visible         =   0   'False
@@ -623,7 +640,7 @@ Begin VB.Form frmInput
       Height          =   405
       Left            =   120
       Locked          =   -1  'True
-      TabIndex        =   88
+      TabIndex        =   108
       TabStop         =   0   'False
       ToolTipText     =   "Population of the current individual"
       Top             =   3840
@@ -660,10 +677,10 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   840
-      MouseIcon       =   "Input Form.frx":2514
+      MouseIcon       =   "Input Form.frx":2666
       MousePointer    =   99  'Custom
       Style           =   1  'Graphical
-      TabIndex        =   3
+      TabIndex        =   8
       ToolTipText     =   "Add the current ID to the first open female or male slot"
       Top             =   6840
       Width           =   2055
@@ -681,7 +698,7 @@ Begin VB.Form frmInput
       Height          =   405
       Left            =   120
       Locked          =   -1  'True
-      TabIndex        =   86
+      TabIndex        =   58
       TabStop         =   0   'False
       ToolTipText     =   "Gender of the current individual"
       Top             =   2880
@@ -702,7 +719,7 @@ Begin VB.Form frmInput
       Left            =   240
       LinkItem        =   "Field(1)"
       LinkTopic       =   "winwedge|COM1"
-      TabIndex        =   85
+      TabIndex        =   106
       Top             =   480
       Width           =   1815
    End
@@ -719,9 +736,9 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   8160
-      MouseIcon       =   "Input Form.frx":2666
+      MouseIcon       =   "Input Form.frx":27B8
       MousePointer    =   99  'Custom
-      TabIndex        =   37
+      TabIndex        =   51
       ToolTipText     =   "Clears all data for mating individuals"
       Top             =   6960
       Width           =   1335
@@ -740,10 +757,10 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   12240
-      MouseIcon       =   "Input Form.frx":27B8
+      MouseIcon       =   "Input Form.frx":290A
       MousePointer    =   99  'Custom
       Style           =   1  'Graphical
-      TabIndex        =   36
+      TabIndex        =   56
       ToolTipText     =   "Create mating pairs based on the 'Optimize Matings' setting"
       Top             =   7920
       Width           =   1335
@@ -762,9 +779,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   10
       Left            =   12480
-      MouseIcon       =   "Input Form.frx":290A
+      MouseIcon       =   "Input Form.frx":2A5C
       MousePointer    =   99  'Custom
-      TabIndex        =   34
+      TabIndex        =   50
       ToolTipText     =   "Remove this male's unique ID"
       Top             =   7080
       Visible         =   0   'False
@@ -785,7 +802,7 @@ Begin VB.Form frmInput
       Index           =   10
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   80
+      TabIndex        =   101
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
       Top             =   7080
@@ -806,9 +823,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   9
       Left            =   12480
-      MouseIcon       =   "Input Form.frx":2A5C
+      MouseIcon       =   "Input Form.frx":2BAE
       MousePointer    =   99  'Custom
-      TabIndex        =   33
+      TabIndex        =   48
       ToolTipText     =   "Remove this male's unique ID"
       Top             =   6480
       Visible         =   0   'False
@@ -829,7 +846,7 @@ Begin VB.Form frmInput
       Index           =   9
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   78
+      TabIndex        =   99
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
       Top             =   6480
@@ -849,56 +866,12 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   12480
-      MouseIcon       =   "Input Form.frx":2BAE
-      MousePointer    =   99  'Custom
-      TabIndex        =   32
-      ToolTipText     =   "Remove this male's unique ID"
-      Top             =   5880
-      Visible         =   0   'False
-      Width           =   735
-   End
-   Begin VB.TextBox txtTagMale 
-      Alignment       =   2  'Center
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   360
-      Index           =   8
-      Left            =   10200
-      Locked          =   -1  'True
-      TabIndex        =   76
-      TabStop         =   0   'False
-      ToolTipText     =   "Unique ID for mating male"
-      Top             =   5880
-      Visible         =   0   'False
-      Width           =   2055
-   End
-   Begin VB.CommandButton cmdClearM 
-      Caption         =   "Clear"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   360
-      Index           =   7
       Left            =   12480
       MouseIcon       =   "Input Form.frx":2D00
       MousePointer    =   99  'Custom
-      TabIndex        =   31
+      TabIndex        =   46
       ToolTipText     =   "Remove this male's unique ID"
-      Top             =   5280
+      Top             =   5880
       Visible         =   0   'False
       Width           =   735
    End
@@ -914,13 +887,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   7
+      Index           =   8
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   74
+      TabIndex        =   97
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
-      Top             =   5280
+      Top             =   5880
       Visible         =   0   'False
       Width           =   2055
    End
@@ -936,13 +909,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   6
+      Index           =   7
       Left            =   12480
       MouseIcon       =   "Input Form.frx":2E52
       MousePointer    =   99  'Custom
-      TabIndex        =   30
+      TabIndex        =   44
       ToolTipText     =   "Remove this male's unique ID"
-      Top             =   4680
+      Top             =   5280
       Visible         =   0   'False
       Width           =   735
    End
@@ -958,13 +931,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   6
+      Index           =   7
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   72
+      TabIndex        =   95
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
-      Top             =   4680
+      Top             =   5280
       Visible         =   0   'False
       Width           =   2055
    End
@@ -980,13 +953,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   5
+      Index           =   6
       Left            =   12480
       MouseIcon       =   "Input Form.frx":2FA4
       MousePointer    =   99  'Custom
-      TabIndex        =   29
+      TabIndex        =   42
       ToolTipText     =   "Remove this male's unique ID"
-      Top             =   4080
+      Top             =   4680
       Visible         =   0   'False
       Width           =   735
    End
@@ -1002,13 +975,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   5
+      Index           =   6
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   70
+      TabIndex        =   93
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
-      Top             =   4080
+      Top             =   4680
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1024,13 +997,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   4
+      Index           =   5
       Left            =   12480
       MouseIcon       =   "Input Form.frx":30F6
       MousePointer    =   99  'Custom
-      TabIndex        =   28
+      TabIndex        =   40
       ToolTipText     =   "Remove this male's unique ID"
-      Top             =   3480
+      Top             =   4080
       Visible         =   0   'False
       Width           =   735
    End
@@ -1046,13 +1019,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   4
+      Index           =   5
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   68
+      TabIndex        =   91
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
-      Top             =   3480
+      Top             =   4080
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1068,13 +1041,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   3
+      Index           =   4
       Left            =   12480
       MouseIcon       =   "Input Form.frx":3248
       MousePointer    =   99  'Custom
-      TabIndex        =   27
+      TabIndex        =   38
       ToolTipText     =   "Remove this male's unique ID"
-      Top             =   2880
+      Top             =   3480
       Visible         =   0   'False
       Width           =   735
    End
@@ -1090,13 +1063,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   3
+      Index           =   4
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   66
+      TabIndex        =   89
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
-      Top             =   2880
+      Top             =   3480
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1112,13 +1085,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   2
+      Index           =   3
       Left            =   12480
       MouseIcon       =   "Input Form.frx":339A
       MousePointer    =   99  'Custom
-      TabIndex        =   26
+      TabIndex        =   36
       ToolTipText     =   "Remove this male's unique ID"
-      Top             =   2280
+      Top             =   2880
       Visible         =   0   'False
       Width           =   735
    End
@@ -1134,13 +1107,13 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   2
+      Index           =   3
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   64
+      TabIndex        =   87
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
-      Top             =   2280
+      Top             =   2880
       Visible         =   0   'False
       Width           =   2055
    End
@@ -1156,11 +1129,55 @@ Begin VB.Form frmInput
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Index           =   1
+      Index           =   2
       Left            =   12480
       MouseIcon       =   "Input Form.frx":34EC
       MousePointer    =   99  'Custom
-      TabIndex        =   25
+      TabIndex        =   34
+      ToolTipText     =   "Remove this male's unique ID"
+      Top             =   2280
+      Visible         =   0   'False
+      Width           =   735
+   End
+   Begin VB.TextBox txtTagMale 
+      Alignment       =   2  'Center
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Index           =   2
+      Left            =   10200
+      Locked          =   -1  'True
+      TabIndex        =   85
+      TabStop         =   0   'False
+      ToolTipText     =   "Unique ID for mating male"
+      Top             =   2280
+      Visible         =   0   'False
+      Width           =   2055
+   End
+   Begin VB.CommandButton cmdClearM 
+      Caption         =   "Clear"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Index           =   1
+      Left            =   12480
+      MouseIcon       =   "Input Form.frx":363E
+      MousePointer    =   99  'Custom
+      TabIndex        =   32
       ToolTipText     =   "Remove this male's unique ID"
       Top             =   1680
       Visible         =   0   'False
@@ -1181,7 +1198,7 @@ Begin VB.Form frmInput
       Index           =   1
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   62
+      TabIndex        =   83
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
       Top             =   1680
@@ -1202,9 +1219,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   0
       Left            =   12480
-      MouseIcon       =   "Input Form.frx":363E
+      MouseIcon       =   "Input Form.frx":3790
       MousePointer    =   99  'Custom
-      TabIndex        =   24
+      TabIndex        =   30
       ToolTipText     =   "Remove this male's unique ID"
       Top             =   1080
       Visible         =   0   'False
@@ -1225,7 +1242,7 @@ Begin VB.Form frmInput
       Index           =   0
       Left            =   10200
       Locked          =   -1  'True
-      TabIndex        =   60
+      TabIndex        =   81
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating male"
       Top             =   1080
@@ -1246,9 +1263,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   9
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":3790
+      MouseIcon       =   "Input Form.frx":38E2
       MousePointer    =   99  'Custom
-      TabIndex        =   23
+      TabIndex        =   28
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   6480
       Visible         =   0   'False
@@ -1269,7 +1286,7 @@ Begin VB.Form frmInput
       Index           =   9
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   58
+      TabIndex        =   79
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   6480
@@ -1290,9 +1307,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   8
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":38E2
+      MouseIcon       =   "Input Form.frx":3A34
       MousePointer    =   99  'Custom
-      TabIndex        =   21
+      TabIndex        =   26
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   5880
       Visible         =   0   'False
@@ -1313,7 +1330,7 @@ Begin VB.Form frmInput
       Index           =   8
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   56
+      TabIndex        =   77
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   5880
@@ -1334,9 +1351,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   7
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":3A34
+      MouseIcon       =   "Input Form.frx":3B86
       MousePointer    =   99  'Custom
-      TabIndex        =   19
+      TabIndex        =   24
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   5280
       Visible         =   0   'False
@@ -1357,7 +1374,7 @@ Begin VB.Form frmInput
       Index           =   7
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   54
+      TabIndex        =   75
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   5280
@@ -1378,9 +1395,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   6
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":3B86
+      MouseIcon       =   "Input Form.frx":3CD8
       MousePointer    =   99  'Custom
-      TabIndex        =   17
+      TabIndex        =   22
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   4680
       Visible         =   0   'False
@@ -1401,7 +1418,7 @@ Begin VB.Form frmInput
       Index           =   6
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   52
+      TabIndex        =   73
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   4680
@@ -1422,9 +1439,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   5
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":3CD8
+      MouseIcon       =   "Input Form.frx":3E2A
       MousePointer    =   99  'Custom
-      TabIndex        =   15
+      TabIndex        =   20
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   4080
       Visible         =   0   'False
@@ -1445,7 +1462,7 @@ Begin VB.Form frmInput
       Index           =   5
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   50
+      TabIndex        =   71
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   4080
@@ -1466,9 +1483,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   4
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":3E2A
+      MouseIcon       =   "Input Form.frx":3F7C
       MousePointer    =   99  'Custom
-      TabIndex        =   13
+      TabIndex        =   18
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   3480
       Visible         =   0   'False
@@ -1489,7 +1506,7 @@ Begin VB.Form frmInput
       Index           =   4
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   48
+      TabIndex        =   69
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   3480
@@ -1510,9 +1527,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   3
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":3F7C
+      MouseIcon       =   "Input Form.frx":40CE
       MousePointer    =   99  'Custom
-      TabIndex        =   11
+      TabIndex        =   16
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   2880
       Visible         =   0   'False
@@ -1533,7 +1550,7 @@ Begin VB.Form frmInput
       Index           =   3
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   46
+      TabIndex        =   67
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   2880
@@ -1554,9 +1571,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   2
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":40CE
+      MouseIcon       =   "Input Form.frx":4220
       MousePointer    =   99  'Custom
-      TabIndex        =   9
+      TabIndex        =   14
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   2280
       Visible         =   0   'False
@@ -1577,7 +1594,7 @@ Begin VB.Form frmInput
       Index           =   2
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   44
+      TabIndex        =   65
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   2280
@@ -1598,9 +1615,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   1
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":4220
+      MouseIcon       =   "Input Form.frx":4372
       MousePointer    =   99  'Custom
-      TabIndex        =   7
+      TabIndex        =   12
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   1680
       Visible         =   0   'False
@@ -1621,7 +1638,7 @@ Begin VB.Form frmInput
       Index           =   1
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   42
+      TabIndex        =   63
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   1680
@@ -1642,9 +1659,9 @@ Begin VB.Form frmInput
       Height          =   360
       Index           =   0
       Left            =   7680
-      MouseIcon       =   "Input Form.frx":4372
+      MouseIcon       =   "Input Form.frx":44C4
       MousePointer    =   99  'Custom
-      TabIndex        =   5
+      TabIndex        =   10
       ToolTipText     =   "Remove this female's unique ID"
       Top             =   1080
       Visible         =   0   'False
@@ -1665,7 +1682,7 @@ Begin VB.Form frmInput
       Index           =   0
       Left            =   5400
       Locked          =   -1  'True
-      TabIndex        =   40
+      TabIndex        =   61
       TabStop         =   0   'False
       ToolTipText     =   "Unique ID for mating female"
       Top             =   1080
@@ -1684,7 +1701,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   405
       Left            =   120
-      TabIndex        =   105
+      TabIndex        =   113
       TabStop         =   0   'False
       ToolTipText     =   "Cohort of the current individual"
       Top             =   4800
@@ -1705,7 +1722,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   375
       Left            =   6480
-      TabIndex        =   106
+      TabIndex        =   114
       Top             =   90
       Width           =   4935
    End
@@ -1723,7 +1740,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   120
-      TabIndex        =   104
+      TabIndex        =   112
       Top             =   4440
       Width           =   1935
    End
@@ -1742,7 +1759,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   9000
-      TabIndex        =   91
+      TabIndex        =   111
       ToolTipText     =   "PIT tag number for spawning male"
       Top             =   720
       Width           =   735
@@ -1770,7 +1787,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   3960
-      TabIndex        =   90
+      TabIndex        =   110
       ToolTipText     =   "3 digit ID number for female-male spawning"
       Top             =   720
       Width           =   1455
@@ -1789,7 +1806,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   120
-      TabIndex        =   89
+      TabIndex        =   109
       Top             =   3480
       Width           =   1575
    End
@@ -1807,7 +1824,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   120
-      TabIndex        =   87
+      TabIndex        =   107
       Top             =   5400
       Width           =   2175
    End
@@ -1825,7 +1842,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   120
-      TabIndex        =   84
+      TabIndex        =   105
       Top             =   2520
       Width           =   1215
    End
@@ -1843,7 +1860,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   120
-      TabIndex        =   83
+      TabIndex        =   104
       Top             =   120
       Width           =   1935
    End
@@ -1862,7 +1879,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   10440
-      TabIndex        =   82
+      TabIndex        =   103
       ToolTipText     =   "PIT tag number for spawning male"
       Top             =   720
       Width           =   1335
@@ -1882,7 +1899,7 @@ Begin VB.Form frmInput
       EndProperty
       Height          =   495
       Left            =   5760
-      TabIndex        =   81
+      TabIndex        =   102
       ToolTipText     =   "PIT tag number for spawning female"
       Top             =   720
       Width           =   1335
@@ -1903,7 +1920,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   10
       Left            =   9720
-      TabIndex        =   79
+      TabIndex        =   100
       Top             =   7140
       Visible         =   0   'False
       Width           =   255
@@ -1924,7 +1941,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   9
       Left            =   9720
-      TabIndex        =   77
+      TabIndex        =   98
       Top             =   6540
       Visible         =   0   'False
       Width           =   255
@@ -1945,7 +1962,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   8
       Left            =   9720
-      TabIndex        =   75
+      TabIndex        =   96
       Top             =   5940
       Visible         =   0   'False
       Width           =   255
@@ -1966,7 +1983,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   7
       Left            =   9720
-      TabIndex        =   73
+      TabIndex        =   94
       Top             =   5340
       Visible         =   0   'False
       Width           =   255
@@ -1987,7 +2004,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   6
       Left            =   9720
-      TabIndex        =   71
+      TabIndex        =   92
       Top             =   4740
       Visible         =   0   'False
       Width           =   255
@@ -2008,7 +2025,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   5
       Left            =   9720
-      TabIndex        =   69
+      TabIndex        =   90
       Top             =   4140
       Visible         =   0   'False
       Width           =   255
@@ -2029,7 +2046,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   4
       Left            =   9720
-      TabIndex        =   67
+      TabIndex        =   88
       Top             =   3540
       Visible         =   0   'False
       Width           =   255
@@ -2050,7 +2067,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   3
       Left            =   9720
-      TabIndex        =   65
+      TabIndex        =   86
       Top             =   2940
       Visible         =   0   'False
       Width           =   255
@@ -2071,7 +2088,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   2
       Left            =   9720
-      TabIndex        =   63
+      TabIndex        =   84
       Top             =   2340
       Visible         =   0   'False
       Width           =   255
@@ -2092,7 +2109,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   1
       Left            =   9720
-      TabIndex        =   61
+      TabIndex        =   82
       Top             =   1740
       Visible         =   0   'False
       Width           =   255
@@ -2113,7 +2130,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   0
       Left            =   9720
-      TabIndex        =   59
+      TabIndex        =   80
       Top             =   1140
       Visible         =   0   'False
       Width           =   255
@@ -2134,7 +2151,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   9
       Left            =   3840
-      TabIndex        =   57
+      TabIndex        =   78
       Top             =   6540
       Visible         =   0   'False
       Width           =   255
@@ -2155,7 +2172,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   8
       Left            =   3840
-      TabIndex        =   55
+      TabIndex        =   76
       Top             =   5940
       Visible         =   0   'False
       Width           =   255
@@ -2176,7 +2193,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   7
       Left            =   3840
-      TabIndex        =   53
+      TabIndex        =   74
       Top             =   5340
       Visible         =   0   'False
       Width           =   255
@@ -2197,7 +2214,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   6
       Left            =   3840
-      TabIndex        =   51
+      TabIndex        =   72
       Top             =   4740
       Visible         =   0   'False
       Width           =   255
@@ -2218,7 +2235,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   5
       Left            =   3840
-      TabIndex        =   49
+      TabIndex        =   70
       Top             =   4140
       Visible         =   0   'False
       Width           =   255
@@ -2239,7 +2256,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   4
       Left            =   3840
-      TabIndex        =   47
+      TabIndex        =   68
       Top             =   3540
       Visible         =   0   'False
       Width           =   255
@@ -2260,7 +2277,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   3
       Left            =   3840
-      TabIndex        =   45
+      TabIndex        =   66
       Top             =   2940
       Visible         =   0   'False
       Width           =   255
@@ -2281,7 +2298,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   2
       Left            =   3840
-      TabIndex        =   43
+      TabIndex        =   64
       Top             =   2340
       Visible         =   0   'False
       Width           =   255
@@ -2302,7 +2319,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   1
       Left            =   3840
-      TabIndex        =   41
+      TabIndex        =   62
       Top             =   1740
       Visible         =   0   'False
       Width           =   255
@@ -2323,7 +2340,7 @@ Begin VB.Form frmInput
       Height          =   375
       Index           =   0
       Left            =   3840
-      TabIndex        =   39
+      TabIndex        =   60
       Top             =   1140
       Visible         =   0   'False
       Width           =   255
@@ -2368,8 +2385,10 @@ Dim accessApp As Access.Application, dbTemp As Database
 Private Sub chkFamIDPrefix_Click()
     If frmInput.cmbFamIDPrefix.Enabled = False Then
         frmInput.cmbFamIDPrefix.Enabled = True
+        frmInput.cmdClearFamIDPrefix.Enabled = True
     Else
         frmInput.cmbFamIDPrefix.Enabled = False
+        frmInput.cmdClearFamIDPrefix.Enabled = False
     End If
 End Sub
 
@@ -2403,6 +2422,18 @@ Private Sub chkUse_Click(Index As Integer)
             frmInput.cmdClearM(z).Enabled = True
         End If
     Next z
+End Sub
+
+Private Sub cmbFamIDPrefix_LostFocus()
+    For i = 0 To frmInput.cmbFamIDPrefix.ListCount - 1
+        If frmInput.cmbFamIDPrefix.Text = frmInput.cmbFamIDPrefix.List(i) Then
+            Exit Sub
+        End If
+    Next i
+    If frmInput.cmbFamIDPrefix.Text <> "" Then
+        frmInput.cmbFamIDPrefix.AddItem frmInput.cmbFamIDPrefix.Text
+        frmInput.cmbFamIDPrefix.ListIndex = frmInput.cmbFamIDPrefix.ListCount - 1
+    End If
 End Sub
 
 Private Sub cmbTemplate_LostFocus()
@@ -2561,6 +2592,17 @@ Private Sub cmdClearF_Click(Index As Integer)
     End If
     
     frmInput.txtTagFem(Index).Text = ""
+End Sub
+
+Private Sub cmdClearFamIDPrefix_Click()
+    Msg = "Would you like to remove all of the Family ID prefixes from the dropdown list?"
+    Style = vbYesNo + vbQuestion + vbDefaultButton1
+    Title = "Clear Family ID Prefix List"
+    Response = MsgBox(Msg, Style, Title)
+    
+    If Response = 6 Then 'yes
+        frmInput.cmbFamIDPrefix.Clear
+    End If
 End Sub
 
 Private Sub cmdClearM_Click(Index As Integer)
@@ -2774,7 +2816,7 @@ Public Function getMalesRecip(tmpColl)
             Next n
                                 
             'determining which combination is best
-            If pTotal > pFinal Then
+            If pTotal > pFinal Or pTotal = 0 Then
                 pFinal = pTotal
                 For n = 1 To femMD - disAbledF
                     pFinalMeasure(n) = Format(Exp(-(pTempMeasure(n))), "0.000")
@@ -2871,6 +2913,7 @@ End Sub
 
 Public Sub cmdOpt_Click()
     Call frmInput.saveTemplates
+    Call frmInput.savePrefixes
     
     disAbledF = 0
     disAbledM = 0
@@ -2969,7 +3012,11 @@ Public Sub cmdOpt_Click()
         For m = 1 To mateNum
             If frmInput.txtFamID((i - 1) + (m - 1)).Enabled = True Then
                 enNumF(j) = (i - 1) + (m - 1)
-                famID(j) = frmInput.txtFamID((i - 1) + (m - 1)).Text
+                If frmInput.chkFamIDPrefix.Value = 1 Then
+                    famID(j) = frmInput.cmbFamIDPrefix.Text & frmInput.txtFamID((i - 1) + (m - 1)).Text
+                Else
+                    famID(j) = frmInput.txtFamID((i - 1) + (m - 1)).Text
+                End If
                 fOrder(j) = frmInput.txtTagFem(i - 1).Text
                 'fDrainage(j - 1) = fDrainage((i - 1))
                 'fYear(j - 1) = fYear((i - 1))
@@ -3426,6 +3473,24 @@ Public Sub cmdOpt_Click()
     
     'Call frmMain.highlightTag
     
+    'Add in mating design
+    For i = 0 To frmMain.optMatDes.Count - 1
+        If frmMain.optMatDes(i).Value = True Then
+            Select Case i
+                Case 0
+                    frmMain.txtMatDes.Text = "1 to 1"
+                Case 1
+                    frmMain.txtMatDes.Text = "1 to 2"
+                Case 2
+                    frmMain.txtMatDes.Text = "2 to 2"
+                Case 3
+                    frmMain.txtMatDes.Text = "1 to 3"
+                Case 4
+                    frmMain.txtMatDes.Text = "3 to 3"
+            End Select
+            Exit For
+        End If
+    Next i
     frmInput.Hide
 End Sub
 
@@ -3667,11 +3732,15 @@ skipEnable:
         frmInput.txtTagMale(i).Enabled = True
         frmInput.cmdClearM(i).Enabled = True
     Next i
+    
+    frmInput.chkOptimize.Value = frmMain.varOpt
+    Debug.Print (frmMain.varOpt)
 End Sub
 
 Private Sub Form_Load()
     'Set accessApp = CreateObject("Access.Application")
     Call frmInput.importTemplates
+    Call frmInput.importPrefixes
 End Sub
 
 Private Sub txtFamID_LostFocus(Index As Integer)
@@ -3887,6 +3956,17 @@ Public Function saveTemplates()
     Close #1
 End Function
 
+Public Function savePrefixes()
+    Open App.Path & "\prefix_settings.mmf" For Output As #1
+        Print #1, CStr(frmInput.chkFamIDPrefix.Value)
+        Print #1, CStr(frmInput.cmbFamIDPrefix.ListCount - 1)
+        For i = 0 To frmInput.cmbFamIDPrefix.ListCount - 1
+            Print #1, frmInput.cmbFamIDPrefix.List(i)
+        Next i
+        Print #1, frmInput.cmbFamIDPrefix.Text
+    Close #1
+End Function
+
 Public Function importTemplates()
     If Dir(App.Path & "\template_settings.mmf") <> "" Then
         Open App.Path & "\template_settings.mmf" For Input As #1
@@ -3904,6 +3984,30 @@ Public Function importTemplates()
             For i = 0 To a
                 If frmInput.cmbTemplate.List(i) = tmpStr Then
                     frmInput.cmbTemplate.ListIndex = i
+                    Exit For
+                End If
+            Next i
+        Close #1
+    End If
+End Function
+
+Public Function importPrefixes()
+    If Dir(App.Path & "\prefix_settings.mmf") <> "" Then
+        Open App.Path & "\prefix_settings.mmf" For Input As #1
+            Input #1, tmpStr
+            frmInput.chkFamIDPrefix.Value = CLng(tmpStr)
+            
+            Input #1, tmpStr
+            a = CLng(tmpStr)
+            For i = 0 To a
+                Input #1, tmpStr
+                frmInput.cmbFamIDPrefix.List(i) = tmpStr
+            Next i
+            
+            Input #1, tmpStr
+            For i = 0 To a
+                If frmInput.cmbFamIDPrefix.List(i) = tmpStr Then
+                    frmInput.cmbFamIDPrefix.ListIndex = i
                     Exit For
                 End If
             Next i

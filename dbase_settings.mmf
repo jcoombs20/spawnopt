@@ -1,6 +1,6 @@
-C:\maine_genetics\MaineBroodstock.mdb
-MaineBroodstock.mdb
-Genetics_2
+C:\maine_genetics\test.accdb
+test.accdb
+Genetics
 PIT
 Gender
 18
@@ -11,7 +11,7 @@ Drainage
 1
 Year
 0
-matings_table_test
+test_matings
 Batch
 Family
 Dam
@@ -26,6 +26,7 @@ Sire_Scored_Loci
 Sire_Released
 Metric
 Relatedness
+Mating_Design
 Optimized
 Date
 Time

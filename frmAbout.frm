@@ -66,7 +66,7 @@ Begin VB.Form frmAbout
       Width           =   2295
    End
    Begin VB.Label lblCopyright 
-      Caption         =   "April 5, 2019"
+      Caption         =   "April 25, 2019"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25

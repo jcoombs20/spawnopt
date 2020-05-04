@@ -113,7 +113,7 @@ Begin VB.Form frmSplash
       End
       Begin VB.Label lblCopyright 
          Alignment       =   2  'Center
-         Caption         =   "April 5, 2019"
+         Caption         =   "May 4th, 2020"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -149,7 +149,7 @@ Begin VB.Form frmSplash
       Begin VB.Label lblVersion 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
-         Caption         =   "Version 1.0"
+         Caption         =   "Version 1.01"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   12
@@ -160,10 +160,10 @@ Begin VB.Form frmSplash
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5160
+         Left            =   5025
          TabIndex        =   3
          Top             =   6600
-         Width           =   1275
+         Width           =   1410
       End
    End
 End

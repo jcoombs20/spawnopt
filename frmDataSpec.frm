@@ -1,13 +1,13 @@
 VERSION 5.00
 Begin VB.Form frmDataSpec 
    Caption         =   "Database Specifications"
-   ClientHeight    =   7920
+   ClientHeight    =   8655
    ClientLeft      =   4485
    ClientTop       =   3525
    ClientWidth     =   20250
    Icon            =   "frmDataSpec.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   7920
+   ScaleHeight     =   8655
    ScaleWidth      =   20250
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -40,11 +40,11 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   375
       Left            =   9720
-      TabIndex        =   70
+      TabIndex        =   71
       TabStop         =   0   'False
       Text            =   "matings_nonopt"
       ToolTipText     =   $"frmDataSpec.frx":0FAD
-      Top             =   7200
+      Top             =   7920
       Visible         =   0   'False
       Width           =   2175
    End
@@ -69,11 +69,32 @@ Begin VB.Form frmDataSpec
    End
    Begin VB.Frame frameMatings 
       Enabled         =   0   'False
-      Height          =   5535
+      Height          =   6255
       Left            =   7080
-      TabIndex        =   47
+      TabIndex        =   48
       Top             =   1560
       Width           =   12975
+      Begin VB.ComboBox cmbMatDes 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   390
+         Left            =   1800
+         MouseIcon       =   "frmDataSpec.frx":1036
+         MousePointer    =   99  'Custom
+         Style           =   2  'Dropdown List
+         TabIndex        =   23
+         Tag             =   "-1"
+         ToolTipText     =   "Column containing the genetic relatedness measure for the dam (mother) and sire (father) in the mating pair"
+         Top             =   2160
+         Width           =   4650
+      End
       Begin VB.ComboBox cmbMetric 
          BeginProperty Font 
             Name            =   "Arial"
@@ -85,8 +106,8 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   1560
-         MouseIcon       =   "frmDataSpec.frx":1036
+         Left            =   1800
+         MouseIcon       =   "frmDataSpec.frx":1188
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   21
@@ -108,11 +129,11 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   495
          Left            =   6000
-         MouseIcon       =   "frmDataSpec.frx":1188
+         MouseIcon       =   "frmDataSpec.frx":12DA
          MousePointer    =   99  'Custom
-         TabIndex        =   37
+         TabIndex        =   38
          ToolTipText     =   "Click to clear the above fields"
-         Top             =   4920
+         Top             =   5640
          Width           =   1575
       End
       Begin VB.ComboBox cmbComments 
@@ -127,10 +148,10 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   8160
-         MouseIcon       =   "frmDataSpec.frx":12DA
+         MouseIcon       =   "frmDataSpec.frx":142C
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   26
+         TabIndex        =   27
          Tag             =   "-1"
          ToolTipText     =   "Column containing comments about this mating pair, including any mating flags that are raised by this pairing"
          Top             =   1680
@@ -148,10 +169,10 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   8160
-         MouseIcon       =   "frmDataSpec.frx":142C
+         MouseIcon       =   "frmDataSpec.frx":157E
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   25
+         TabIndex        =   26
          Tag             =   "-1"
          ToolTipText     =   "Column containing the individual's gender (e.g. M, F, U)"
          Top             =   1200
@@ -169,10 +190,10 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   8160
-         MouseIcon       =   "frmDataSpec.frx":157E
+         MouseIcon       =   "frmDataSpec.frx":16D0
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   24
+         TabIndex        =   25
          Tag             =   "-1"
          ToolTipText     =   "Column containing the date that the dam (mother) and sire (father) were mated"
          Top             =   720
@@ -190,10 +211,10 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   8160
-         MouseIcon       =   "frmDataSpec.frx":16D0
+         MouseIcon       =   "frmDataSpec.frx":1822
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   23
+         TabIndex        =   24
          Tag             =   "-1"
          ToolTipText     =   "Column recording wheter the mating pair were selected by minimizing genetic relatedness among all mating pairs in the batch"
          Top             =   240
@@ -210,8 +231,8 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   1560
-         MouseIcon       =   "frmDataSpec.frx":1822
+         Left            =   1800
+         MouseIcon       =   "frmDataSpec.frx":1974
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   22
@@ -231,15 +252,15 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   8640
-         MouseIcon       =   "frmDataSpec.frx":1974
+         Left            =   8400
+         MouseIcon       =   "frmDataSpec.frx":1AC6
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   36
+         TabIndex        =   37
          Tag             =   "-1"
          ToolTipText     =   "Column showing whether the sire (father) was released after mating"
-         Top             =   4425
-         Width           =   4170
+         Top             =   5025
+         Width           =   4410
       End
       Begin VB.ComboBox cmbSireLoci 
          BeginProperty Font 
@@ -252,15 +273,15 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   8640
-         MouseIcon       =   "frmDataSpec.frx":1AC6
+         Left            =   8400
+         MouseIcon       =   "frmDataSpec.frx":1C18
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   35
+         TabIndex        =   36
          Tag             =   "-1"
          ToolTipText     =   "Column containing the number of loci that had allelic information for the sire (father)"
-         Top             =   3945
-         Width           =   4170
+         Top             =   4545
+         Width           =   4410
       End
       Begin VB.ComboBox cmbSireCohort 
          BeginProperty Font 
@@ -273,15 +294,15 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   8640
-         MouseIcon       =   "frmDataSpec.frx":1C18
+         Left            =   8400
+         MouseIcon       =   "frmDataSpec.frx":1D6A
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   34
+         TabIndex        =   35
          Tag             =   "-1"
          ToolTipText     =   "Column containing the cohort information (if available) for the sire (father)"
-         Top             =   3465
-         Width           =   4170
+         Top             =   4065
+         Width           =   4410
       End
       Begin VB.ComboBox cmbSirePop 
          BeginProperty Font 
@@ -294,15 +315,15 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   8640
-         MouseIcon       =   "frmDataSpec.frx":1D6A
+         Left            =   8400
+         MouseIcon       =   "frmDataSpec.frx":1EBC
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   33
+         TabIndex        =   34
          Tag             =   "-1"
          ToolTipText     =   "Column containing the population information (if available) for the sire (father)"
-         Top             =   2985
-         Width           =   4170
+         Top             =   3585
+         Width           =   4410
       End
       Begin VB.ComboBox cmbSireID 
          BeginProperty Font 
@@ -315,15 +336,15 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   8640
-         MouseIcon       =   "frmDataSpec.frx":1EBC
+         Left            =   8400
+         MouseIcon       =   "frmDataSpec.frx":200E
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   32
+         TabIndex        =   33
          Tag             =   "-1"
          ToolTipText     =   "Column containing the unique identerifier for the sire (father)"
-         Top             =   2505
-         Width           =   4170
+         Top             =   3105
+         Width           =   4410
       End
       Begin VB.ComboBox cmbDamReleased 
          BeginProperty Font 
@@ -337,14 +358,14 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":200E
+         MouseIcon       =   "frmDataSpec.frx":2160
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   31
+         TabIndex        =   32
          Tag             =   "-1"
          ToolTipText     =   "Column showing whether the dam (mother) was released after mating"
-         Top             =   4440
-         Width           =   4170
+         Top             =   5040
+         Width           =   4410
       End
       Begin VB.ComboBox cmbBatch 
          BeginProperty Font 
@@ -357,13 +378,13 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   1560
-         MouseIcon       =   "frmDataSpec.frx":2160
+         Left            =   1800
+         MouseIcon       =   "frmDataSpec.frx":22B2
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   19
          Tag             =   "-1"
-         ToolTipText     =   $"frmDataSpec.frx":22B2
+         ToolTipText     =   $"frmDataSpec.frx":2404
          Top             =   240
          Width           =   4650
       End
@@ -379,14 +400,14 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":233F
+         MouseIcon       =   "frmDataSpec.frx":2491
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
-         TabIndex        =   27
+         TabIndex        =   28
          Tag             =   "-1"
          ToolTipText     =   "Column containing the unique identerifier for the dam (mother)"
-         Top             =   2520
-         Width           =   4170
+         Top             =   3120
+         Width           =   4410
       End
       Begin VB.ComboBox cmbFamID 
          BeginProperty Font 
@@ -399,8 +420,8 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   1560
-         MouseIcon       =   "frmDataSpec.frx":2491
+         Left            =   1800
+         MouseIcon       =   "frmDataSpec.frx":25E3
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   20
@@ -421,37 +442,16 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":25E3
-         MousePointer    =   99  'Custom
-         Style           =   2  'Dropdown List
-         TabIndex        =   28
-         Tag             =   "-1"
-         ToolTipText     =   "Column containing the population information (if available) for the dam (mother)"
-         Top             =   3000
-         Width           =   4170
-      End
-      Begin VB.ComboBox cmbDamCohort 
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   390
-         Left            =   2040
          MouseIcon       =   "frmDataSpec.frx":2735
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   29
          Tag             =   "-1"
-         ToolTipText     =   "Column containing the cohort information (if available) for the dam (mother)"
-         Top             =   3480
-         Width           =   4170
+         ToolTipText     =   "Column containing the population information (if available) for the dam (mother)"
+         Top             =   3600
+         Width           =   4410
       End
-      Begin VB.ComboBox cmbDamLoci 
+      Begin VB.ComboBox cmbDamCohort 
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   12
@@ -468,9 +468,48 @@ Begin VB.Form frmDataSpec
          Style           =   2  'Dropdown List
          TabIndex        =   30
          Tag             =   "-1"
+         ToolTipText     =   "Column containing the cohort information (if available) for the dam (mother)"
+         Top             =   4080
+         Width           =   4410
+      End
+      Begin VB.ComboBox cmbDamLoci 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   390
+         Left            =   2040
+         MouseIcon       =   "frmDataSpec.frx":29D9
+         MousePointer    =   99  'Custom
+         Style           =   2  'Dropdown List
+         TabIndex        =   31
+         Tag             =   "-1"
          ToolTipText     =   "Column containing the number of loci that had allelic information for the dam (mother)"
-         Top             =   3960
-         Width           =   4170
+         Top             =   4560
+         Width           =   4410
+      End
+      Begin VB.Label lblMatDes 
+         Alignment       =   1  'Right Justify
+         Caption         =   "Mating Design"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   120
+         TabIndex        =   74
+         Top             =   2220
+         Width           =   1575
       End
       Begin VB.Label lblMetric 
          Alignment       =   1  'Right Justify
@@ -486,7 +525,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   69
+         TabIndex        =   70
          Top             =   1245
          Width           =   1335
       End
@@ -504,7 +543,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   6720
-         TabIndex        =   68
+         TabIndex        =   69
          Top             =   1725
          Width           =   1335
       End
@@ -522,7 +561,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   6720
-         TabIndex        =   67
+         TabIndex        =   68
          Top             =   1245
          Width           =   1335
       End
@@ -540,7 +579,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   6720
-         TabIndex        =   66
+         TabIndex        =   67
          Top             =   765
          Width           =   1335
       End
@@ -558,7 +597,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   6720
-         TabIndex        =   65
+         TabIndex        =   66
          Top             =   285
          Width           =   1335
       End
@@ -575,8 +614,8 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   120
-         TabIndex        =   64
+         Left            =   360
+         TabIndex        =   65
          Top             =   1725
          Width           =   1335
       End
@@ -593,9 +632,9 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   6720
-         TabIndex        =   63
-         Top             =   4455
+         Left            =   6480
+         TabIndex        =   64
+         Top             =   5055
          Width           =   1815
       End
       Begin VB.Label lblSireLoci 
@@ -611,9 +650,9 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   6720
-         TabIndex        =   62
-         Top             =   3975
+         Left            =   6480
+         TabIndex        =   63
+         Top             =   4575
          Width           =   1815
       End
       Begin VB.Label lblSireInfo 
@@ -629,8 +668,8 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   6840
-         TabIndex        =   61
-         Top             =   2145
+         TabIndex        =   62
+         Top             =   2745
          Width           =   6015
       End
       Begin VB.Label lblSireCohort 
@@ -646,9 +685,9 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   6720
-         TabIndex        =   60
-         Top             =   3495
+         Left            =   6480
+         TabIndex        =   61
+         Top             =   4095
          Width           =   1815
       End
       Begin VB.Label lblSirePop 
@@ -664,9 +703,9 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   6720
-         TabIndex        =   59
-         Top             =   3015
+         Left            =   6480
+         TabIndex        =   60
+         Top             =   3615
          Width           =   1815
       End
       Begin VB.Label lblSireID 
@@ -682,9 +721,9 @@ Begin VB.Form frmDataSpec
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   6720
-         TabIndex        =   58
-         Top             =   2535
+         Left            =   6480
+         TabIndex        =   59
+         Top             =   3135
          Width           =   1815
       End
       Begin VB.Label lblDamReleased 
@@ -701,8 +740,8 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   57
-         Top             =   4485
+         TabIndex        =   58
+         Top             =   5085
          Width           =   1815
       End
       Begin VB.Label lblDamLoci 
@@ -719,12 +758,12 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   56
-         Top             =   4005
+         TabIndex        =   57
+         Top             =   4605
          Width           =   1815
       End
       Begin VB.Label lblDamInfo 
-         Caption         =   "Dam Information                                                     "
+         Caption         =   "Dam Information                                                         "
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   12.75
@@ -736,9 +775,9 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   240
-         TabIndex        =   55
-         Top             =   2160
-         Width           =   6015
+         TabIndex        =   56
+         Top             =   2760
+         Width           =   6255
       End
       Begin VB.Label lblDamCohort 
          Alignment       =   1  'Right Justify
@@ -754,8 +793,8 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   54
-         Top             =   3525
+         TabIndex        =   55
+         Top             =   4125
          Width           =   1815
       End
       Begin VB.Label lblBatch 
@@ -772,7 +811,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   51
+         TabIndex        =   52
          Top             =   285
          Width           =   1335
       End
@@ -790,8 +829,8 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   50
-         Top             =   2565
+         TabIndex        =   51
+         Top             =   3165
          Width           =   1815
       End
       Begin VB.Label lblDamPop 
@@ -808,8 +847,8 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   49
-         Top             =   3045
+         TabIndex        =   50
+         Top             =   3645
          Width           =   1815
       End
       Begin VB.Label lblFamID 
@@ -826,7 +865,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   49
          Top             =   765
          Width           =   1335
       End
@@ -845,7 +884,7 @@ Begin VB.Form frmDataSpec
       Height          =   255
       Index           =   1
       Left            =   11760
-      MouseIcon       =   "frmDataSpec.frx":29D9
+      MouseIcon       =   "frmDataSpec.frx":2B2B
       MousePointer    =   99  'Custom
       TabIndex        =   16
       ToolTipText     =   "Select to create a new table for recording mated pairs"
@@ -866,7 +905,7 @@ Begin VB.Form frmDataSpec
       Height          =   255
       Index           =   0
       Left            =   9600
-      MouseIcon       =   "frmDataSpec.frx":2B2B
+      MouseIcon       =   "frmDataSpec.frx":2C7D
       MousePointer    =   99  'Custom
       TabIndex        =   15
       Tag             =   "True"
@@ -888,7 +927,7 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   390
       Left            =   7080
-      MouseIcon       =   "frmDataSpec.frx":2C7D
+      MouseIcon       =   "frmDataSpec.frx":2DCF
       MousePointer    =   99  'Custom
       Style           =   2  'Dropdown List
       TabIndex        =   17
@@ -901,7 +940,7 @@ Begin VB.Form frmDataSpec
       Enabled         =   0   'False
       Height          =   5535
       Left            =   240
-      TabIndex        =   43
+      TabIndex        =   44
       Top             =   1560
       Width           =   6375
       Begin VB.ComboBox cmbGenComments 
@@ -916,12 +955,12 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":2DCF
+         MouseIcon       =   "frmDataSpec.frx":2F21
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   7
          Tag             =   "-1"
-         ToolTipText     =   $"frmDataSpec.frx":2F21
+         ToolTipText     =   $"frmDataSpec.frx":3073
          Top             =   2640
          Width           =   4170
       End
@@ -938,7 +977,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   495
          Left            =   2400
-         MouseIcon       =   "frmDataSpec.frx":2FA9
+         MouseIcon       =   "frmDataSpec.frx":30FB
          MousePointer    =   99  'Custom
          TabIndex        =   14
          ToolTipText     =   "Click to clear the above fields"
@@ -957,7 +996,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":30FB
+         MouseIcon       =   "frmDataSpec.frx":324D
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   3
@@ -978,7 +1017,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":324D
+         MouseIcon       =   "frmDataSpec.frx":339F
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   4
@@ -1000,7 +1039,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   480
-         MouseIcon       =   "frmDataSpec.frx":339F
+         MouseIcon       =   "frmDataSpec.frx":34F1
          MousePointer    =   99  'Custom
          TabIndex        =   12
          Tag             =   "0"
@@ -1021,7 +1060,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":34F1
+         MouseIcon       =   "frmDataSpec.frx":3643
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   13
@@ -1043,7 +1082,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":3643
+         MouseIcon       =   "frmDataSpec.frx":3795
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   11
@@ -1065,7 +1104,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   480
-         MouseIcon       =   "frmDataSpec.frx":3795
+         MouseIcon       =   "frmDataSpec.frx":38E7
          MousePointer    =   99  'Custom
          TabIndex        =   10
          Tag             =   "0"
@@ -1086,7 +1125,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":38E7
+         MouseIcon       =   "frmDataSpec.frx":3A39
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   9
@@ -1108,7 +1147,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   500
-         MouseIcon       =   "frmDataSpec.frx":3A39
+         MouseIcon       =   "frmDataSpec.frx":3B8B
          MousePointer    =   99  'Custom
          TabIndex        =   8
          Tag             =   "0"
@@ -1128,12 +1167,12 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   390
          Left            =   2040
-         MouseIcon       =   "frmDataSpec.frx":3B8B
+         MouseIcon       =   "frmDataSpec.frx":3CDD
          MousePointer    =   99  'Custom
          Style           =   2  'Dropdown List
          TabIndex        =   6
          Tag             =   "-1"
-         ToolTipText     =   $"frmDataSpec.frx":3CDD
+         ToolTipText     =   $"frmDataSpec.frx":3E2F
          Top             =   2040
          Width           =   4170
       End
@@ -1168,7 +1207,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   72
+         TabIndex        =   73
          Top             =   2685
          Width           =   1815
       End
@@ -1186,7 +1225,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   53
+         TabIndex        =   54
          Top             =   280
          Width           =   1815
       End
@@ -1204,7 +1243,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   52
+         TabIndex        =   53
          Top             =   880
          Width           =   1815
       End
@@ -1222,7 +1261,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   45
+         TabIndex        =   46
          Top             =   2080
          Width           =   1815
       End
@@ -1239,7 +1278,7 @@ Begin VB.Form frmDataSpec
          EndProperty
          Height          =   375
          Left            =   240
-         TabIndex        =   44
+         TabIndex        =   45
          Top             =   1480
          Width           =   1815
       End
@@ -1257,7 +1296,7 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   390
       Left            =   240
-      MouseIcon       =   "frmDataSpec.frx":3DBC
+      MouseIcon       =   "frmDataSpec.frx":3F0E
       MousePointer    =   99  'Custom
       Style           =   2  'Dropdown List
       TabIndex        =   2
@@ -1279,7 +1318,7 @@ Begin VB.Form frmDataSpec
       Height          =   375
       Left            =   4200
       Locked          =   -1  'True
-      TabIndex        =   40
+      TabIndex        =   41
       TabStop         =   0   'False
       Top             =   120
       Width           =   8295
@@ -1297,7 +1336,7 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   375
       Left            =   12480
-      MouseIcon       =   "frmDataSpec.frx":3F0E
+      MouseIcon       =   "frmDataSpec.frx":4060
       MousePointer    =   99  'Custom
       TabIndex        =   0
       ToolTipText     =   "Click to select the Access database containing individual genetic information and recorded matings if used previously "
@@ -1317,11 +1356,11 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   495
       Left            =   240
-      MouseIcon       =   "frmDataSpec.frx":4060
+      MouseIcon       =   "frmDataSpec.frx":41B2
       MousePointer    =   99  'Custom
-      TabIndex        =   39
+      TabIndex        =   40
       ToolTipText     =   "Click to cancel changes made to the form"
-      Top             =   7320
+      Top             =   8040
       Width           =   1335
    End
    Begin VB.CommandButton cmdSave 
@@ -1338,12 +1377,12 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   495
       Left            =   18720
-      MouseIcon       =   "frmDataSpec.frx":41B2
+      MouseIcon       =   "frmDataSpec.frx":4304
       MousePointer    =   99  'Custom
       Style           =   1  'Graphical
-      TabIndex        =   38
+      TabIndex        =   39
       ToolTipText     =   "Click to save the current database settings"
-      Top             =   7320
+      Top             =   8040
       Width           =   1335
    End
    Begin VB.Label lblMatingsNonopt 
@@ -1360,8 +1399,8 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   375
       Left            =   6960
-      TabIndex        =   71
-      Top             =   7200
+      TabIndex        =   72
+      Top             =   7920
       Visible         =   0   'False
       Width           =   2895
    End
@@ -1378,7 +1417,7 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   375
       Left            =   7080
-      TabIndex        =   46
+      TabIndex        =   47
       Top             =   720
       Width           =   1695
    End
@@ -1395,7 +1434,7 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   375
       Left            =   240
-      TabIndex        =   42
+      TabIndex        =   43
       Top             =   720
       Width           =   2175
    End
@@ -1413,7 +1452,7 @@ Begin VB.Form frmDataSpec
       EndProperty
       Height          =   375
       Left            =   1440
-      TabIndex        =   41
+      TabIndex        =   42
       Top             =   120
       Width           =   2655
    End
@@ -1648,6 +1687,21 @@ End Sub
 
 Private Sub cmbGeneticsTable_Click()
     Call enableGeneticOptions
+End Sub
+
+Private Sub cmbMatDes_Click()
+    If frmDataSpec.cmbMatDes.ListIndex > -1 Then
+        tmpText = checkDataType("cmbMatDes")
+        If (tmpText <> "Text" And tmpText <> "Text (fixed width)") Then
+            If frmDataSpec.Visible = True Then
+                MsgBox "The data type for the field must be text", vbInformation, "Wrong Data Type"
+                frmDataSpec.cmbMatDes.SetFocus
+            End If
+            frmDataSpec.cmbMatDes.ListIndex = -1
+        End If
+        
+        Call frmDataSpec.checkFieldDups(frmDataSpec.cmbMatDes.Text, "cmbMatDes")
+    End If
 End Sub
 
 Private Sub cmbMatingsTable_Click()
@@ -2057,7 +2111,7 @@ Public Function saveDbase() As Integer
             saveDbase = makeMatTable
         End If
         
-        txtArray = Array("cmbMatingsTable", "cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
+        txtArray = Array("cmbMatingsTable", "cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbMatDes", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
         
         For j = 0 To UBound(txtArray)
             Print #1, frmDataSpec(txtArray(j)).Text
@@ -2110,6 +2164,7 @@ Public Function makeMatTable() As Integer
         .Fields.Append .CreateField("Sire_Released", dbBoolean)
         .Fields.Append .CreateField("Metric", dbText)
         .Fields.Append .CreateField("Relatedness", dbSingle)
+        .Fields.Append .CreateField("Mating_Design", dbText)
         .Fields.Append .CreateField("Optimized", dbText)
         .Fields.Append .CreateField("Date", dbDate)
         .Fields.Append .CreateField("Time", dbDate)
@@ -2168,10 +2223,11 @@ Public Function makeMatTable() As Integer
     frmDataSpec.cmbSireReleased.ListIndex = 11
     frmDataSpec.cmbMetric.ListIndex = 12
     frmDataSpec.cmbRelatedness.ListIndex = 13
-    frmDataSpec.cmbOptimized.ListIndex = 14
-    frmDataSpec.cmbDate.ListIndex = 15
-    frmDataSpec.cmbTime.ListIndex = 16
-    frmDataSpec.cmbComments.ListIndex = 17
+    frmDataSpec.cmbMatDes.ListIndex = 14
+    frmDataSpec.cmbOptimized.ListIndex = 15
+    frmDataSpec.cmbDate.ListIndex = 16
+    frmDataSpec.cmbTime.ListIndex = 17
+    frmDataSpec.cmbComments.ListIndex = 18
 End Function
 
 Public Function checkDbase(tmpType As String) As Integer
@@ -2300,7 +2356,7 @@ Public Function checkDataType(control As String) As String
 End Function
 
 Public Function checkFieldDups(tmpText As String, tmpControl As String)
-    txtArray = Array("cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
+    txtArray = Array("cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbMatDes", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
     
     For a = 0 To UBound(txtArray)
         If txtArray(a) <> tmpControl Then
@@ -2415,7 +2471,7 @@ Public Function clearGenetics(tmpType As String)
 End Function
 
 Public Function clearMatings(tmpType As String)
-    txtArray = Array("cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
+    txtArray = Array("cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbMatDes", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
 
     If tmpType = "all" Then
         For j = 0 To UBound(txtArray)
@@ -2571,7 +2627,7 @@ Public Function importDbaseSettings() As Boolean
             Else
                 frmDataSpec.optMatingsTable(0).Value = True
                 
-                txtArray = Array("cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
+                txtArray = Array("cmbBatch", "cmbFamID", "cmbDamID", "cmbDamPop", "cmbDamCohort", "cmbDamLoci", "cmbDamReleased", "cmbSireID", "cmbSirePop", "cmbSireCohort", "cmbSireLoci", "cmbSireReleased", "cmbMetric", "cmbRelatedness", "cmbMatDes", "cmbOptimized", "cmbDate", "cmbTime", "cmbComments")
                 
                 For j = 0 To UBound(txtArray)
                     Input #1, tmpText
@@ -2697,6 +2753,8 @@ Public Function enableMatFrame()
     frmDataSpec.cmbMetric.Enabled = True
     frmDataSpec.lblRelatedness.Enabled = True
     frmDataSpec.cmbRelatedness.Enabled = True
+    frmDataSpec.lblMatDes.Enabled = True
+    frmDataSpec.cmbMatDes.Enabled = True
     frmDataSpec.lblOptimized.Enabled = True
     frmDataSpec.cmbOptimized.Enabled = True
     frmDataSpec.lblDate.Enabled = True
@@ -2738,6 +2796,8 @@ Public Function disableMatFrame()
     frmDataSpec.cmbSireReleased.Enabled = False
     frmDataSpec.lblMetric.Enabled = False
     frmDataSpec.cmbMetric.Enabled = False
+    frmDataSpec.lblMatDes.Enabled = False
+    frmDataSpec.cmbMatDes.Enabled = False
     frmDataSpec.lblRelatedness.Enabled = False
     frmDataSpec.cmbRelatedness.Enabled = False
     frmDataSpec.lblOptimized.Enabled = False
@@ -2772,12 +2832,12 @@ Public Function checkMatingsNonopt() As Boolean
                         MsgBox "For the 'matings_nonopt' table, the data type for '" & matTab.Fields(i).Name & "' must be long integer. To resolve this issue, your options are" & Chr(13) & Chr(13) & "1) Rename the table to something besides 'mating_nonopt'" & Chr(13) & "2) Change the data type of this field in Access" & Chr(13) & "3) Delete the 'matings_nonopt' table from the Access database", vbInformation, "Wrong Data Type"
                         Err.Raise (1)
                     End If
-                Case 1, 2, 3, 6, 7, 10, 12 'Text
+                Case 1, 2, 3, 6, 7, 10, 12, 13 'Text
                     If (tmpString <> "Text" And tmpString <> "Text (fixed width)") Then
                         MsgBox "For the 'matings_nonopt' table, the data type for '" & matTab.Fields(i).Name & "' must be text. To resolve this issue, your options are" & Chr(13) & Chr(13) & "1) Rename the table to something besides 'mating_nonopt'" & Chr(13) & "2) Change the data type of this field in Access" & Chr(13) & "3) Delete the 'matings_nonopt' table from the Access database", vbInformation, "Wrong Data Type"
                         Err.Raise (1)
                     End If
-                Case 13, 14 'Date Time
+                Case 14, 15 'Date Time
                     If (tmpString <> "Date/Time") Then
                         MsgBox "For the 'matings_nonopt' table, the data type for '" & matTab.Fields(i).Name & "' must be date/time. To resolve this issue, your options are" & Chr(13) & Chr(13) & "1) Rename the table to something besides 'mating_nonopt'" & Chr(13) & "2) Change the data type of this field in Access" & Chr(13) & "3) Delete the 'matings_nonopt' table from the Access database", vbInformation, "Wrong Data Type"
                         Err.Raise (1)
@@ -2856,21 +2916,22 @@ Public Function makeMatNonoptTable() As Integer
     'Set dbTemp = accessApp.CurrentDb
     Set matTab = dbTemp.CreateTableDef(frmDataSpec.txtMatingsNonopt.Text)
     With matTab
-        .Fields.Append .CreateField("Batch", dbLong)
-        .Fields.Append .CreateField("Family", dbText)
-        .Fields.Append .CreateField("Dam", dbText)
-        .Fields.Append .CreateField("Dam_Pop", dbText)
-        .Fields.Append .CreateField("Dam_Cohort", dbLong)
-        .Fields.Append .CreateField("Dam_Scored_Loci", dbLong)
-        .Fields.Append .CreateField("Sire", dbText)
-        .Fields.Append .CreateField("Sire_Pop", dbText)
-        .Fields.Append .CreateField("Sire_Cohort", dbLong)
-        .Fields.Append .CreateField("Sire_Scored_Loci", dbLong)
-        .Fields.Append .CreateField("Metric", dbText)
-        .Fields.Append .CreateField("Relatedness", dbSingle)
-        .Fields.Append .CreateField("Optimized", dbText)
-        .Fields.Append .CreateField("Date", dbDate)
-        .Fields.Append .CreateField("Time", dbDate)
+        .Fields.Append .CreateField("Batch", dbLong)            '0
+        .Fields.Append .CreateField("Family", dbText)           '1
+        .Fields.Append .CreateField("Dam", dbText)              '2
+        .Fields.Append .CreateField("Dam_Pop", dbText)          '3
+        .Fields.Append .CreateField("Dam_Cohort", dbLong)       '4
+        .Fields.Append .CreateField("Dam_Scored_Loci", dbLong)  '5
+        .Fields.Append .CreateField("Sire", dbText)             '6
+        .Fields.Append .CreateField("Sire_Pop", dbText)         '7
+        .Fields.Append .CreateField("Sire_Cohort", dbLong)      '8
+        .Fields.Append .CreateField("Sire_Scored_Loci", dbLong) '9
+        .Fields.Append .CreateField("Metric", dbText)           '10
+        .Fields.Append .CreateField("Relatedness", dbSingle)    '11
+        .Fields.Append .CreateField("Mating_Design", dbText)    '12
+        .Fields.Append .CreateField("Optimized", dbText)        '13
+        .Fields.Append .CreateField("Date", dbDate)             '14
+        .Fields.Append .CreateField("Time", dbDate)             '15
     End With
         
     dbTemp.TableDefs.Append matTab

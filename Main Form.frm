@@ -25,7 +25,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   390
       ItemData        =   "Main Form.frx":048A
-      Left            =   360
+      Left            =   240
       List            =   "Main Form.frx":0491
       MouseIcon       =   "Main Form.frx":04B3
       MousePointer    =   99  'Custom
@@ -33,7 +33,7 @@ Begin VB.Form frmMain
       TabIndex        =   255
       ToolTipText     =   "The metric that will be used to calculate pairwise relatedness between males and females"
       Top             =   7440
-      Width           =   3615
+      Width           =   3495
    End
    Begin VB.TextBox txtAvgPShare 
       Alignment       =   2  'Center
@@ -47,7 +47,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   249
       TabStop         =   0   'False
@@ -338,7 +338,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":21BF
       MousePointer    =   99  'Custom
       TabIndex        =   45
@@ -360,7 +360,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":2311
       MousePointer    =   99  'Custom
       TabIndex        =   41
@@ -382,7 +382,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":2463
       MousePointer    =   99  'Custom
       TabIndex        =   37
@@ -404,7 +404,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":25B5
       MousePointer    =   99  'Custom
       TabIndex        =   33
@@ -426,7 +426,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":2707
       MousePointer    =   99  'Custom
       TabIndex        =   29
@@ -448,7 +448,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":2859
       MousePointer    =   99  'Custom
       TabIndex        =   25
@@ -470,7 +470,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":29AB
       MousePointer    =   99  'Custom
       TabIndex        =   21
@@ -492,7 +492,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   10920
+      Left            =   11280
       MousePointer    =   99  'Custom
       TabIndex        =   17
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -513,7 +513,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":2AFD
       MousePointer    =   99  'Custom
       TabIndex        =   13
@@ -535,7 +535,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   10920
+      Left            =   11280
       MouseIcon       =   "Main Form.frx":2C4F
       MousePointer    =   99  'Custom
       TabIndex        =   9
@@ -576,7 +576,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   102
       TabStop         =   0   'False
@@ -598,7 +598,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   101
       TabStop         =   0   'False
@@ -620,7 +620,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   100
       TabStop         =   0   'False
@@ -642,7 +642,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   99
       TabStop         =   0   'False
@@ -664,7 +664,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   98
       TabStop         =   0   'False
@@ -686,7 +686,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   97
       TabStop         =   0   'False
@@ -708,7 +708,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   96
       TabStop         =   0   'False
@@ -730,7 +730,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   95
       TabStop         =   0   'False
@@ -752,7 +752,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   94
       TabStop         =   0   'False
@@ -774,7 +774,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   9600
+      Left            =   9960
       Locked          =   -1  'True
       TabIndex        =   93
       TabStop         =   0   'False
@@ -808,7 +808,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   9
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":2EF3
       MousePointer    =   99  'Custom
       TabIndex        =   46
@@ -820,7 +820,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   8
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":3045
       MousePointer    =   99  'Custom
       TabIndex        =   42
@@ -832,7 +832,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   7
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":3197
       MousePointer    =   99  'Custom
       TabIndex        =   38
@@ -844,7 +844,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   6
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":32E9
       MousePointer    =   99  'Custom
       TabIndex        =   34
@@ -856,7 +856,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   5
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":343B
       MousePointer    =   99  'Custom
       TabIndex        =   30
@@ -868,7 +868,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   4
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":358D
       MousePointer    =   99  'Custom
       TabIndex        =   26
@@ -880,7 +880,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   3
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":36DF
       MousePointer    =   99  'Custom
       TabIndex        =   22
@@ -892,7 +892,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   2
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":3831
       MousePointer    =   99  'Custom
       TabIndex        =   18
@@ -904,7 +904,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   1
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":3983
       MousePointer    =   99  'Custom
       TabIndex        =   14
@@ -916,7 +916,7 @@ Begin VB.Form frmMain
    Begin VB.CheckBox chkSpawned 
       Height          =   375
       Index           =   0
-      Left            =   14160
+      Left            =   14460
       MouseIcon       =   "Main Form.frx":3AD5
       MousePointer    =   99  'Custom
       TabIndex        =   10
@@ -938,7 +938,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   88
       TabStop         =   0   'False
@@ -960,7 +960,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   87
       TabStop         =   0   'False
@@ -982,7 +982,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   86
       TabStop         =   0   'False
@@ -1004,7 +1004,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   85
       TabStop         =   0   'False
@@ -1026,7 +1026,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   84
       TabStop         =   0   'False
@@ -1048,7 +1048,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   83
       TabStop         =   0   'False
@@ -1070,7 +1070,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   82
       TabStop         =   0   'False
@@ -1092,7 +1092,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   81
       TabStop         =   0   'False
@@ -1114,7 +1114,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   80
       TabStop         =   0   'False
@@ -1136,7 +1136,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   7440
+      Left            =   7800
       Locked          =   -1  'True
       TabIndex        =   79
       TabStop         =   0   'False
@@ -1158,7 +1158,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   78
       TabStop         =   0   'False
@@ -1180,7 +1180,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   77
       TabStop         =   0   'False
@@ -1202,7 +1202,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   76
       TabStop         =   0   'False
@@ -1224,7 +1224,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   75
       TabStop         =   0   'False
@@ -1246,7 +1246,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   74
       TabStop         =   0   'False
@@ -1268,7 +1268,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   73
       TabStop         =   0   'False
@@ -1290,7 +1290,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   72
       TabStop         =   0   'False
@@ -1312,7 +1312,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   71
       TabStop         =   0   'False
@@ -1334,7 +1334,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   70
       TabStop         =   0   'False
@@ -1356,7 +1356,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   5280
+      Left            =   5640
       Locked          =   -1  'True
       TabIndex        =   69
       TabStop         =   0   'False
@@ -1379,7 +1379,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   765
+      Left            =   525
       MouseIcon       =   "Main Form.frx":3C27
       MousePointer    =   99  'Custom
       Style           =   1  'Graphical
@@ -1401,7 +1401,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   2415
-      Left            =   1245
+      Left            =   1005
       TabIndex        =   2
       Top             =   4440
       Width           =   1815
@@ -1581,7 +1581,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   405
       ItemData        =   "Main Form.frx":4413
-      Left            =   2760
+      Left            =   2520
       List            =   "Main Form.frx":4438
       MouseIcon       =   "Main Form.frx":445F
       MousePointer    =   99  'Custom
@@ -1603,7 +1603,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   405
       ItemData        =   "Main Form.frx":45B1
-      Left            =   2760
+      Left            =   2520
       List            =   "Main Form.frx":45D3
       MouseIcon       =   "Main Form.frx":45F6
       MousePointer    =   99  'Custom
@@ -1664,7 +1664,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   114
       TabStop         =   0   'False
       Top             =   1800
@@ -1683,7 +1683,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   115
       TabStop         =   0   'False
       Top             =   2400
@@ -1702,7 +1702,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   116
       TabStop         =   0   'False
       Top             =   3000
@@ -1721,7 +1721,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   117
       TabStop         =   0   'False
       Top             =   3600
@@ -1740,7 +1740,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   118
       TabStop         =   0   'False
       Top             =   4200
@@ -1759,7 +1759,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   119
       TabStop         =   0   'False
       Top             =   4800
@@ -1778,7 +1778,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   120
       TabStop         =   0   'False
       Top             =   5400
@@ -1797,7 +1797,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   121
       TabStop         =   0   'False
       Top             =   6000
@@ -1816,7 +1816,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   122
       TabStop         =   0   'False
       Top             =   6600
@@ -1835,7 +1835,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   6240
+      Left            =   6600
       TabIndex        =   123
       TabStop         =   0   'False
       Top             =   7200
@@ -1854,7 +1854,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   124
       TabStop         =   0   'False
       Top             =   1800
@@ -1873,7 +1873,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   125
       TabStop         =   0   'False
       Top             =   2400
@@ -1892,7 +1892,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   126
       TabStop         =   0   'False
       Top             =   3000
@@ -1911,7 +1911,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   127
       TabStop         =   0   'False
       Top             =   3600
@@ -1930,7 +1930,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   128
       TabStop         =   0   'False
       Top             =   4200
@@ -1949,7 +1949,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   129
       TabStop         =   0   'False
       Top             =   4800
@@ -1968,7 +1968,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   130
       TabStop         =   0   'False
       Top             =   5400
@@ -1987,7 +1987,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   131
       TabStop         =   0   'False
       Top             =   6000
@@ -2006,7 +2006,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   132
       TabStop         =   0   'False
       Top             =   6600
@@ -2025,7 +2025,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   133
       TabStop         =   0   'False
       Top             =   7200
@@ -2043,7 +2043,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   12000
+      Left            =   12360
       TabIndex        =   134
       TabStop         =   0   'False
       Top             =   1800
@@ -2053,7 +2053,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   0
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   135
       TabStop         =   0   'False
       Top             =   1800
@@ -2063,7 +2063,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   1
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   136
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2074,7 +2074,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   2
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   137
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2085,7 +2085,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   3
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   138
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2096,7 +2096,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   4
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   139
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2107,7 +2107,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   5
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   140
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2118,7 +2118,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   6
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   141
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2129,7 +2129,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   7
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   142
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2140,7 +2140,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   8
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   143
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2151,7 +2151,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtOptimized 
       Height          =   285
       Index           =   9
-      Left            =   12360
+      Left            =   12720
       TabIndex        =   144
       TabStop         =   0   'False
       ToolTipText     =   "Opens form to add a comment for that mating pair"
@@ -2171,7 +2171,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   0
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   145
       TabStop         =   0   'False
       Top             =   1800
@@ -2190,7 +2190,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   1
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   146
       TabStop         =   0   'False
       Top             =   2400
@@ -2209,7 +2209,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   2
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   147
       TabStop         =   0   'False
       Top             =   3000
@@ -2228,7 +2228,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   3
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   148
       TabStop         =   0   'False
       Top             =   3600
@@ -2247,7 +2247,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   4
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   149
       TabStop         =   0   'False
       Top             =   4200
@@ -2266,7 +2266,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   5
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   150
       TabStop         =   0   'False
       Top             =   4800
@@ -2285,7 +2285,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   6
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   151
       TabStop         =   0   'False
       Top             =   5400
@@ -2304,7 +2304,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   7
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   152
       TabStop         =   0   'False
       Top             =   6000
@@ -2323,7 +2323,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   8
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   153
       TabStop         =   0   'False
       Top             =   6600
@@ -2342,7 +2342,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   285
       Index           =   9
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   154
       TabStop         =   0   'False
       Top             =   7200
@@ -2361,7 +2361,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   155
       TabStop         =   0   'False
       Top             =   1800
@@ -2380,7 +2380,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   156
       TabStop         =   0   'False
       Top             =   2400
@@ -2399,7 +2399,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   157
       TabStop         =   0   'False
       Top             =   3000
@@ -2418,7 +2418,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   158
       TabStop         =   0   'False
       Top             =   3600
@@ -2437,7 +2437,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   159
       TabStop         =   0   'False
       Top             =   4200
@@ -2456,7 +2456,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   160
       TabStop         =   0   'False
       Top             =   4800
@@ -2475,7 +2475,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   161
       TabStop         =   0   'False
       Top             =   5400
@@ -2494,7 +2494,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   162
       TabStop         =   0   'False
       Top             =   6000
@@ -2513,7 +2513,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   163
       TabStop         =   0   'False
       Top             =   6600
@@ -2532,7 +2532,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   5880
+      Left            =   6240
       TabIndex        =   164
       TabStop         =   0   'False
       Top             =   7200
@@ -2551,7 +2551,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   165
       TabStop         =   0   'False
       Top             =   1800
@@ -2570,7 +2570,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   166
       TabStop         =   0   'False
       Top             =   2400
@@ -2589,7 +2589,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   167
       TabStop         =   0   'False
       Top             =   3000
@@ -2608,7 +2608,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   168
       TabStop         =   0   'False
       Top             =   3600
@@ -2627,7 +2627,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   169
       TabStop         =   0   'False
       Top             =   4200
@@ -2646,7 +2646,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   170
       TabStop         =   0   'False
       Top             =   4800
@@ -2665,7 +2665,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   171
       TabStop         =   0   'False
       Top             =   5400
@@ -2684,7 +2684,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   172
       TabStop         =   0   'False
       Top             =   6000
@@ -2703,7 +2703,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   173
       TabStop         =   0   'False
       Top             =   6600
@@ -2722,7 +2722,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   7560
+      Left            =   7920
       TabIndex        =   174
       TabStop         =   0   'False
       Top             =   7200
@@ -2741,7 +2741,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   175
       TabStop         =   0   'False
       Top             =   1800
@@ -2760,7 +2760,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   176
       TabStop         =   0   'False
       Top             =   2400
@@ -2779,7 +2779,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   177
       TabStop         =   0   'False
       Top             =   3000
@@ -2798,7 +2798,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   178
       TabStop         =   0   'False
       Top             =   3600
@@ -2817,7 +2817,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   179
       TabStop         =   0   'False
       Top             =   4200
@@ -2836,7 +2836,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   180
       TabStop         =   0   'False
       Top             =   4800
@@ -2855,7 +2855,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   181
       TabStop         =   0   'False
       Top             =   5400
@@ -2874,7 +2874,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   182
       TabStop         =   0   'False
       Top             =   6000
@@ -2893,7 +2893,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   183
       TabStop         =   0   'False
       Top             =   6600
@@ -2912,7 +2912,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   9000
+      Left            =   9360
       TabIndex        =   184
       TabStop         =   0   'False
       Top             =   7200
@@ -2931,7 +2931,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   185
       TabStop         =   0   'False
       Top             =   1800
@@ -2950,7 +2950,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   186
       TabStop         =   0   'False
       Top             =   2400
@@ -2969,7 +2969,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   187
       TabStop         =   0   'False
       Top             =   3000
@@ -2988,7 +2988,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   188
       TabStop         =   0   'False
       Top             =   3600
@@ -3007,7 +3007,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   189
       TabStop         =   0   'False
       Top             =   4200
@@ -3026,7 +3026,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   190
       TabStop         =   0   'False
       Top             =   4800
@@ -3045,7 +3045,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   191
       TabStop         =   0   'False
       Top             =   5400
@@ -3064,7 +3064,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   192
       TabStop         =   0   'False
       Top             =   6000
@@ -3083,7 +3083,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   193
       TabStop         =   0   'False
       Top             =   6600
@@ -3102,7 +3102,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   6600
+      Left            =   6960
       TabIndex        =   194
       TabStop         =   0   'False
       Top             =   7200
@@ -3121,7 +3121,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   195
       TabStop         =   0   'False
       Top             =   1800
@@ -3140,7 +3140,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   196
       TabStop         =   0   'False
       Top             =   2400
@@ -3159,7 +3159,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   197
       TabStop         =   0   'False
       Top             =   3000
@@ -3178,7 +3178,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   198
       TabStop         =   0   'False
       Top             =   3600
@@ -3197,7 +3197,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   199
       TabStop         =   0   'False
       Top             =   4200
@@ -3216,7 +3216,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   200
       TabStop         =   0   'False
       Top             =   4800
@@ -3235,7 +3235,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   201
       TabStop         =   0   'False
       Top             =   5400
@@ -3254,7 +3254,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   202
       TabStop         =   0   'False
       Top             =   6000
@@ -3273,7 +3273,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   203
       TabStop         =   0   'False
       Top             =   6600
@@ -3292,7 +3292,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   8280
+      Left            =   8640
       TabIndex        =   204
       TabStop         =   0   'False
       Top             =   7200
@@ -3311,7 +3311,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   206
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3331,7 +3331,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   207
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3351,7 +3351,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   208
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3371,7 +3371,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   209
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3391,7 +3391,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   210
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3411,7 +3411,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   211
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3431,7 +3431,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   212
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3451,7 +3451,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   9720
+      Left            =   10080
       TabIndex        =   214
       TabStop         =   0   'False
       Text            =   "Text1"
@@ -3462,7 +3462,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   0
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   213
       TabStop         =   0   'False
       Top             =   1800
@@ -3472,7 +3472,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   1
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   215
       TabStop         =   0   'False
       Top             =   2400
@@ -3482,7 +3482,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   2
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   216
       TabStop         =   0   'False
       Top             =   3000
@@ -3492,7 +3492,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   3
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   217
       TabStop         =   0   'False
       Top             =   3600
@@ -3502,7 +3502,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   4
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   218
       TabStop         =   0   'False
       Top             =   4200
@@ -3512,7 +3512,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   5
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   219
       TabStop         =   0   'False
       Top             =   4800
@@ -3522,7 +3522,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   6
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   220
       TabStop         =   0   'False
       Top             =   5400
@@ -3532,7 +3532,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   7
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   221
       TabStop         =   0   'False
       Top             =   6000
@@ -3542,7 +3542,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   8
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   222
       TabStop         =   0   'False
       Top             =   6600
@@ -3552,7 +3552,7 @@ Begin VB.Form frmMain
    Begin VB.TextBox txtFlag 
       Height          =   285
       Index           =   9
-      Left            =   11040
+      Left            =   11400
       TabIndex        =   223
       TabStop         =   0   'False
       Top             =   7200
@@ -3571,7 +3571,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   224
       Text            =   "Text1"
       Top             =   1800
@@ -3590,7 +3590,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   225
       Text            =   "Text1"
       Top             =   2400
@@ -3609,7 +3609,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   226
       Text            =   "Text1"
       Top             =   3000
@@ -3628,7 +3628,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   227
       Text            =   "Text1"
       Top             =   3600
@@ -3647,7 +3647,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   228
       Text            =   "Text1"
       Top             =   4200
@@ -3666,7 +3666,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   229
       Text            =   "Text1"
       Top             =   4800
@@ -3685,7 +3685,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   230
       Text            =   "Text1"
       Top             =   5400
@@ -3704,7 +3704,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   231
       Text            =   "Text1"
       Top             =   6000
@@ -3723,7 +3723,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   232
       Text            =   "Text1"
       Top             =   6600
@@ -3742,7 +3742,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   6840
+      Left            =   7200
       TabIndex        =   233
       Text            =   "Text1"
       Top             =   7200
@@ -3761,7 +3761,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   234
       Text            =   "Text1"
       Top             =   1800
@@ -3780,7 +3780,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   235
       Text            =   "Text1"
       Top             =   2400
@@ -3799,7 +3799,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   236
       Text            =   "Text1"
       Top             =   3000
@@ -3818,7 +3818,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   237
       Text            =   "Text1"
       Top             =   3600
@@ -3837,7 +3837,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   238
       Text            =   "Text1"
       Top             =   4200
@@ -3856,7 +3856,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   239
       Text            =   "Text1"
       Top             =   4800
@@ -3875,7 +3875,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   240
       Text            =   "Text1"
       Top             =   5400
@@ -3894,7 +3894,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   241
       Text            =   "Text1"
       Top             =   6000
@@ -3913,7 +3913,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   242
       Text            =   "Text1"
       Top             =   6600
@@ -3932,12 +3932,22 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   8640
+      Left            =   9000
       TabIndex        =   243
       Text            =   "Text1"
       Top             =   7200
       Visible         =   0   'False
       Width           =   180
+   End
+   Begin VB.TextBox txtMatDes 
+      Height          =   285
+      Left            =   10680
+      TabIndex        =   256
+      TabStop         =   0   'False
+      ToolTipText     =   "Opens form to add a comment for that mating pair"
+      Top             =   7920
+      Visible         =   0   'False
+      Width           =   150
    End
    Begin VB.Label Label15 
       Alignment       =   1  'Right Justify
@@ -3954,7 +3964,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   1080
+      Left            =   840
       TabIndex        =   254
       Top             =   7080
       Width           =   2175
@@ -3974,7 +3984,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   570
+      Left            =   330
       TabIndex        =   253
       Top             =   3285
       Width           =   2055
@@ -3994,7 +4004,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   840
+      Left            =   600
       TabIndex        =   252
       Top             =   3885
       Width           =   1815
@@ -4014,7 +4024,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   8160
+      Left            =   8520
       TabIndex        =   250
       ToolTipText     =   "Average proportion of shared alleles between all spawning pairs (0 = no shared alleles, 1 = all alleles shared)"
       Top             =   7920
@@ -4036,7 +4046,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   4440
+      Left            =   4800
       TabIndex        =   248
       ToolTipText     =   "Tag number of spawning female"
       Top             =   1200
@@ -4107,7 +4117,7 @@ Begin VB.Form frmMain
    End
    Begin VB.Line Line2 
       BorderWidth     =   2
-      X1              =   4440
+      X1              =   4080
       X2              =   16440
       Y1              =   7800
       Y2              =   7800
@@ -4127,7 +4137,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   12840
+      Left            =   13320
       TabIndex        =   205
       ToolTipText     =   "A flag indicating that something could be wrong with this mating pair"
       Top             =   1200
@@ -4136,7 +4146,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   9
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":489A
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":49EC
@@ -4149,7 +4159,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   8
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":395B0
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":39702
@@ -4162,7 +4172,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   7
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":6E2C6
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":6E418
@@ -4175,7 +4185,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   6
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":A2FDC
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":A312E
@@ -4188,7 +4198,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   5
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":D7CF2
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":D7E44
@@ -4201,7 +4211,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   4
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":10CA08
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":10CB5A
@@ -4214,7 +4224,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   3
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":14171E
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":141870
@@ -4227,7 +4237,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   2
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":176434
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":176586
@@ -4240,7 +4250,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   1
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":1AB14A
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":1AB29C
@@ -4253,7 +4263,7 @@ Begin VB.Form frmMain
    Begin VB.Image imgFlag 
       Height          =   480
       Index           =   0
-      Left            =   12960
+      Left            =   13440
       MouseIcon       =   "Main Form.frx":1DFE60
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":1DFFB2
@@ -4264,14 +4274,14 @@ Begin VB.Form frmMain
       Width           =   495
    End
    Begin VB.Image Image1 
-      Height          =   2265
+      Height          =   2025
       Left            =   120
       MouseIcon       =   "Main Form.frx":214B76
       MousePointer    =   99  'Custom
       Picture         =   "Main Form.frx":214CC8
       Stretch         =   -1  'True
-      Top             =   120
-      Width           =   4140
+      Top             =   240
+      Width           =   3780
    End
    Begin VB.Label Label9 
       Alignment       =   2  'Center
@@ -4288,7 +4298,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   9360
+      Left            =   9720
       TabIndex        =   92
       ToolTipText     =   "The proportion of shared alleles between the mating pair"
       Top             =   1200
@@ -4309,7 +4319,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   13680
+      Left            =   13920
       TabIndex        =   91
       ToolTipText     =   "Check box to highlight pairs that have already been spawned"
       Top             =   1200
@@ -4330,7 +4340,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   7680
+      Left            =   8040
       TabIndex        =   90
       ToolTipText     =   "Tag number of spawning male"
       Top             =   1200
@@ -4351,7 +4361,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   5520
+      Left            =   5880
       TabIndex        =   89
       ToolTipText     =   "Tag number of spawning female"
       Top             =   1200
@@ -4372,12 +4382,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   9
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   68
       ToolTipText     =   "Family ID of mating pair"
       Top             =   7260
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4394,12 +4404,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   8
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   67
       ToolTipText     =   "Family ID of mating pair"
       Top             =   6660
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4416,12 +4426,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   7
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   66
       ToolTipText     =   "Family ID of mating pair"
       Top             =   6060
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4438,12 +4448,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   6
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   65
       ToolTipText     =   "Family ID of mating pair"
       Top             =   5460
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4460,12 +4470,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   5
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   64
       ToolTipText     =   "Family ID of mating pair"
       Top             =   4860
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4482,12 +4492,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   4
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   63
       ToolTipText     =   "Family ID of mating pair"
       Top             =   4260
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4504,12 +4514,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   3
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   62
       ToolTipText     =   "Family ID of mating pair"
       Top             =   3660
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4526,12 +4536,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   2
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   61
       ToolTipText     =   "Family ID of mating pair"
       Top             =   3060
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4548,12 +4558,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   1
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   60
       ToolTipText     =   "Family ID of mating pair"
       Top             =   2460
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label lblFem 
       Alignment       =   1  'Right Justify
@@ -4570,12 +4580,12 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   375
       Index           =   0
-      Left            =   4320
+      Left            =   3960
       TabIndex        =   59
       ToolTipText     =   "Family ID of mating pair"
       Top             =   1860
       Visible         =   0   'False
-      Width           =   855
+      Width           =   1575
    End
    Begin VB.Label Label4 
       Alignment       =   1  'Right Justify
@@ -4599,7 +4609,7 @@ Begin VB.Form frmMain
    End
    Begin VB.Line Line1 
       BorderWidth     =   2
-      X1              =   4440
+      X1              =   4080
       X2              =   16440
       Y1              =   720
       Y2              =   720
@@ -4618,7 +4628,7 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   600
+      Left            =   360
       TabIndex        =   57
       Top             =   2640
       Width           =   3255
@@ -4630,7 +4640,7 @@ Begin VB.Form frmMain
       Height          =   6300
       Left            =   120
       Top             =   2520
-      Width           =   4095
+      Width           =   3735
    End
    Begin VB.Label lblMale 
       Alignment       =   1  'Right Justify
@@ -4647,7 +4657,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   9
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   113
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   7200
@@ -4669,7 +4679,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   8
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   112
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   6600
@@ -4691,7 +4701,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   7
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   111
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   6000
@@ -4713,7 +4723,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   6
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   110
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   5400
@@ -4735,7 +4745,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   5
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   109
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   4800
@@ -4757,7 +4767,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   4
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   108
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   4200
@@ -4779,7 +4789,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   3
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   107
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   3600
@@ -4801,7 +4811,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   2
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   106
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   3000
@@ -4823,7 +4833,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   1
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   105
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   2400
@@ -4845,7 +4855,7 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   360
       Index           =   0
-      Left            =   7320
+      Left            =   7680
       TabIndex        =   104
       ToolTipText     =   "Number of male referring to order that male was entered on input form"
       Top             =   1800
@@ -4925,6 +4935,8 @@ Dim strFactorial As String, tmpArray(11) As Long, tmpBatch As Long, batchArray()
 Dim tmpDate As Variant, tmpTime As Variant
 Dim yesDbase As String, yesFlags As String, yesPercs As String
 Dim accessApp As Access.Application, dbTemp As Database
+Public varOpt As Integer
+
 
 Public Function removeComment()
     spawnComment(CInt(frmMain.txtCommentInt.Text)) = ""
@@ -5163,6 +5175,7 @@ Private Sub cmdSpawnUp_Click()
             If spawnComment(i) <> "" Then
                 rstTemp(frmDataSpec.cmbComments.Text) = spawnComment(i)
             End If
+            rstTemp(frmDataSpec.cmbMatDes.Text) = frmMain.txtMatDes.Text
             rstTemp.Update
         End If
     Next i
@@ -5204,6 +5217,7 @@ Private Sub cmdSpawnUp_Click()
             rstTemp("Optimized") = "No"
             rstTemp("Date") = tmpDate
             rstTemp("Time") = tmpTime
+            rstTemp("Mating_Design") = frmMain.txtMatDes.Text
             rstTemp.Update
         End If
     Next i
@@ -5246,6 +5260,7 @@ Private Sub cmdSpawnUp_Click()
     
     frmMain.txtAvgPShare.Text = ""
     
+    varOpt = frmInput.chkOptimize.Value
     Unload frmInput
     
     Msg = "The selected matings have been added to the table '" & frmDataSpec.cmbMatingsTable.Text & "'."
@@ -5295,6 +5310,9 @@ Public Sub Form_Load()
     Next
 
     frmMain.Show 0
+    
+    'Variable for the Optimization checkbox on the input form
+    varOpt = 1
     
     frmMain.cmbFem.Text = 5
     frmMain.cmbMale.Text = 5
