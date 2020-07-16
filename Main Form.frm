@@ -4935,6 +4935,7 @@ Dim strFactorial As String, tmpArray(11) As Long, tmpBatch As Long, batchArray()
 Dim tmpDate As Variant, tmpTime As Variant
 Dim yesDbase As String, yesFlags As String, yesPercs As String
 Dim accessApp As Access.Application, dbTemp As Database
+'Dim accessApp As Object
 Public varOpt As Integer
 
 
